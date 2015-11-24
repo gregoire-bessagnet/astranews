@@ -9,7 +9,7 @@ before_action :find_post, only: [:index, :new, :create, :show, :destroy]
   end
 
   def show
-    @post = Post.find(user_id)
+    @post = Post.find([:user][:id])
   end
 
   def new
