@@ -4,13 +4,12 @@ before_filter :authenticate_user!, except: [:index]
 before_action :find_post, only: [:show, :destroy]
 
 
-
   def index
      @posts = Post.all
   end
 
   def show
-    @post = Post.new
+    @post = Post.find(params[:id])
   end
 
   def new
