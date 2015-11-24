@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'post/index'
+
+  get 'post/show'
+
+  get 'post/new'
+
+  get 'post/create'
+
+  get 'post/edit'
+
+  get 'post/update'
+
+  get 'post/destroy'
+
   devise_for :users
   root to: 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
