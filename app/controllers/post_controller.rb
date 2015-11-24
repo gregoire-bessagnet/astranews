@@ -1,6 +1,8 @@
 class PostController < ApplicationController
 
+before_filter :authenticate_user!, except: [:index]
 before_action :find_post, only: [:show, :destroy]
+
 
 
   def index
@@ -45,7 +47,8 @@ before_action :find_post, only: [:show, :destroy]
   end
 
   def post_params
-    params.require(:post).permit(:name, :picture)
+    params.require(:post).permit(:title, :introduction, :content, :synopsis, :city, :category, :price, :licence)
   end
 
 end
+
