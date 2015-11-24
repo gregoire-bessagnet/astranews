@@ -1,4 +1,4 @@
-class MediaController < ApplicationController
+class MediasController < ApplicationController
 
   before_action :find_media, only: [:show, :destroy]
 

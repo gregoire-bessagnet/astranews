@@ -1,4 +1,4 @@
-class PostController < ApplicationController
+class PostsController < ApplicationController
 
 before_filter :authenticate_user!, except: [:index]
 before_action :find_post, only: [:show, :destroy]
