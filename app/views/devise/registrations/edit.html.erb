@@ -14,6 +14,19 @@
     <%= f.input :password_confirmation, required: false %>
     <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
   </div>
+  <hr>
+  <div class="row">
+    <div class="col-sm-6">
+      <%= f.input :first_name %>
+    </div>
+    <div class="col-sm-6">
+      <%= f.input :last_name %>
+    </div>
+  </div>
+
+
+  <%= f.input :phone_number %>
+  <%= f.input :address, as: :text %>
 
   <div class="form-actions">
     <%= f.button :submit, "Update" %>
