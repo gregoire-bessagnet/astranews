@@ -1,0 +1,27 @@
+<div class="container">
+
+ <h2>Créer un article</h2>
+
+     <%= simple_form_for @post do |f| %>
+     <%= f.error_notification %>
+     <%= f.input :title, label: 'Le titre' %>
+     <%= f.input :introduction, label: 'Le chapô', placeholder: "le chapo" %>
+     <%= f.input :content, label: 'Votre article', placeholder: "Tapez ici votre article" %>
+     <%= f.input :date, label: 'Date de rédaction' %>
+     <%= f.input :synopsis, label: 'Le synopsis', placeholder: "Tapez ici le synopsis" %>
+     <%= f.input :status, label: 'LE STATUT - A MODIFIER', placeholder: "Tapez ici le synopsis" %>
+     <%= f.input :category, collection: Post::CATEGORIES, selected: Post::CATEGORIES.first %>
+     <%= f.input :character_number, label: 'Nombre de caractères' %>
+     <%= f.input :city, label: 'Ville', placeholder: "Entrez votre ville" %>
+     <%= f.input :price, label: 'Le prix', placeholder: "Choisir le prix de l'article" %>
+     <%= f.input :licence, label: 'Choisir la licence' %>
+
+     <%= f.submit "Créer l'article", class: "btn btn-primary" %>
+   <% end %>
+<hr>
+   <h4>
+     <%= link_to '< Retour', :back %>
+   </h4>
+
+</div>
+
