@@ -1,16 +1,23 @@
 <div class="text-center">
-  <h2>Ajoutez votre foodtruck</h2>
+  <h2>Créez votre profil</h2>
 </div>
-      <%= simple_form_for @user do |f| %>
-      <%= f.error_notification %>
-      <%= f.input :firs_name %>
-      <%= f.input :address %>
+    <%= simple_form_for @user do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :speciality, label: 'Spécialité', placeholder: "pigiste, jri, photographe..." %>
+    <%= f.input :biography, label: 'Biographie', placeholder: "Quel est votre parcours ?" %>
+    <%= f.input :siren, label: 'Numéro de SIREN', placeholder: "XXX XXX XXX" %>
+    <%= f.input :document_identity %>
+    <%= f.input :company_name, label: 'Entreprise', placeholder: "Dénomination sociale"  %>
+    <%= f.input :website_url, label: 'Site web', placeholder: "www.votresite.com" %>
+    <%= f.input :sociallink1, label: 'Réseau social 1', placeholder: "Twitter" %>
+    <%= f.input :sociallink2, label: 'Réseau social 2', placeholder: "Facebook" %>
+    <%= f.input :sociallink3, label: 'Réseau social 3', placeholder: "LinkedIn" %>
 
-      <%= f.input :category, collection: USER::CATEGORIES, selected: User::CATEGORIES.first %>
-      <%= f.submit "Créer", class: "btn btn-primary" %>
+    <%= f.submit "Créer", class: "btn btn-primary" %>
     <% end %>
 <hr>
     <h4>
       <%= link_to '< Retour', :back %>
     </h4>
+
 
