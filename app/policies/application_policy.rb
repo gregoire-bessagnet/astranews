@@ -1,4 +1,5 @@
 class ApplicationPolicy
+
   attr_reader :user, :record
 
   def initialize(user, record)
@@ -49,5 +50,10 @@ class ApplicationPolicy
     def resolve
       scope
     end
+
+    def update?
+      record.user == user
+    end
+
   end
 end
