@@ -1,4 +1,5 @@
-User.destroy_all
+Users.destroy_all
+Post.destroy_all
 
 50.times do   genre = ["men", "women"].sample
    last_name = Faker::Name.fr_last_name
@@ -31,7 +32,9 @@ User.destroy_all
     availability: true,
     phone_number: Faker::Number.number(10)
   )
+
 end
+
 
 Post.destroy_all
 50.times do
@@ -48,6 +51,11 @@ Post.create(
     )
 
 end
+
+
+
+
+
 
 
 

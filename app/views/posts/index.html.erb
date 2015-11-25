@@ -1,0 +1,9 @@
+<% @posts.each do |post| %>
+ <h2>
+   <%= link_to post_path(post) do %>
+      <%= post.title %>
+ </h2>
+<%= link_to "supprimer l'article",  post_path(post),
+    data: { confirm: 'Are you sure?' }, method: :delete %>
+   <% end %>
+   <% end %>
