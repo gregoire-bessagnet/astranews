@@ -25,7 +25,7 @@ class PostPolicy < ApplicationPolicy
   private
 
   def is_owner?
-    record.user == current_user
+    record.user == user
   end
 
 
