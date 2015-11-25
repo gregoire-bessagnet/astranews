@@ -49,7 +49,7 @@
     <% end %>
     <hr>
 
-    <% if policy(@post).create? %>
+    <% if policy(Post).create? %>
     <%= link_to t(".top_call_to_action", default: "Poster un article"), new_post_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
     <% end %>
   </div>
