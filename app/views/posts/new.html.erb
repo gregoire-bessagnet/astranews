@@ -4,6 +4,7 @@
 
      <%= simple_form_for @post do |f| %>
      <%= f.error_notification %>
+     <%= f.input :cover, as: :file %>
      <%= f.input :title, label: 'Le titre' %>
      <%= f.input :introduction, label: 'Le chapô', placeholder: "le chapo" %>
      <%= f.input :content, label: 'Votre article', placeholder: "Tapez ici votre article" %>
