@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, omniauth_providers: [:facebook]
 
-  has_many :posts
+  has_many :posts, dependent: :destroy
 
   validates :first_name, presence: true, uniqueness: true
   validates :last_name, presence: true, uniqueness: true
