@@ -20,6 +20,9 @@ gem 'faker_extension_fr'
 
 gem 'pundit'
 
+gem 'carrierwave'
+gem 'cloudinary'
+
 
 group :development, :test do
   gem 'binding_of_caller'
