@@ -1,4 +1,4 @@
-Users.destroy_all
+User.destroy_all
 Post.destroy_all
 
 50.times do   genre = ["men", "women"].sample
@@ -30,26 +30,12 @@ Post.destroy_all
     birth_date: Faker::Date.between(22.years.ago, 55.years.ago),
     siren: siren,
     availability: true,
+    speciality: Faker::Lorem.word,
     phone_number: Faker::Number.number(10)
   )
 
 end
 
-
-# Post.destroy_all
-# 50.times do
-
-# Post.create(
-#     introduction: Faker::Lorem.sentences,
-#     content: Faker::Lorem.paragraph,
-#     synopsis: Faker::Lorem.paragraph,
-#     city: Faker::Address.city,
-#     category: Faker::SlackEmoji.people,
-#     status: Faker::Team.state,
-#     price: Faker::Commerce.price,
-#     licence: Faker::company_name
-#     )
-# end
 
 
 
