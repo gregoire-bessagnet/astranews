@@ -33,3 +33,21 @@ User.destroy_all
   )
 end
 
+Post.destroy_all
+50.times do
+
+Post.create(
+    introduction: Faker::Lorem.sentences,
+    content: Faker::Lorem.paragraph,
+    synopsis: Faker::Lorem.paragraph,
+    city: Faker::Address.city,
+    category: Faker::SlackEmoji.people,
+    status: Faker::Team.state,
+    price: Faker::Commerce.price,
+    licence: Faker::company_name
+    )
+
+end
+
+
+
