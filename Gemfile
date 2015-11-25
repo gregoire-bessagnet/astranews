@@ -18,6 +18,9 @@ gem 'autoprefixer-rails'
 gem 'faker'
 gem 'faker_extension_fr'
 
+gem 'pundit'
+
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
