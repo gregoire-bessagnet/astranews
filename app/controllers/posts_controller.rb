@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
 before_filter :authenticate_user!, except: [:index, :show, :new, :create]
-before_action :find_post, only: [ :show, :destroy]
+before_action :find_post, only: [ :show, :edit, :update, :destroy]
 
 
   def index
@@ -9,7 +9,6 @@ before_action :find_post, only: [ :show, :destroy]
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def new
@@ -18,6 +17,7 @@ before_action :find_post, only: [ :show, :destroy]
 
   def create
     @post = Post.new(post_params)
+    @post.user = current_user
     if @post.save
       redirect_to @post
     else
@@ -26,8 +26,6 @@ before_action :find_post, only: [ :show, :destroy]
   end
 
   def edit
-
-
   end
 
   def update
@@ -41,12 +39,11 @@ before_action :find_post, only: [ :show, :destroy]
   private
 
   def find_post
-    @post = Post.find(params[:user])
-
+    @post = Post.find(params[:id])
   end
 
   def post_params
-    params.require(:post).permit(:title, :introduction, :content, :synopsis, :city, :category, :price, :licence)
+    params.require(:post).permit(:title, :introduction, :content, :status, :synopsis, :city, :category, :price, :licence)
   end
 
 end
