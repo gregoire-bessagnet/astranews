@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :users, :controllers => { registrations: 'users/registrations' }
-  resources :users, only: :show
+  resources :users, only: [:show]
   root to: 'pages#home'
 
 end

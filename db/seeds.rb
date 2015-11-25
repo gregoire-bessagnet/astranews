@@ -1,5 +1,9 @@
-Users.destroy_all
+puts "----Destroying Users"
+User.destroy_all
+puts "----Destroying Posts"
 Post.destroy_all
+
+puts "----Seeding Users"
 
 50.times do   genre = ["men", "women"].sample
    last_name = Faker::Name.fr_last_name
@@ -30,23 +34,61 @@ Post.destroy_all
     birth_date: Faker::Date.between(22.years.ago, 55.years.ago),
     siren: siren,
     availability: true,
+    speciality: Faker::Lorem.word,
     phone_number: Faker::Number.number(10)
   )
 
 end
 
-50.times do
-  Post.create(
-    introduction:
-    content:
-    synopsis:
-    city: Faker::Address.city,
-    category:
-    status:
-    price: Faker::Commerce.price,
-    licence: Faker::Team.name
+puts "----Seeding Posts"
+
+users = User.all
 
 
-    )
 
-end
+Post.create({
+  title:Faker::Lorem.word,
+  introduction:Faker::Lorem.word,
+  content:Faker::Lorem.word,
+  date: Faker::Date.backward(90),
+  synopsis:Faker::Lorem.word,
+  status:["Publié", "Brouillon"].sample,
+  category:["Société", "Culture", "Science", "Arts", "Médias", "Finance", "Economie"].sample,
+  character_number:Faker::Number.between(80, 300),
+  city:Faker::Lorem.word,
+  price:Faker::Number.between(1, 10),
+  licence:["Copyright", "Creative Commons", "Libre"].sample,
+  user_id: users[rand(40)].id,
+  })
+
+
+Post.create({
+  title:Faker::Lorem.word,
+  introduction:Faker::Lorem.word,
+  content:Faker::Lorem.word,
+  date: Faker::Date.backward(90),
+  synopsis:Faker::Lorem.word,
+  status:["Publié", "Brouillon"].sample,
+  category:["Société", "Culture", "Science", "Arts", "Médias", "Finance", "Economie"].sample,
+  character_number:Faker::Number.between(80, 300),
+  city:Faker::Lorem.word,
+  price:Faker::Number.between(1, 10),
+  licence:["Copyright", "Creative Commons", "Libre"].sample,
+  user_id: users[rand(40)].id,
+  })
+
+Post.create({
+  title:Faker::Lorem.word,
+  introduction:Faker::Lorem.word,
+  content:Faker::Lorem.word,
+  date: Faker::Date.backward(90),
+  synopsis:Faker::Lorem.word,
+  status:["Publié", "Brouillon"].sample,
+  category:["Société", "Culture", "Science", "Arts", "Médias", "Finance", "Economie"].sample,
+  character_number:Faker::Number.between(80, 300),
+  city:Faker::Lorem.word,
+  price:Faker::Number.between(1, 10),
+  licence:["Copyright", "Creative Commons", "Libre"].sample,
+  user_id: users[rand(40)].id,
+  })
+
