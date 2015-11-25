@@ -1,3 +1,12 @@
-<h1>User#show</h1>
+<h1>Bienvenue sur votre profil <%= @user.first_name.capitalize %> <%=@user.last_name.capitalize %></h1>
 
-<%= @user.inspect %>
+<h2><%= @user.speciality %></h2>
+<h3><%= @user.biography %></h3>
+
+<h5><%= @user.company_name %></h5>
+<h5><%= @user.website_url %> </h5>
+
+
+
+
+
