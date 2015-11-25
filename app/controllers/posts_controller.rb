@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
 before_filter :authenticate_user!, except: [:index, :show, :new, :create]
-before_action :find_post, only: [ :show, :destroy]
+before_action :find_post, only: [ :show, :edit, :update, :destroy]
 
 
   def index
@@ -9,7 +9,6 @@ before_action :find_post, only: [ :show, :destroy]
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def new
@@ -41,8 +40,7 @@ before_action :find_post, only: [ :show, :destroy]
   private
 
   def find_post
-    @post = Post.find(params[:user])
-
+    @post = Post.find(params[:id])
   end
 
   def post_params
