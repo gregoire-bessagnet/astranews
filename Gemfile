@@ -23,6 +23,7 @@ gem 'pundit'
 
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'multipart-post', '~> 2.0'
 
 
 group :development, :test do
