@@ -5,7 +5,7 @@ before_action :find_post, only: [ :show, :edit, :update, :destroy]
 
 
   def index
-     @posts = Post.all
+     @posts = policy_scope(Post)
   end
 
   def show
@@ -13,22 +13,28 @@ before_action :find_post, only: [ :show, :edit, :update, :destroy]
 
   def new
     @post = Post.new
+    authorize @post
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.user = current_user
+
+    @post = current_user.posts.new(post_params)
+    authorize @post
     if @post.save
       redirect_to @post
     else
       render :new
     end
+
+
   end
 
   def edit
+
   end
 
   def update
+
   end
 
   def destroy
@@ -40,10 +46,12 @@ before_action :find_post, only: [ :show, :edit, :update, :destroy]
 
   def find_post
     @post = Post.find(params[:id])
+    authorize @post
   end
 
   def post_params
     params.require(:post).permit(:title, :introduction, :content, :status, :synopsis, :city, :category, :price, :licence)
+    authorize @post
   end
 
 end
