@@ -9,7 +9,7 @@
      <%= f.input :content, label: 'Votre article', placeholder: "Tapez ici votre article" %>
      <%= f.input :date, label: 'Date de rédaction' %>
      <%= f.input :synopsis, label: 'Le synopsis', placeholder: "Tapez ici le synopsis" %>
-     <%= f.input :status, label: 'LE STATUT - A MODIFIER', placeholder: "Tapez ici le synopsis" %>
+     <%= f.input :status, label: 'status de larticle', collection: Post::STATUS, selected: Post::STATUS.first %>
      <%= f.input :category, collection: Post::CATEGORIES, selected: Post::CATEGORIES.first %>
      <%= f.input :character_number, label: 'Nombre de caractères' %>
      <%= f.input :city, label: 'Ville', placeholder: "Entrez votre ville" %>
