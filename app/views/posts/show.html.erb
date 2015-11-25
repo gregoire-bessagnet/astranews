@@ -1,2 +1,36 @@
-<h1>Post#show</h1>
-<p>Find me in app/views/post/show.html.erb</p>
+
+<div class="container">
+
+  <p><%= @post.date %></p>
+
+  <h4><%= @post.city %></h4>
+
+  <h1><%= @post.title %></h1>
+
+  <h2><%= @post.introduction %></h2>
+
+  <p><%= @post.content %></p>
+
+  <h3><%= @post.synopsis %></h3>
+
+  <h4><%= @post.category %></h4>
+
+  <p><%= @post.character_number %></p>
+
+  <p><%= @post.price %></p>
+
+  <p><%= @post.licence %></p>
+
+<br><br>
+
+<%= link_to "Acheter l'article", class: "btn btn-primary" %>
+
+<hr>
+
+
+
+
+ <%= link_to "Retour aux articles", posts_path %>
+
+ <hr>
+
