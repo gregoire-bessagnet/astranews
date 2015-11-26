@@ -1,18 +1,32 @@
 <div>
   <h1>
-    <img src="..." alt="..." class="img-circle">
+    <%= image_tag(current_user.picture) %>
+
     <%= @user.first_name.capitalize %> <%=@user.last_name.capitalize %>
+
   </h1>
   <h4>
-    Fonction : <%= @user.speciality.upcase %>
+    <% if current_user.speciality.blank? %>
+      Fonction : non renseigné
+    <% else %>
+      Fonction : <%= @user.speciality.upcase %>
+    <% end %>
   </h4>
 
   <h4>
-    Agence : <%= @user.company_name.upcase  %>
+    <% if current_user.company_name.blank? %>
+      Agence : non renseigné
+    <% else %>
+      Agence : <%= @user.company_name.upcase %>
+    <% end %>
   </h4>
 
   <h4>
-    Site web :<%= @user.website_url.upcase  %>
+    <% if current_user.website_url.blank? %>
+      Site web : non renseigné
+    <% else %>
+      Site web : <%= @user.website_url.upcase %>
+    <% end %>
   </h4>
 </div>
 
