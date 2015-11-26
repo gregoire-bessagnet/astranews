@@ -27,7 +27,7 @@ puts "----Seeding Users"
     address: Faker::Address.fr_zip_and_city_in_region,
     password: "123soleil",
     password_confirmation: "123soleil",
-    # picture: "http://api.randomuser.me/portraits/med/#{genre}/#{rand(0..61)}.jpg", # => TODO
+    picture: "http://api.randomuser.me/portraits/med/#{genre}/#{rand(0..61)}.jpg", # => TODO
     email: Faker::Internet.free_email("#{first_name}.#{last_name}"),
     biography: Faker::Lorem.paragraph,
     company_name: company_name,
@@ -38,57 +38,36 @@ puts "----Seeding Users"
     phone_number: Faker::Number.number(10)
   )
 
+
 end
+
 
 puts "----Seeding Posts"
 
-users = User.all
+20.times do
+
+
+  users = User.all
+
+
+  Post.create({
+    title: Faker::Lorem.sentence,
+    introduction: Faker::Lorem.paragraph,
+    content: Faker::Lorem.paragraphs(3),
+    date: Faker::Date.backward(90),
+    synopsis: Faker::Lorem.sentence(2, true, 8),
+    status:["Publié", "Brouillon"].sample,
+    category:["Société", "Culture", "Science", "Arts", "Médias", "Finance", "Economie"].sample,
+    character_number:Faker::Number.between(80, 300),
+    city: Faker::Address.fr_zip_and_city_in_region(10),
+    price:Faker::Number.between(1, 10),
+    licence:["Copyright", "Creative Commons", "Libre"].sample,
+    user_id: users[rand(40)].id,
+    cover:Faker::Avatar.image
+    })
+
+end
 
 
 
-Post.create({
-  title:Faker::Lorem.word,
-  introduction:Faker::Lorem.word,
-  content:Faker::Lorem.word,
-  date: Faker::Date.backward(90),
-  synopsis:Faker::Lorem.word,
-  status:["Publié", "Brouillon"].sample,
-  category:["Société", "Culture", "Science", "Arts", "Médias", "Finance", "Economie"].sample,
-  character_number:Faker::Number.between(80, 300),
-  city:Faker::Lorem.word,
-  price:Faker::Number.between(1, 10),
-  licence:["Copyright", "Creative Commons", "Libre"].sample,
-  user_id: users[rand(40)].id,
-  })
-
-
-Post.create({
-  title:Faker::Lorem.word,
-  introduction:Faker::Lorem.word,
-  content:Faker::Lorem.word,
-  date: Faker::Date.backward(90),
-  synopsis:Faker::Lorem.word,
-  status:["Publié", "Brouillon"].sample,
-  category:["Société", "Culture", "Science", "Arts", "Médias", "Finance", "Economie"].sample,
-  character_number:Faker::Number.between(80, 300),
-  city:Faker::Lorem.word,
-  price:Faker::Number.between(1, 10),
-  licence:["Copyright", "Creative Commons", "Libre"].sample,
-  user_id: users[rand(40)].id,
-  })
-
-Post.create({
-  title:Faker::Lorem.word,
-  introduction:Faker::Lorem.word,
-  content:Faker::Lorem.word,
-  date: Faker::Date.backward(90),
-  synopsis:Faker::Lorem.word,
-  status:["Publié", "Brouillon"].sample,
-  category:["Société", "Culture", "Science", "Arts", "Médias", "Finance", "Economie"].sample,
-  character_number:Faker::Number.between(80, 300),
-  city:Faker::Lorem.word,
-  price:Faker::Number.between(1, 10),
-  licence:["Copyright", "Creative Commons", "Libre"].sample,
-  user_id: users[rand(40)].id,
-  })
 
