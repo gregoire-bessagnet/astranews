@@ -50,7 +50,7 @@ before_action :find_post, only: [ :show, :edit, :update, :destroy]
   end
 
   def post_params
-    params.require(:post).permit(:title, :introduction, :content, :status, :synopsis, :city, :category, :price, :licence)
+    params.require(:post).permit(:title, :introduction, :content, :status, :synopsis, :city, :category, :price, :licence, :cover)
 
   end
 
