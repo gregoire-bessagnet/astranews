@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-before_filter :authenticate_user!, except: [:index, :show, :new, :create]
+before_filter :authenticate_user!, except: [:index, :show]
 before_action :find_post, only: [ :show, :edit, :update, :destroy]
 
 
@@ -17,7 +17,6 @@ before_action :find_post, only: [ :show, :edit, :update, :destroy]
   end
 
   def create
-
     @post = current_user.posts.new(post_params)
     authorize @post
     if @post.save
@@ -30,11 +29,14 @@ before_action :find_post, only: [ :show, :edit, :update, :destroy]
   end
 
   def edit
-
   end
 
   def update
-
+    if @post.update(post_params)
+      redirect_to @post
+    else
+      render :edit
+    end
   end
 
   def destroy
