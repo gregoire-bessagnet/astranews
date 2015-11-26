@@ -33,8 +33,8 @@
               <% end %>
             </li>
             <li>
-              <%= link_to edit_user_registration_path do %>
-                <i class="fa fa-user"></i> <%= t ".profile", default: "Mon profil" %>
+              <%= link_to user_path(@user) do %>
+                <i class="fa fa-user"></i> <%= t ".profile", default: "Voir mon profil" %>
               <% end %>
             </li>
             <li>
