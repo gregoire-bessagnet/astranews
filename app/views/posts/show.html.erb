@@ -1,37 +1,49 @@
 
 <div class="container">
-
-  <%= cl_image_tag @post.cover, width:"100%"  %>
-
-  <p><%= @post.date %></p>
-
-  <h4><%= @post.city %></h4>
-
-  <h1><%= @post.title %></h1>
-
-  <h2><%= @post.introduction %></h2>
-
-  <p><%= @post.content %></p>
-
-  <h3><%= @post.synopsis %></h3>
-
-  <h4><%= @post.category %></h4>
-
-  <p><%= @post.character_number %></p>
-
-  <p><%= @post.price %></p>
-
-  <p><%= @post.licence %></p>
-
-<br><br>
-
-<%= link_to "Acheter l'article", class: "btn btn-primary" %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset">
+      <div class="carding">
 
 
-<hr>
+        <%= cl_image_tag @post.cover, width:"60%"  %>
 
- <%= link_to "Retour aux articles", posts_path %> |
- <%= link_to "Modifier", edit_post_path(@post) %>
+        <h5><%= @post.date %></h5>
 
- <hr>
+        <!-- <h4><%= @post.city %></h4> -->
+
+        <h1><%= @post.title %></h1>
+
+        <h2><%= @post.introduction %></h2>
+
+        <p><%= @post.content %></p>
+
+        <h3><%= @post.synopsis %></h3>
+
+
+        <h4><%= @post.category %></h4>
+
+        <p>Nombre de caractères<%= @post.character_number %></p>
+
+        <p>Prix: <%= @post.price %></p>
+
+        <p><%= @post.licence %></p>
+
+        <br><br>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+  <%= link_to "Acheter l'article", edit_post_path(@post), class:'btn btn-primary btn-sm' %>
+  <%= link_to "Modifier", edit_post_path(@post), class:"btn btn-primary btn-sm" %>
+  <hr>
+  <%= link_to "Retour aux articles", posts_path, class:'btn btn-default btn-sm' %>
 
