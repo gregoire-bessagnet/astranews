@@ -1,3 +1,16 @@
+require 'rest-client'
+
+def get_picture_url
+  puts "- getting image"
+  json = RestClient.get 'http://www.splashbase.co/api/v1/images/random'
+  hash = JSON.parse(json)
+  puts "- image: " + hash['url']
+  return hash['url']
+end
+
+
+
+
 puts "----Destroying Users"
 User.destroy_all
 puts "----Destroying Posts"
@@ -49,22 +62,25 @@ puts "----Seeding Posts"
 
   users = User.all
 
-
-  Post.create({
-    title: Faker::Lorem.sentence,
-    introduction: Faker::Lorem.paragraph,
-    content: Faker::Lorem.paragraphs(3),
-    date: Faker::Date.backward(90),
-    synopsis: Faker::Lorem.sentence(2, true, 8),
-    status:["Publié", "Brouillon"].sample,
-    category:["Société", "Culture", "Science", "Arts", "Médias", "Finance", "Economie"].sample,
-    character_number:Faker::Number.between(80, 300),
-    city: Faker::Address.fr_zip_and_city_in_region(10),
-    price:Faker::Number.between(1, 10),
-    licence:["Copyright", "Creative Commons", "Libre"].sample,
-    user_id: users[rand(40)].id,
-    cover:Faker::Avatar.image
+  begin
+    Post.create({
+      title: Faker::Lorem.sentence,
+      introduction: Faker::Lorem.paragraph,
+      content: Faker::Lorem.paragraphs(3),
+      date: Faker::Date.backward(90),
+      synopsis: Faker::Lorem.sentence(2, true, 8),
+      status:["Publié", "Brouillon"].sample,
+      category:["Société", "Culture", "Science", "Arts", "Médias", "Finance", "Economie"].sample,
+      character_number:Faker::Number.between(80, 300),
+      city: Faker::Address.fr_zip_and_city_in_region(10),
+      price:Faker::Number.between(1, 10),
+      licence:["Copyright", "Creative Commons", "Libre"].sample,
+      user_id: users[rand(40)].id,
+      remote_cover_url: get_picture_url()
     })
+  rescue
+    puts "/!\\ Image File Size Too Large"
+  end
 
 end
 
