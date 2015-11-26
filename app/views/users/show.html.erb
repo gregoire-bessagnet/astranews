@@ -2,7 +2,7 @@
   <%= image_tag @user.picture, class:"img-circle" %>
   <%= @user.first_name.capitalize %> <%=@user.last_name.capitalize %>
 </h1>
-<ul>
+<ul class="list-unstyled">
   <li>
     <% if @user.speciality.blank? %>
       <strong>Fonction</strong> : non renseigné
