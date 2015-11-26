@@ -3,12 +3,11 @@
   <%= f.input :cover %>
   <%= cl_image_tag @post.cover, transformation: :thumbnail  %>
   <%= f.input :title, label: 'Le titre' %>
-  <%= f.input :introduction, label: 'Le chapô', placeholder: "le chapo" %>
   <%= f.input :content, label: 'Votre article', placeholder: "Tapez ici votre article" %>
   <%= f.input :synopsis, label: 'Le synopsis', placeholder: "Tapez ici le synopsis" %>
   <%= f.input :status, label: "status de l'article", collection: Post::STATUS, selected: Post::STATUS.first %>
   <%= f.input :category, collection: Post::CATEGORIES, selected: Post::CATEGORIES.first %>
-  <%= f.input :city, label: 'localisation', placeholder: "Ex: liban" %>
+  <%= f.input :city, label: 'localisation', placeholder: "Ex: Liban, Paris" %>
   <%= f.input :price, label: 'Le prix', placeholder: "Choisir le prix de l'article" %>
   <%= f.input :licence, label: 'Choisir la licence', collection: Post::LICENCE, selected: Post::LICENCE.first %>
 
