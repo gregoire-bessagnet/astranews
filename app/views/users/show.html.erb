@@ -1,10 +1,36 @@
-<h1>Bienvenue sur votre profil <%= @user.first_name.capitalize %> <%=@user.last_name.capitalize %></h1>
+<div>
+  <h1>
+    <img src="..." alt="..." class="img-circle">
+    <%= @user.first_name.capitalize %> <%=@user.last_name.capitalize %>
+  </h1>
+  <h4>
+    Fonction : <%= @user.speciality.upcase %>
+  </h4>
 
-<h2><%= @user.speciality %></h2>
-<h3><%= @user.biography %></h3>
+  <h4>
+    Agence : <%= @user.company_name.upcase  %>
+  </h4>
 
-<h5><%= @user.company_name %></h5>
-<h5><%= @user.website_url %> </h5>
+  <h4>
+    Site web :<%= @user.website_url.upcase  %>
+  </h4>
+</div>
+
+<hr>
+
+<div>
+  <h4>Description</h4>
+  <h5><%= @user.biography %></h5>
+</div>
+
+<hr>
+
+<div>
+
+</div>
+
+
+
 
 
 

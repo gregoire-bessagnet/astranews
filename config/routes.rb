@@ -1,7 +1,7 @@
 
 Rails.application.routes.draw do
 
-  resources :posts , only: [:index, :show, :new, :create, :destroy] do
+  resources :posts do
     resources :medias
   end
 
