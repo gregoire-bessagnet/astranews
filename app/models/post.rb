@@ -15,6 +15,7 @@ class Post < ActiveRecord::Base
   validates :status, inclusion: { in: Post::STATUS, allow_nil: false }
   validates :price, presence: true
   validates :licence, presence: true, inclusion: { in: Post::LICENCE, allow_nil: false }
-  mount_uploader :image, ImageUploader
+
+  mount_uploader :cover, ImageUploader
 
 end

@@ -1,7 +1,7 @@
 
 <div class="container">
 
-    <%= cl_image_tag @post.cover, width:"100%"  %>
+  <%= cl_image_tag @post.cover, width:"100%"  %>
 
   <p><%= @post.date %></p>
 
@@ -30,7 +30,8 @@
 
 <hr>
 
- <%= link_to "Retour aux articles", posts_path %>
+ <%= link_to "Retour aux articles", posts_path %> |
+ <%= link_to "Modifier", edit_post_path(@post) %>
 
  <hr>
 
