@@ -8,6 +8,7 @@
   padding: 15px;
   margin: 15px auto;
   height:250px;
+  position: relative;
 }
 
 .card h2 {
@@ -30,4 +31,16 @@ text-align: center;
 .carding h5 {
   padding-left: 1000px;
   color: darkgray;
+}
+
+.card-filter {
+color: aliceblue;
+padding: 15px;
+position: absolute;
+top:0;
+bottom:0;
+left:0;
+right:0;
+background: rgba(0.1, 0.1, 0.1, 0.4);
+
 }
