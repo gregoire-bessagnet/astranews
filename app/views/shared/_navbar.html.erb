@@ -1,18 +1,19 @@
 <nav class="navbar-wagon">
   <div class="container navbar-wagon-container">
 
-    <a href="/">
-      ASTRANEWS
-    </a>
+    <%= link_to root_path do %>
+        <%= image_tag "logo.png", width:"25%" %>
+    <% end %>
 
     <div class="navbar-wagon-pusher"></div>
 
-    <form action="" class="navbar-wagon-search hidden-xs hidden-sm">
+    <!-- <form action="" class="navbar-wagon-search hidden-xs hidden-sm">
       <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
-    </form>
+    </form> -->
+
     <hr class="hidden-xs hidden-sm">
     <% if user_signed_in? %>
       <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
@@ -45,13 +46,13 @@
         </div>
       </div>
     <% else %>
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %> |
-      <%= link_to t(".sign_up", default: "Register"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "btn btn-success-outline btn-sm" %>
+      <%= link_to t(".sign_up", default: "Register"), new_user_registration_path, class: "btn btn-success-outline btn-sm" %>
     <% end %>
     <hr>
 
     <% if policy(Post).create? %>
-    <%= link_to t(".top_call_to_action", default: "Ecrire un article"), new_post_path, class: "btn btn-primary" %>
+    <%= link_to t(".top_call_to_action", default: "Ecrire un article"), new_post_path, class: "btn btn-success btn-sm" %>
     <% end %>
   </div>
 </nav>
