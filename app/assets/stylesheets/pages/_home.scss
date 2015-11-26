@@ -2,3 +2,18 @@
   border: 1px solid #278f75;
   border-radius:5px;
 }
+
+.coverhome {
+  background-image: url("http://res.cloudinary.com/dzr44aeiu/image/upload/v1448551943/1731375873_c23c88bc95_o_pm56p3.jpg");
+  background-size: cover;
+  position:relative;
+  height: 600px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 43%;
+  margin-top:0;
+}
+
+.coverhome h1 {
+  margin:0;
+}
