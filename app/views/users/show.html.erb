@@ -1,180 +1,83 @@
-<<<<<<< HEAD
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <h1>
-        <%= image_tag @user.picture, class:"img-circle" %>
-        <%= @user.first_name.capitalize %> <%=@user.last_name.capitalize %>
-      </h1>
-      <p><%= link_to edit_user_registration_path do %>
-        <i class="fa fa-pencil-square-o"></i> <%= t ".profile", default: "Modifier mon profil" %>
-        <% end %>
-      </p>
-      <ul class="list-unstyled">
-        <li>
-          <% if @user.speciality.blank? %>
-          <strong>Fonction</strong> : non renseigné
-          <% else %>
-          <strong>Fonction</strong> : <%= @user.speciality.upcase %>
-          <% end %>
-        </li>
-        <li>
-          <% if @user.company_name.blank? %>
-          <strong>Agence</strong> : non renseigné
-          <% else %>
-          <strong>Agence</strong> : <%= @user.company_name.upcase %>
-          <% end %>
-        </li>
-        <li>
-          <% if @user.website_url.blank? %>
-          <strong>Site web</strong> : non renseigné
-          <% else %>
-          <strong>Site web</strong> : <%= link_to @user.website_url, @user.website_url, target: "_blank" %>
-          <% end %>
-        </li>
-        <li>
-          <% if @user.sociallink1.blank? %>
-          <strong>Twitter</strong> : non renseigné
-          <% else %>
-          <%= link_to @user.sociallink1, target: "_blank" do %>
-          <i class="fa fa-twitter"></i>
-          <% end %>
-          <% end %>
-        </li>
-        <li>
-          <% if @user.sociallink2.blank? %>
-          <strong>Facebook</strong> : non renseigné
-          <% else %>
-          <%= link_to @user.sociallink2, target: "_blank" do %>
-          <i class="fa fa-facebook"></i>
-          <% end %>
-          <% end %>
-        </li>
-        <li>
-          <% if @user.sociallink3.blank? %>
-          <strong>Linkedin</strong> : non renseigné
-          <% else %>
-          <%= link_to @user.sociallink3, target: "_blank" do %>
-          <i class="fa fa-linkedin"></i>
-          <% end %>
-          <% end %>
-        </li>
-      </ul>
-      <hr>
-      <div class="">
-        <h4>Description</h4>
-        <h5><%= @user.biography %></h5>
-=======
 <div class="diving">
+
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-6">
-          <h1>
-            <%= image_tag @user.picture, class:"img-circle" %>
-            <%= @user.first_name.capitalize %> <%=@user.last_name.capitalize %>
-          </h1>
-
-          <p><%= link_to edit_user_registration_path do %>
-            <i class="fa fa-pencil-square-o"></i> <%= t ".profile", default: "Modifier mon profil" %>
+        <h1>
+          <%= image_tag @user.picture, class:"img-circle" %>
+          <%= @user.first_name.capitalize %> <%=@user.last_name.capitalize %>
+        </h1>
+        <p><%= link_to edit_user_registration_path do %>
+          <i class="fa fa-pencil-square-o"></i> <%= t ".profile", default: "Modifier mon profil" %>
+          <% end %>
+        </p>
+        <ul class="list-unstyled">
+          <li>
+            <% if @user.speciality.blank? %>
+            <strong>Fonction</strong> : non renseigné
+            <% else %>
+            <strong>Fonction</strong> : <%= @user.speciality.upcase %>
             <% end %>
-          </p>
-          <ul class="list-unstyled">
-            <li>
-              <% if @user.speciality.blank? %>
-              <strong>Fonction</strong> : non renseigné
-              <% else %>
-              <strong>Fonction</strong> : <%= @user.speciality.upcase %>
-              <% end %>
-            </li>
-            <li>
-              <% if @user.company_name.blank? %>
-              <strong>Agence</strong> : non renseigné
-              <% else %>
-              <strong>Agence</strong> : <%= @user.company_name.upcase %>
-              <% end %>
-            </li>
-            <li>
-              <% if @user.website_url.blank? %>
-              <strong>Site web</strong> : non renseigné
-              <% else %>
-              <strong>Site web</strong> : <%= @user.website_url.upcase %>
-              <% end %>
-            </li>
-            <li>
-              <% if @user.sociallink1.blank? %>
-              <strong>Linkedin</strong> : non renseigné
-              <% else %>
-              <%= link_to @user.sociallink1 do %>
-              <i class="fa fa-twitter"></i>
-              <% end %>
-              <% end %>
-            </li>
-            <li>
-              <% if @user.sociallink2.blank? %>
-              <strong>Facebook</strong> : non renseigné
-              <% else %>
-              <%= link_to @user.sociallink2 do %>
-              <i class="fa fa-facebook"></i>
-              <% end %>
-              <% end %>
-            </li>
-            <li>
-              <% if @user.sociallink3.blank? %>
-              <strong>Twitter</strong> : non renseigné
-              <% else %>
-              <%= link_to @user.sociallink3 do %>
-              <i class="fa fa-linkedin"></i>
-              <% end %>
-              <% end %>
-            </li>
-          </ul>
-          <hr>
-          <div class="">
-            <h4>Description</h4>
-            <h5><%= @user.biography %></h5>
-          </div>
-        </div>
->>>>>>> master
-      </div>
-      <hr>
-      <div class="">
-        <h4>Articles de <%= @user.first_name %> <%=@user.last_name %> </h4>
-
-        <div class="row">
-
-          <div class="card" style="background: url(<%= cloudinary_url post.cover %>); background-size:cover">
-          <div class="card-filter">
-            <h2>
-              <%= link_to post_path(post) do %>
-                <%= post.title %>
-              <% end %>
-            </h2>
-            <p>
-              <%= image_tag post.user.picture, class:'avatar' %> <br>
-              Ecrit par <%= post.user.first_name %>
-              Le <%= post.created_at.strftime("%d %b. %Y") %>
-            </p>
-
-            <h6>
-              Synopsis :
-              <%= post.synopsis %>
-            </h6>
-            <% if policy(post).destroy? %>
-              <%= link_to "supprimer l'article",  post_path(post),
-            data: { confirm: 'Are you sure?' }, method: :delete %>
+          </li>
+          <li>
+            <% if @user.company_name.blank? %>
+            <strong>Agence</strong> : non renseigné
+            <% else %>
+            <strong>Agence</strong> : <%= @user.company_name.upcase %>
             <% end %>
-          </div>
+          </li>
+          <li>
+            <% if @user.website_url.blank? %>
+            <strong>Site web</strong> : non renseigné
+            <% else %>
+            <strong>Site web</strong> : <%= link_to @user.website_url, @user.website_url, target: "_blank" %>
+            <% end %>
+          </li>
+          <li>
+            <% if @user.sociallink1.blank? %>
+            <strong>Twitter</strong> : non renseigné
+            <% else %>
+            <%= link_to @user.sociallink1, target: "_blank" do %>
+            <i class="fa fa-twitter"></i>
+            <% end %>
+            <% end %>
+          </li>
+          <li>
+            <% if @user.sociallink2.blank? %>
+            <strong>Facebook</strong> : non renseigné
+            <% else %>
+            <%= link_to @user.sociallink2, target: "_blank" do %>
+            <i class="fa fa-facebook"></i>
+            <% end %>
+            <% end %>
+          </li>
+          <li>
+            <% if @user.sociallink3.blank? %>
+            <strong>Linkedin</strong> : non renseigné
+            <% else %>
+            <%= link_to @user.sociallink3, target: "_blank" do %>
+            <i class="fa fa-linkedin"></i>
+            <% end %>
+            <% end %>
+          </li>
+        </ul>
+        <hr>
+        <div class="">
+          <h4>Description</h4>
+          <h5><%= @user.biography %></h5>
+
         </div>
+        <hr>
+        <div class="">
+          <h4>Articles de <%= @user.first_name %> <%=@user.last_name %> </h4>
 
-      </div>
 
+
+        </div>
       </div>
     </div>
-</div>
 
-
-
-
+  </div>
 
 
 
