@@ -5,6 +5,10 @@
         <%= image_tag @user.picture, class:"img-circle" %>
         <%= @user.first_name.capitalize %> <%=@user.last_name.capitalize %>
       </h1>
+      <p><%= link_to edit_user_registration_path do %>
+        <i class="fa fa-pencil-square-o"></i> <%= t ".profile", default: "Modifier mon profil" %>
+        <% end %>
+      </p>
       <ul class="list-unstyled">
         <li>
           <% if @user.speciality.blank? %>
