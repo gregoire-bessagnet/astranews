@@ -17,20 +17,30 @@
 }
 
 .card p {
-  font-size:12px;
-}
-
-.carding {
-
+  font-size:14px;
 }
 
 .carding h1 {
-text-align: center;
+  text-align: center;
+  font-weight : strong;
 }
 
 .carding h5 {
-  padding-left: 1000px;
+  text-align: right;
   color: darkgray;
+}
+
+.synops h5 {
+  text-align: left;
+  color: darkgray;
+}
+
+.hrlength hr {
+
+}
+
+.contenu{
+  text-align: justify;
 }
 
 .card-filter {
