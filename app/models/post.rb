@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :title, presence: true, uniqueness: true
-  validates :introduction, presence: true
+  # validates :introduction, presence: true
   validates :content, presence: true
   validates :synopsis, length: { maximum: 200 }, presence: true
   validates :city, presence: true
