@@ -28,14 +28,14 @@
           <% if @user.website_url.blank? %>
           <strong>Site web</strong> : non renseigné
           <% else %>
-          <strong>Site web</strong> : <%= @user.website_url.upcase %>
+          <strong>Site web</strong> : <%= link_to @user.website_url, @user.website_url, target: "_blank" %>
           <% end %>
         </li>
         <li>
           <% if @user.sociallink1.blank? %>
-          <strong>Linkedin</strong> : non renseigné
+          <strong>Twitter</strong> : non renseigné
           <% else %>
-          <%= link_to @user.sociallink1 do %>
+          <%= link_to @user.sociallink1, target: "_blank" do %>
           <i class="fa fa-twitter"></i>
           <% end %>
           <% end %>
@@ -44,16 +44,16 @@
           <% if @user.sociallink2.blank? %>
           <strong>Facebook</strong> : non renseigné
           <% else %>
-          <%= link_to @user.sociallink2 do %>
+          <%= link_to @user.sociallink2, target: "_blank" do %>
           <i class="fa fa-facebook"></i>
           <% end %>
           <% end %>
         </li>
         <li>
           <% if @user.sociallink3.blank? %>
-          <strong>Twitter</strong> : non renseigné
+          <strong>Linkedin</strong> : non renseigné
           <% else %>
-          <%= link_to @user.sociallink3 do %>
+          <%= link_to @user.sociallink3, target: "_blank" do %>
           <i class="fa fa-linkedin"></i>
           <% end %>
           <% end %>
