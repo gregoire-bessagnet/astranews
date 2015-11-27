@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :omniauthable, omniauth_providers: [:facebook]
 
   has_many :posts, dependent: :destroy
-
+  mount_uploader :profile, ImageUploader
 
 
   # validates :speciality, presence: true
