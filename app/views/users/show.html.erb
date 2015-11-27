@@ -64,6 +64,39 @@
         <h4>Description</h4>
         <h5><%= @user.biography %></h5>
       </div>
+      <hr>
+      <div class="">
+        <h4>Articles de <%= @user.first_name %> <%=@user.last_name %> </h4>
+
+        <div class="row">
+
+          <div class="card" style="background: url(<%= cloudinary_url post.cover %>); background-size:cover">
+          <div class="card-filter">
+            <h2>
+              <%= link_to post_path(post) do %>
+                <%= post.title %>
+              <% end %>
+            </h2>
+            <p>
+              <%= image_tag post.user.picture, class:'avatar' %> <br>
+              Ecrit par <%= post.user.first_name %>
+              Le <%= post.created_at.strftime("%d %b. %Y") %>
+            </p>
+
+            <h6>
+              Synopsis :
+              <%= post.synopsis %>
+            </h6>
+            <% if policy(post).destroy? %>
+              <%= link_to "supprimer l'article",  post_path(post),
+            data: { confirm: 'Are you sure?' }, method: :delete %>
+            <% end %>
+          </div>
+        </div>
+
+      </div>
+
+      </div>
     </div>
   </div>
 </div>
