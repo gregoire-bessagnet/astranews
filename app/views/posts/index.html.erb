@@ -10,7 +10,9 @@
               <% end %>
             </h2>
             <p>
-              <%= image_tag post.user.picture, class:'avatar' %> <br>
+              <%= link_to user_path(post.user) do  %>
+                <%= image_tag post.user.picture, class:'avatar' %> <br>
+              <% end %>
               Ecrit par <%= post.user.first_name %>
               Le <%= post.created_at.strftime("%d %b. %Y") %>
             </p>
