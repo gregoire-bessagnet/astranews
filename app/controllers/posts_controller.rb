@@ -6,6 +6,12 @@ before_action :find_post, only: [ :show, :edit, :update, :destroy]
 
   def index
      @posts = policy_scope(Post)
+    if params[:search] and not params[:search][:title].blank?
+      @posts = Post.where("title ILIKE ?", "%" + params[:search][:title] + "%")
+      @search_title = params[:search][:title]
+    else
+      @posts = Post.all
+    end
   end
 
   def show
@@ -55,6 +61,5 @@ before_action :find_post, only: [ :show, :edit, :update, :destroy]
     params.require(:post).permit(:title, :introduction, :content, :status, :synopsis, :city, :category, :price, :licence, :cover)
 
   end
-
 end
 
