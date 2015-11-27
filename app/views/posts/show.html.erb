@@ -3,46 +3,63 @@
     <div class="col-xs-12 col-sm-offset">
       <div class="carding">
 
+        <%= cl_image_tag @post.cover, width:"100%", height:"600px" %>
 
-        <%= cl_image_tag @post.cover, width:"60%"  %>
-
-        <h5><%= @post.date %></h5>
+        <h5>publié le <%= @post.date %></h5>
 
         <!-- <h4><%= @post.city %></h4> -->
 
-        <h1><%= @post.title %></h1>
+        <h1><%= @post.title.upcase %></h1>
 
-        <h2><%= @post.introduction %></h2>
+        <h4><%= @post.introduction %></h4>
+
+        <div class="contenu">
 
         <p><%= @post.content %></p>
 
-        <h3><%= @post.synopsis %></h3>
+        </div>
 
+        <hr>
 
-        <h4><%= @post.category %></h4>
+        <div class="synops">
+          <h5>
+            Catégorie
+          </h5>
+          <h4>
+            <%= @post.category %>
+          </h4>
+        </div>
 
-        <p>Nombre de caractères<%= @post.character_number %></p>
+        <hr>
 
-        <p>Prix: <%= @post.price %></p>
+        <div class="synops">
+          <h5>
+            Synopsis
+          </h5>
+          <h4>
+            <%= @post.synopsis %>
+          </h4>
+        </div>
 
-        <p><%= @post.licence %></p>
+        <hr>
 
-        <br><br>
+        <div class="synops">
+          <h5>
+            Informations relatives
+          </h5>
 
+          <p>Nombre de caractères : <%= @post.character_number %></p>
+
+          <p>Prix indiqué : <%= @post.price %> €</p>
+
+          <p>Licence de droit :<%= @post.licence %></p>
+
+          <%= link_to "Acheter l'article", edit_post_path(@post), class:'btn btn-primary btn-sm' %> <%= link_to "Modifier l'article", edit_post_path(@post), class:"btn btn-primary btn-sm" %> <%= link_to "Voir tous les articles", posts_path, class:'btn btn-default btn-sm' %>
+          <br/>
+        </div>
       </div>
-
     </div>
-
   </div>
 </div>
 
-
-
-
-
-
-  <%= link_to "Acheter l'article", edit_post_path(@post), class:'btn btn-primary btn-sm' %>
-  <%= link_to "Modifier", edit_post_path(@post), class:"btn btn-primary btn-sm" %>
-  <hr>
-  <%= link_to "Retour aux articles", posts_path, class:'btn btn-default btn-sm' %>
 
