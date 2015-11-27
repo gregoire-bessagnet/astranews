@@ -1,71 +1,74 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <h1>
-        <%= image_tag @user.picture, class:"img-circle" %>
-        <%= @user.first_name.capitalize %> <%=@user.last_name.capitalize %>
-      </h1>
-      <p><%= link_to edit_user_registration_path do %>
-        <i class="fa fa-pencil-square-o"></i> <%= t ".profile", default: "Modifier mon profil" %>
-        <% end %>
-      </p>
-      <ul class="list-unstyled">
-        <li>
-          <% if @user.speciality.blank? %>
-          <strong>Fonction</strong> : non renseigné
-          <% else %>
-          <strong>Fonction</strong> : <%= @user.speciality.upcase %>
-          <% end %>
-        </li>
-        <li>
-          <% if @user.company_name.blank? %>
-          <strong>Agence</strong> : non renseigné
-          <% else %>
-          <strong>Agence</strong> : <%= @user.company_name.upcase %>
-          <% end %>
-        </li>
-        <li>
-          <% if @user.website_url.blank? %>
-          <strong>Site web</strong> : non renseigné
-          <% else %>
-          <strong>Site web</strong> : <%= @user.website_url.upcase %>
-          <% end %>
-        </li>
-        <li>
-          <% if @user.sociallink1.blank? %>
-          <strong>Linkedin</strong> : non renseigné
-          <% else %>
-          <%= link_to @user.sociallink1 do %>
-          <i class="fa fa-twitter"></i>
-          <% end %>
-          <% end %>
-        </li>
-        <li>
-          <% if @user.sociallink2.blank? %>
-          <strong>Facebook</strong> : non renseigné
-          <% else %>
-          <%= link_to @user.sociallink2 do %>
-          <i class="fa fa-facebook"></i>
-          <% end %>
-          <% end %>
-        </li>
-        <li>
-          <% if @user.sociallink3.blank? %>
-          <strong>Twitter</strong> : non renseigné
-          <% else %>
-          <%= link_to @user.sociallink3 do %>
-          <i class="fa fa-linkedin"></i>
-          <% end %>
-          <% end %>
-        </li>
-      </ul>
-      <hr>
-      <div class="">
-        <h4>Description</h4>
-        <h5><%= @user.biography %></h5>
+<div class="diving">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+          <h1>
+            <%= image_tag @user.picture, class:"img-circle" %>
+            <%= @user.first_name.capitalize %> <%=@user.last_name.capitalize %>
+          </h1>
+
+          <p><%= link_to edit_user_registration_path do %>
+            <i class="fa fa-pencil-square-o"></i> <%= t ".profile", default: "Modifier mon profil" %>
+            <% end %>
+          </p>
+          <ul class="list-unstyled">
+            <li>
+              <% if @user.speciality.blank? %>
+              <strong>Fonction</strong> : non renseigné
+              <% else %>
+              <strong>Fonction</strong> : <%= @user.speciality.upcase %>
+              <% end %>
+            </li>
+            <li>
+              <% if @user.company_name.blank? %>
+              <strong>Agence</strong> : non renseigné
+              <% else %>
+              <strong>Agence</strong> : <%= @user.company_name.upcase %>
+              <% end %>
+            </li>
+            <li>
+              <% if @user.website_url.blank? %>
+              <strong>Site web</strong> : non renseigné
+              <% else %>
+              <strong>Site web</strong> : <%= @user.website_url.upcase %>
+              <% end %>
+            </li>
+            <li>
+              <% if @user.sociallink1.blank? %>
+              <strong>Linkedin</strong> : non renseigné
+              <% else %>
+              <%= link_to @user.sociallink1 do %>
+              <i class="fa fa-twitter"></i>
+              <% end %>
+              <% end %>
+            </li>
+            <li>
+              <% if @user.sociallink2.blank? %>
+              <strong>Facebook</strong> : non renseigné
+              <% else %>
+              <%= link_to @user.sociallink2 do %>
+              <i class="fa fa-facebook"></i>
+              <% end %>
+              <% end %>
+            </li>
+            <li>
+              <% if @user.sociallink3.blank? %>
+              <strong>Twitter</strong> : non renseigné
+              <% else %>
+              <%= link_to @user.sociallink3 do %>
+              <i class="fa fa-linkedin"></i>
+              <% end %>
+              <% end %>
+            </li>
+          </ul>
+          <hr>
+          <div class="">
+            <h4>Description</h4>
+            <h5><%= @user.biography %></h5>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 </div>
 
 
