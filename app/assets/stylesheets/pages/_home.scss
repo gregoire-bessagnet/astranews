@@ -64,15 +64,25 @@
   font-family: 'Chivo', sans-serif;
   font-size:45px;
   color:#5E9E9F;
+
 }
 
 
-.header_logo a:link, a:visited, a:hover, a:active {
-  text-decoration: none;
-}
+.footer{
+bottom: -50px;
+text-align: left;
+position: absolute;
+width: 875px;
+font-size: 25px;
+
 
 .bloctwo {
   bottom:10px;
   position:relative;
   margin-top:500px;
+}
+
+.list-footer-inline a {
+  margin-right: 12px;
+  color:#5E9E9F;
 }

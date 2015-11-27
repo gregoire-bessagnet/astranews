@@ -7,8 +7,14 @@
           <%= image_tag @user.picture, class:"img-circle" %>
           <%= @user.first_name.capitalize %> <%=@user.last_name.capitalize %>
         </h1>
-        <p><%= link_to edit_user_registration_path do %>
-          <i class="fa fa-pencil-square-o"></i> <%= t ".profile", default: "Modifier mon profil" %>
+        <% if current_user == @user %>
+          <p><%= link_to edit_user_registration_path do %>
+            <i class="fa fa-pencil-square-o"></i> <%= t ".profile", default: "Modifier mon profil" %>
+            <% end %>
+          </p>
+        <% end %>
+        <p><%= link_to "" do %>
+          <i class="fa fa-envelope-o"></i> <%= t ".profile", default: "Envoyer un message privé" %>
           <% end %>
         </p>
         <ul class="list-unstyled">
@@ -68,6 +74,10 @@
 
         </div>
         <hr>
+
+        <div class="">
+          <h5>email: <%= @user.email %></h5>
+
 
         <h4>Articles de <%= @user.first_name %> <%=@user.last_name %> </h4>
 
