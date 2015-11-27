@@ -38,6 +38,7 @@
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;top: 50%;
+    text-align:center;
 }
 
 #search {
@@ -70,4 +71,8 @@
   text-decoration: none;
 }
 
-
+.bloctwo {
+  bottom:10px;
+  position:relative;
+  margin-top:500px;
+}
