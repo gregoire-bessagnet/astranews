@@ -79,8 +79,6 @@ ActiveRecord::Schema.define(version: 20151127153506) do
     t.string   "picture"
     t.string   "token"
     t.datetime "token_expiry"
-    t.float    "latitude"
-    t.float    "longitude"
     t.string   "profile"
   end
 
