@@ -1,0 +1,23 @@
+------  CONTRUIRE UNE API ------
+
+Dans Rails, ca se traduit par un set de nouveau controllers qui rendent du JSON.
+Application Programming Interface
+
+l'API doit être consultable depuis une URl de style :
+
+-/api/v1/restaurants
+
+v1 si il y a des changements, v1.1, si menus changements, V2, si gros changements
+
+Intérêt de l'API :
+- pour soi, faire du web encapsulé dans du mobile. Grâce à des requêtes AJAX, on peut aller chercher de l'info dans l'API
+- pour les clients, permettre d'aller chercher des données chez soi.
+
+Création d'un dossier de controller API + V1
+
+Demande la gem jbuilder.
+
+Dès quo'on a une nouvelle URL, on créé un point d'API
+
+On peut protéger une API via Pundit et son authentification. > gem simple token authentification
+
