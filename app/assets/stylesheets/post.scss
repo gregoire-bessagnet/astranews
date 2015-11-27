@@ -9,6 +9,7 @@
   margin: 15px auto;
   height:250px;
   position: relative;
+  padding-bottom: 200px;
 }
 
 .card h2 {
@@ -44,13 +45,19 @@
 }
 
 .card-filter {
-color: aliceblue;
+color: white;
 padding: 15px;
 position: absolute;
 top:0;
 bottom:0;
 left:0;
 right:0;
-background: rgba(0.1, 0.1, 0.1, 0.7);
+background: rgba(0.1, 0.1, 0.1, 0.4);
 
+
+
+  a {
+  color:#8F8F8F;
+  }
 }
+

@@ -21,7 +21,7 @@
       <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
         <div class="icon-badge-container">
           <i class="fa fa-envelope-o"></i>
-          <div class="icon-badge icon-badge-blue">3</div>
+
         </div>
       <% end %>
       <hr>
@@ -40,8 +40,8 @@
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
+              <%= link_to posts_path do %>
+                <i class="fa fa-plus"></i>  <%= t ".profile", default: "Mes articles" %>
               <% end %>
             </li>
             <li>
