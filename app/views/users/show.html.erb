@@ -76,7 +76,8 @@
         <hr>
 
         <div class="">
-          <h5>email: <%= @user.email %></h5>
+          <h5>email: <a href="mailto:<%= @user.email %>"><%= @user.email %></a></h5>
+
 
 
         <h4>Articles de <%= @user.first_name %> <%=@user.last_name %> </h4>
