@@ -13,7 +13,7 @@ class MediasController < ApplicationController
   end
 
   def create
-    @media = @post.medias.new(media_params)
+    @media = @post.media.new(media_params)
     @media.user = current_user
     if @media.save
       redirect_to new_post_media_path
@@ -25,8 +25,6 @@ class MediasController < ApplicationController
   def new
     @media = Media.new
   end
-
-
 
   def edit
   end
