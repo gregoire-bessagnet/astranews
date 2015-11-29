@@ -1,13 +1,2 @@
-<div class="container">
-  <div class="row">
-    <div class= "col-md-8 col-md-offset-2">
-      <%= simple_form_for [@post, @media] do |f| %>
-      <h1>Postez vos médias </h1>
-      <%= f.input :photo %>
-      <%= cl_image_tag @post.cover, transformation: :thumbnail  %>
-      <%= f.input :description, label: "Description", placeholder: "Décrivez la raison d'être de cette photo" %>
-           <%= f.submit "Poster", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
-</div>
+
+
