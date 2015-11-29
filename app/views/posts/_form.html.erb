@@ -5,8 +5,8 @@
       <%= f.error_notification %>
       <%= f.input :cover %>
       <%= cl_image_tag @post.cover, transformation: :thumbnail  %>
-      <%= f.input :title, label: "Le titre" %>
-      <%= f.input :content, label: "Votre article", placeholder: "Tapez ici votre article" %>
+      <%= f.input :title, label: "Titre", placeholder: "Tapez ici votre titre" %>
+      <%= f.input :content, label: "Votre article", placeholder: "Ecrivez ici votre article" %>
       <%= f.input :synopsis, label: "Le synopsis", placeholder: "Tapez votre synopsis min. 200 caractères" %>
       <%= f.input :status, label: "Status de l'article", collection: Post::STATUS, selected: Post::STATUS.first %>
       <%= f.input :category, label: "Catégorie", collection: Post::CATEGORIES, selected: Post::CATEGORIES.first %>
