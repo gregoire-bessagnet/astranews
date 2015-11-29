@@ -4,7 +4,7 @@
       <div class="carding">
 
         <div class="picture-post">
-        <%= cl_image_tag @post.cover, width:"85%", height:"480px" %>
+          <%= cl_image_tag @post.cover, width:"85%", height:"480px" %>
         </div>
 
         <h5>posté le <%= @post.date %></h5>
@@ -17,7 +17,7 @@
 
         <div class="contenu">
 
-        <p><%= @post.content %></p>
+          <p><%= @post.content %></p>
 
         </div>
 
@@ -57,7 +57,6 @@
           <p>Licence de droit :<%= @post.licence %></p>
 
           <%= link_to "Acheter l'article", edit_post_path(@post), class:'btn btn-primary btn-sm' %> <%= link_to "Modifier l'article", edit_post_path(@post), class:"btn btn-primary btn-sm" %> <%= link_to "Voir tous les articles", posts_path, class:'btn btn-default btn-sm' %>
-          <br/>
         </div>
       </div>
     </div>
