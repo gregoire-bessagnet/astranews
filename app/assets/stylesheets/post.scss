@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
 .card {
   border:1px solid grey;
   border-radius:3px;
@@ -14,7 +16,7 @@
 }
 
 .card h2 {
-  font-size:20px;
+  font-size:40px;
   text-transform:uppercase;
 }
 
@@ -69,6 +71,18 @@ height: 180px;
 }
 
 .avatar {
-width: 30px;
+width: 40px;
 border-radius: 50%;
 }
+
+
+.container_new_post {
+ background-color: #F9F9F9;
+  h2  {
+  font-family: sans-serif;
+  color:black;
+   }
+
+}
+
+
