@@ -15,7 +15,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'omniauth-facebook'
-
+gem 'redcarpet'
 
 gem 'faker'
 gem 'faker_extension_fr'
@@ -25,6 +25,9 @@ gem 'pundit'
 gem 'carrierwave'
 gem 'cloudinary'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-simplemde'
+end
 
 group :development, :test do
   gem 'binding_of_caller'
@@ -39,3 +42,4 @@ group :production do
   gem 'rails_12factor'
   gem 'puma'
 end
+
