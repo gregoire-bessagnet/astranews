@@ -1,10 +1,9 @@
-
 Rails.application.routes.draw do
 
   root to: 'pages#home'
 
   resources :posts do
-    resources :medias
+    resources :uploads
   end
 
   devise_for :users, :controllers => { registrations: 'users/registrations' , omniauth_callbacks: 'users/omniauth_callbacks' }
