@@ -5,20 +5,21 @@
       <%= f.error_notification %>
       <%= f.input :cover %>
       <%= cl_image_tag @post.cover, transformation: :thumbnail  %>
+
       <%= f.input :title, label: 'Le titre', input_html: { class: "input-lg"} %>
       <%= f.input :content, label: 'Votre article', placeholder: "Tapez ici votre article" %>
       <%= f.input :synopsis, label: 'Le synopsis', placeholder: "Tapez ici le synopsis" %>
       <%= f.input :status, label: "status de l'article", collection: Post::STATUS, selected: Post::STATUS.first %>
       <%= f.input :category, collection: Post::CATEGORIES, selected: Post::CATEGORIES.first %>
       <%= f.input :city, label: 'localisation', placeholder: "Ex: Liban, Paris" %>
-    <div class="row">
-      <div class= "col-xs-6"> <%= f.input :price, label: 'Le prix', placeholder: "Choisir le prix de l'article" %> </div>
+      <div class="row">
+        <div class= "col-xs-6"> <%= f.input :price, label: 'Le prix', placeholder: "Choisir le prix de l'article" %> </div>
         <div class= "col-xs-6"><%= f.input :licence, label: 'Choisir la licence', collection: Post::LICENCE, selected: Post::LICENCE.first %>
-          </div>
         </div>
+      </div>
       <div class= "col-xs-12 col-md-offset-5"> <%= f.submit "Créer l'article", class: "btn btn-primary" %> </div>
     </div>
 
-      <% end %>
+    <% end %>
   </div>
 </div>
