@@ -34,8 +34,10 @@ class UploadsController < ApplicationController
   end
 
   def destroy
+    @upload = Upload.find(params[:id])
+    # authorize @upload
     @upload.destroy
-    redirect_to uploads_path
+    redirect_to post_uploads_path
   end
 
   private
