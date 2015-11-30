@@ -64,16 +64,10 @@
   font-family: 'Chivo', sans-serif;
   font-size:45px;
   color:#5E9E9F;
-
 }
 
-
-.footer{
-bottom: -50px;
-text-align: left;
-position: absolute;
-width: 875px;
-font-size: 25px;
+.header_logo a:link a:visited a:hover, a:focus {
+  text-decoration: none;
 }
 
 
@@ -83,7 +77,40 @@ font-size: 25px;
   margin-top:500px;
 }
 
+
+
+.homeblocs{
+  margin-top:30px;
+  height:300px;
+}
+
+.homejournalist{
+    background-color:grey;
+    padding:5px;
+}
+.hometopics{
+    background-color:grey;
+    padding:5px;
+}
+.hometags{
+    background-color:grey;
+    padding:5px;
+}
+
+
+
+.footer {
+margin-top:50px;
+text-align: left;
+position: absolute;
+width: 500px;
+font-size: 40px;
+display:inline;
+}
+
+
 .list-footer-inline a {
   margin-right: 12px;
   color:#5E9E9F;
+  display:inline;
 }

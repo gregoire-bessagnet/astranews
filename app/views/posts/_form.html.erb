@@ -5,7 +5,7 @@
       <%= f.error_notification %>
       <%= f.input :cover %>
       <%= cl_image_tag @post.cover, transformation: :thumbnail  %>
-      <%= f.input :title, label: 'Le titre' %>
+      <%= f.input :title, label: 'Le titre', input_html: { class: "input-lg"} %>
       <%= f.input :content, label: 'Votre article', placeholder: "Tapez ici votre article" %>
       <%= f.input :synopsis, label: 'Le synopsis', placeholder: "Tapez ici le synopsis" %>
       <%= f.input :status, label: "status de l'article", collection: Post::STATUS, selected: Post::STATUS.first %>
