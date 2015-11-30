@@ -1,52 +1,36 @@
-t<div class="container">
-<div class="row">
-  <div class="col-xs-12 col-sm-offset">
-    <div class="carding">
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
 
-      <div class="picture-post">
-        <%= cl_image_tag @post.cover, class: "img-responsive" %>
-      </div>
+        <div class="picture-post">
+          <%= cl_image_tag @post.cover, class: "img-responsive" %>
+          <div class="cover-filter"></div>
+        </div>
 
-      <h5>posté le <%= @post.created_at.strftime("%b %d, %Y") %></h5>
+        <!-- <h4><%= @post.city %></h4> -->
 
-      <!-- <h4><%= @post.city %></h4> -->
+          <div class="article">
 
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-8">
-            <h1><%= @post.title.upcase %></h1>
+             <div class="tags"> <%= @post.category %></div>
+             <h1 class="article-headline"><%= @post.title %></h1>
+             <p class="article-meta">Posté le <%= @post.created_at.strftime("%b %d, %Y") %></p>
 
-            <h4><%= @post.introduction %></h4>
 
-            <div class="contenu">
+             <h4><%= @post.introduction %></h4>
 
-              <p><%= markdown @post.content %></p>
 
-            </div>
+               <p><%= markdown @post.content %></p>
 
-            <hr>
-
-            <div class="synops">
-              <h5>
-                Catégorie
-              </h5>
-              <h4>
-                <%= @post.category %>
-              </h4>
-            </div>
-
-            <hr>
-
-            <div class="synops">
+             <div class="synops">
               <h5>
                 Synopsis
               </h5>
-              <h4>
+              <h4 class="article-excerpt">
                 <%= @post.synopsis %>
               </h4>
             </div>
 
-            <hr>
+
 
             <div class="synops">
               <h5>
@@ -61,8 +45,7 @@ t<div class="container">
 
               <%= link_to "Acheter l'article", edit_post_path(@post), class:'btn btn-primary btn-sm' %> <%= link_to "Modifier l'article", edit_post_path(@post), class:"btn btn-primary btn-sm" %> <%= link_to "Voir tous les articles", posts_path, class:'btn btn-default btn-sm' %>
             </div>
-          </div>
-          <div class="col-md-4">
+          <div class="col-md-12">
             <h2>Les photos associées</h2>
             <%= link_to "Add photo", new_post_upload_path(@post), class: "btn btn-default" %>
 
@@ -71,13 +54,12 @@ t<div class="container">
               <li>
 
                 <%= cl_image_tag upload.photo, class: "img-responsive" %>
+                <%= upload.description %>
               </li>
               <% end %>
             </ul>
           </div>
-        </div>
       </div>
-    </div>
   </div>
 </div>
 </div>
