@@ -3,7 +3,7 @@ class UploadsController < ApplicationController
   before_filter :authenticate_user!
   before_action :set_post, only: [:show, :new, :create]
 
-   def show
+  def show
     @upload = Upload.find(params[:id])
   end
 
@@ -12,10 +12,10 @@ class UploadsController < ApplicationController
   end
 
   def create
-    @upload = Upload.new(upload_params)
+    @upload = @post.uploads.new(upload_params)
     authorize @upload
     if @upload.save
-      redirect_to post_upload_path
+      redirect_to @post
     else
       render 'uploads/show'
     end
@@ -39,7 +39,7 @@ class UploadsController < ApplicationController
 
   private
 
-    def set_post
+  def set_post
     @post = Post.find(params[:post_id])
   end
 
