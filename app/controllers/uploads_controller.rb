@@ -12,6 +12,7 @@ class UploadsController < ApplicationController
   end
 
   def create
+
     @upload = @post.uploads.new(upload_params)
     authorize @upload
     if @upload.save
@@ -38,6 +39,7 @@ class UploadsController < ApplicationController
   end
 
   private
+
 
   def set_post
     @post = Post.find(params[:post_id])
