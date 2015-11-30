@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  has_many :media
+  has_many :upload
   belongs_to :user
 
   CATEGORIES = ["Société", "Culture", "Science", "Arts", "Médias", "Finance", "Economie"]
