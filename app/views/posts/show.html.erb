@@ -1,67 +1,85 @@
 t<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-offset">
-      <div class="carding">
+<div class="row">
+  <div class="col-xs-12 col-sm-offset">
+    <div class="carding">
 
-        <div class="picture-post">
-        <%= cl_image_tag @post.cover, width:"85%", height:"480px" %>
-        </div>
+      <div class="picture-post">
+        <%= cl_image_tag @post.cover, class: "img-responsive" %>
+      </div>
 
-        <h5>posté le <%= @post.created_at.strftime("%b %d, %Y") %></h5>
+      <h5>posté le <%= @post.created_at.strftime("%b %d, %Y") %></h5>
 
-        <!-- <h4><%= @post.city %></h4> -->
+      <!-- <h4><%= @post.city %></h4> -->
 
-        <h1><%= @post.title.upcase %></h1>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-8">
+            <h1><%= @post.title.upcase %></h1>
 
-        <h4><%= @post.introduction %></h4>
+            <h4><%= @post.introduction %></h4>
 
-        <div class="contenu">
+            <div class="contenu">
 
-        <p><%= markdown @post.content %></p>
+              <p><%= markdown @post.content %></p>
 
-        </div>
+            </div>
 
-        <hr>
+            <hr>
 
-        <div class="synops">
-          <h5>
-            Catégorie
-          </h5>
-          <h4>
-            <%= @post.category %>
-          </h4>
-        </div>
+            <div class="synops">
+              <h5>
+                Catégorie
+              </h5>
+              <h4>
+                <%= @post.category %>
+              </h4>
+            </div>
 
-        <hr>
+            <hr>
 
-        <div class="synops">
-          <h5>
-            Synopsis
-          </h5>
-          <h4>
-            <%= @post.synopsis %>
-          </h4>
-        </div>
+            <div class="synops">
+              <h5>
+                Synopsis
+              </h5>
+              <h4>
+                <%= @post.synopsis %>
+              </h4>
+            </div>
 
-        <hr>
+            <hr>
 
-        <div class="synops">
-          <h5>
-            Informations relatives
-          </h5>
+            <div class="synops">
+              <h5>
+                Informations relatives
+              </h5>
 
-          <p>Nombre de caractères : <%= @post.character_number %></p>
+              <p>Nombre de caractères : <%= @post.character_number %></p>
 
-          <p>Prix indiqué : <%= @post.price %> €</p>
+              <p>Prix indiqué : <%= @post.price %> €</p>
 
-          <p>Licence de droit :<%= @post.licence %></p>
+              <p>Licence de droit :<%= @post.licence %></p>
 
-          <%= link_to "Acheter l'article", edit_post_path(@post), class:'btn btn-primary btn-sm' %> <%= link_to "Modifier l'article", edit_post_path(@post), class:"btn btn-primary btn-sm" %> <%= link_to "Voir tous les articles", posts_path, class:'btn btn-default btn-sm' %>
-          <br/>
+              <%= link_to "Acheter l'article", edit_post_path(@post), class:'btn btn-primary btn-sm' %> <%= link_to "Modifier l'article", edit_post_path(@post), class:"btn btn-primary btn-sm" %> <%= link_to "Voir tous les articles", posts_path, class:'btn btn-default btn-sm' %>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h2>Les photos associées</h2>
+            <%= link_to "Add photo", new_post_upload_path(@post), class: "btn btn-default" %>
+
+            <ul>
+              <% @post.uploads.each do |upload| %>
+              <li>
+
+                <%= cl_image_tag upload.photo, class: "img-responsive" %>
+              </li>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>
 
 

@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
 
 before_filter :authenticate_user!, except: [:index, :show]
-before_action :find_post, only: [ :show, :edit, :update, :destroy]
-
+before_action :find_post, only: [:show, :edit, :update, :destroy]
 
   def index
      @posts = policy_scope(Post)
@@ -30,8 +29,6 @@ before_action :find_post, only: [ :show, :edit, :update, :destroy]
     else
       render :new
     end
-
-
   end
 
   def edit
@@ -62,4 +59,3 @@ before_action :find_post, only: [ :show, :edit, :update, :destroy]
 
   end
 end
-
