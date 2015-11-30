@@ -7,7 +7,7 @@ t<div class="container">
         <%= cl_image_tag @post.cover, width:"85%", height:"480px" %>
         </div>
 
-        <h5>posté le <%= @post.date %></h5>
+        <h5>posté le <%= @post.created_at.strftime("%b %d, %Y") %></h5>
 
         <!-- <h4><%= @post.city %></h4> -->
 
