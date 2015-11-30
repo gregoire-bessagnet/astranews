@@ -24,6 +24,7 @@ class UploadsController < ApplicationController
 
   def new
     @upload = Upload.new
+    authorize @upload
   end
 
   def edit
