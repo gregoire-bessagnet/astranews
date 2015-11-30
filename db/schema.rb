@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151130101141) do
+ActiveRecord::Schema.define(version: 20151130110819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20151130101141) do
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
-  create_table "upload", force: :cascade do |t|
+  create_table "uploads", force: :cascade do |t|
     t.text     "description"
     t.string   "photo"
     t.integer  "post_id"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20151130101141) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "upload", ["post_id"], name: "index_upload_on_post_id", using: :btree
+  add_index "uploads", ["post_id"], name: "index_uploads_on_post_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -86,5 +86,5 @@ ActiveRecord::Schema.define(version: 20151130101141) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "posts", "users"
-  add_foreign_key "upload", "posts"
+  add_foreign_key "uploads", "posts"
 end
