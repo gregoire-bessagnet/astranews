@@ -4,7 +4,7 @@
       <div class="carding">
 
         <div class="picture-post">
-          <%= cl_image_tag @post.cover, width:"85%", height:"480px" %>
+          <%= cl_image_tag @post.cover, class: "img-responsive" %>
         </div>
 
         <h5>posté le <%= @post.date %></h5>
@@ -77,8 +77,6 @@
             </div>
           </div>
         </div>
-
-
       </div>
     </div>
   </div>
