@@ -1,4 +1,4 @@
-t<div class="container">
+<div class="container">
 <div class="row">
   <div class="col-xs-12 col-sm-offset">
     <div class="carding">
@@ -66,11 +66,16 @@ t<div class="container">
             <h2>Les photos associées</h2>
             <%= link_to "Add photo", new_post_upload_path(@post), class: "btn btn-default" %>
 
-            <ul>
+            <ul class="list-unstyled">
               <% @post.uploads.each do |upload| %>
               <li>
 
                 <%= cl_image_tag upload.photo, class: "img-responsive" %>
+                <p>Description : <%= upload.description %></p>
+                <% if policy(upload).destroy? %>
+                  <%= link_to "supprimer la photo", post_upload_path(post_id: @post.id, id: upload.id),
+                    data: { confirm: 'Are you sure?' }, method: :delete %>
+                <% end %>
               </li>
               <% end %>
             </ul>
@@ -81,5 +86,3 @@ t<div class="container">
   </div>
 </div>
 </div>
-
-
