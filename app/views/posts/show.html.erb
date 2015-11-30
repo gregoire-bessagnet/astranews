@@ -72,6 +72,10 @@
 
                 <%= cl_image_tag upload.photo, class: "img-responsive" %>
                 <p>Description : <%= upload.description %></p>
+                <% if policy(upload).destroy? %>
+                  <%= link_to "supprimer la photo", post_upload_path(post_id: @post.id, id: upload.id),
+                    data: { confirm: 'Are you sure?' }, method: :delete %>
+                <% end %>
               </li>
               <% end %>
             </ul>
@@ -82,5 +86,3 @@
   </div>
 </div>
 </div>
-
-

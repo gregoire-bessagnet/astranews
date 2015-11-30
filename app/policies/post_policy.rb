@@ -28,5 +28,4 @@ class PostPolicy < ApplicationPolicy
     record.user == user
   end
 
-
 end
