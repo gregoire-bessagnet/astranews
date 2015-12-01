@@ -1,7 +1,7 @@
 class UploadsController < ApplicationController
 
   before_filter :authenticate_user!
-  before_action :set_post, only: [:show, :new, :create]
+  before_action :set_post, only: [:show, :new, :create, :destroy]
 
   def show
     @upload = Upload.find(params[:id])
@@ -35,9 +35,9 @@ class UploadsController < ApplicationController
 
   def destroy
     @upload = Upload.find(params[:id])
-    # authorize @upload
+    authorize @upload
     @upload.destroy
-    redirect_to post_uploads_path
+    redirect_to post_path(@post)
   end
 
   private

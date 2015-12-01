@@ -22,8 +22,8 @@
               <%= post.synopsis %>
             </h6>
             <% if policy(post).destroy? %>
-              <%= link_to "supprimer l'article",  post_upload_path(@upload),
-            data: { confirm: 'Are you sure?' }, method: :delete %>
+              <%= link_to "supprimer l'article",  post_upload_path(@upload), method: :delete,
+            data: { confirm: 'Are you sure?' }  %>
             <% end %>
           </div>
         </div>
