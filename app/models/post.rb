@@ -19,4 +19,11 @@ class Post < ActiveRecord::Base
 
   mount_uploader :cover, ImageUploader
 
+  include PgSearch
+  pg_search_scope :search,
+    against: [ :title, :synopsis, :content ],
+    associated_against: {
+      uploads: [ :description ]
+    }
+
 end
