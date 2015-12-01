@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
   mount_uploader :picture, ImageUploader
 
+  include PgSearch
+  multisearchable against: [:post, :upload]
 
   # validates :speciality, presence: true
 
