@@ -3,7 +3,6 @@
   <div class="row">
     <div class="col-xs-12">
 
-
         <div class="picture-post">
           <%= cl_image_tag @post.cover, class: "img-responsive" %>
           <div class="cover-filter"></div>
@@ -16,7 +15,6 @@
              <div class="tags"> <%= @post.category %></div>
              <h1 class="article-headline"><%= @post.title %></h1>
              <p class="article-meta">Posté le <%= @post.created_at.strftime("%b %d, %Y") %></p>
-
 
              <h4><%= @post.introduction %></h4>
 
@@ -31,8 +29,6 @@
                 <%= @post.synopsis %>
               </h4>
             </div>
-
-
 
             <div class="synops">
               <h5>
@@ -60,9 +56,8 @@
                 <p>Description : <%= upload.description %></p>
                 <% if policy(upload).destroy? %>
                   <%= link_to "supprimer la photo", post_upload_path(post_id: @post.id, id: upload.id),
-                    data: { confirm: 'Are you sure?' }, method: :delete %>
+                    data: { confirm: 'Are you sure?' }, method: :delete, class: "btn btn-primary" %>
                 <% end %>
-
 
               </li>
               <% end %>
