@@ -21,9 +21,11 @@ puts "----Seeding Users"
 50.times do   genre = ["men", "women"].sample
    last_name = Faker::Name.fr_last_name
 
-   if genre == "men"
+  if genre == "men"
     first_name = Faker::Name.fr_first_name_m
-  else    first_name = Faker::Name.fr_first_name_f   end
+  else
+    first_name = Faker::Name.fr_first_name_f
+  end
 
   job = ["media", "journalist", "journalist", "journalist"].sample
   if job == "journalist"
