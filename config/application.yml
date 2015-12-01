@@ -12,12 +12,15 @@
 
 development:
   FB_ID: "1635993773331113"
-  FB_SECRET: "26c603b37e696524cabd211d12c8af93"
+  FB_SECRET: "6945c14f20aa861ea446106881e4004e"
 
 production:
   FB_ID: "1635993359997821"
-  FB_SECRET: "e899ba6da3dd85cbf96c8e940db08147"
+  FB_SECRET: "3514fe606caba349dcd729242deb442d"
 
-cloudinary_name: 'dzr44aeiu'
-cloudinary_api_key: '481396912755468'
-cloudinary_api_secret: 'rO6mvHZ24uuKB1o-Dua_ySJpDbg'
+cloudinary_name: 'gregoire'
+cloudinary_api_key: '181839527517859'
+cloudinary_api_secret: 'rxoim-nQ4e-vx4b6fvkCXCRhQy4'
+
+
+
