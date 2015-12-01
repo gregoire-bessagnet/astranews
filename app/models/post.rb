@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  has_many :uploads
+  has_many :uploads, dependent: :destroy
   belongs_to :user
 
   CATEGORIES = ["Société", "Culture", "Science", "Arts", "Médias", "Finance", "Economie"]

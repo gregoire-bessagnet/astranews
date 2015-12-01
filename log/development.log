@@ -6172,3 +6172,511 @@ Processing by PostsController#show as HTML
   Rendered shared/_navbar.html.erb (3.5ms)
   Rendered shared/_flashes.html.erb (0.1ms)
 Completed 200 OK in 168ms (Views: 163.8ms | ActiveRecord: 1.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'orders'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'posts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'uploads'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 51]]
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 51]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 52]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 52]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 53]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 53]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 54]]
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 5]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 54]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 55]]
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 55]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 56]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = $1  [["id", 3]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 56]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 57]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 57]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 58]]
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 6]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 58]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 59]]
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = $1  [["id", 12]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 4]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 59]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 60]]
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 60]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 61]]
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = $1  [["id", 20]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 61]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 62]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 17]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = $1  [["id", 16]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 62]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 63]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 63]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 64]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 64]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 65]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 65]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 66]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 66]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 67]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 15]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = $1  [["id", 2]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 67]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 68]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 68]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 69]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 14]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = $1  [["id", 11]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 69]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 70]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 70]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 71]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 19]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 71]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 72]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = $1  [["id", 18]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 72]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 73]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 73]]
+  [1m[35m (1.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 74]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 74]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 75]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 75]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 76]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 76]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 77]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 77]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 78]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 10]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 78]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 79]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 79]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 80]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 80]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 81]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 81]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 82]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 82]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 83]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 83]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 84]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 84]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 85]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = $1  [["id", 7]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 85]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 86]]
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 9]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = $1  [["id", 1]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 86]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 87]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 87]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 88]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 88]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 89]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 13]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 89]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 90]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 90]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 91]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 91]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 92]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 92]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 93]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 93]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 94]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 94]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 95]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 95]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 96]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 96]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 97]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 97]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 98]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 98]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 99]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 99]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 100]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 100]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 101]]
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = $1  [["id", 21]]
+PG::ForeignKeyViolation: ERROR:  update or delete on table "posts" violates foreign key constraint "fk_rails_a1c61473cd" on table "uploads"
+DETAIL:  Key (id)=(21) is still referenced from table "uploads".
+: DELETE FROM "posts" WHERE "posts"."id" = $1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 101]]
+  [1m[36mUpload Load (0.3ms)[0m  [1mSELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1[0m  [["post_id", 21]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "uploads" WHERE "uploads"."id" = $1  [["id", 1]]
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 21]]
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 101]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'adrien_collin@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Adrien"], ["last_name", "Collin"], ["address", "[\"59100\", \"Roubaix\", \"50.6942\", \"3.1746\", \"3\"]"], ["encrypted_password", "$2a$10$OC7nkPLseRSKHydCN8BrHebfUzxji9p4k71yhMMqTMSkpaLpg0saS"], ["picture", nil], ["email", "adrien_collin@yahoo.com"], ["biography", "Sit beatae amet. Nostrum distinctio consequatur consequatur enim. Voluptas sint quidem. Iusto est voluptatibus."], ["company_name", "Pariatur Distinctio Sarl"], ["birth_date", "1979-12-18"], ["siren", "487277139"], ["availability", "t"], ["speciality", "non"], ["phone_number", "7058960200"], ["created_at", "2015-12-01 16:34:14.605120"], ["updated_at", "2015-12-01 16:34:14.605120"]]
+  [1m[35m (5.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'lle.pons.jo@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Joëlle"], ["last_name", "Pons"], ["address", "[\"52800\", \"Foulain\", \"48.0395\", \"5.2124\", \"3\"]"], ["encrypted_password", "$2a$10$yLyHpk/BRLMvx5avaMrzlegoolYB34svVHnBQf269PBW3UWLopmr."], ["picture", nil], ["email", "lle.pons.jo@gmail.com"], ["biography", "Vero et sunt magni est. Omnis doloremque est velit repellendus. Voluptatem inventore quae et."], ["company_name", ""], ["birth_date", "1982-09-07"], ["siren", ""], ["availability", "t"], ["speciality", "esse"], ["phone_number", "8112031499"], ["created_at", "2015-12-01 16:34:14.682097"], ["updated_at", "2015-12-01 16:34:14.682097"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'guillemin.louis@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Louis"], ["last_name", "Guillemin"], ["address", "[\"59190\", \"Staple\", \"50.7491\", \"2.4543\", \"3\"]"], ["encrypted_password", "$2a$10$q09vPCb.R5WQu2RJYphEhOtYCQDpt6yn9XH0J8Ec/ytkE792RcjT2"], ["picture", nil], ["email", "guillemin.louis@hotmail.com"], ["biography", "Placeat eius consectetur fugit velit non voluptas. Fugit nesciunt sit quae veritatis distinctio eveniet et. Non doloribus aut harum illum rerum porro."], ["company_name", "Repellat SA"], ["birth_date", "1961-12-03"], ["siren", "654722719"], ["availability", "t"], ["speciality", "tempore"], ["phone_number", "4416746271"], ["created_at", "2015-12-01 16:34:14.756036"], ["updated_at", "2015-12-01 16:34:14.756036"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'julie_kieffer@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Julie"], ["last_name", "Kieffer"], ["address", "[\"60260\", \"Lamorlaye\", \"49.1625\", \"2.4469\", \"3\"]"], ["encrypted_password", "$2a$10$mNxtRXXEgMh3EsMgezZDT.ptqPWE8bTQ7s2L6nxGQxidAP8ks/E2i"], ["picture", nil], ["email", "julie_kieffer@yahoo.com"], ["biography", "Eaque dolor architecto numquam quod saepe. Ipsa ea provident ipsum. Quas maiores et eligendi et officia voluptas. Hic cumque ut et nam."], ["company_name", "Veritatis SA"], ["birth_date", "1980-02-06"], ["siren", "279522635"], ["availability", "t"], ["speciality", "omnis"], ["phone_number", "8809551967"], ["created_at", "2015-12-01 16:34:14.825985"], ["updated_at", "2015-12-01 16:34:14.825985"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'elsa_baudry@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Elsa"], ["last_name", "Baudry"], ["address", "[\"67113\", \"Blaesheim\", \"48.5065\", \"7.6092\", \"3\"]"], ["encrypted_password", "$2a$10$nTWMbMb4Qz4HGXn2Ud4XWugIjaHYHSt2UkzJgYb7oBMMFfHjA0HVG"], ["picture", nil], ["email", "elsa_baudry@hotmail.com"], ["biography", "Ex unde a accusamus ut quisquam. Consequuntur exercitationem modi. Veniam tempore vitae dolores sint soluta mollitia voluptatum. Enim illo ipsam."], ["company_name", "Magni Aspernatur Sarl"], ["birth_date", "1977-09-15"], ["siren", "693806523"], ["availability", "t"], ["speciality", "omnis"], ["phone_number", "3856699086"], ["created_at", "2015-12-01 16:34:14.892784"], ["updated_at", "2015-12-01 16:34:14.892784"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'durant_gabriel@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Gabriel"], ["last_name", "Durant"], ["address", "[\"75010\", \"Paris\", \"48.8709\", \"2.3561\", \"1\"]"], ["encrypted_password", "$2a$10$M48QwS2gMcuDwYg5hWYzBeuBaIPzY7hta74uzAwKwIFHZOOyvJ/Ga"], ["picture", nil], ["email", "durant_gabriel@gmail.com"], ["biography", "Repudiandae sed voluptate eaque incidunt. Autem consequatur atque. Distinctio fuga quis optio in id laudantium. Aliquid enim veritatis amet laborum voluptatum. Optio consequuntur nostrum sit."], ["company_name", ""], ["birth_date", "1966-12-04"], ["siren", ""], ["availability", "t"], ["speciality", "ex"], ["phone_number", "7225823631"], ["created_at", "2015-12-01 16:34:14.962065"], ["updated_at", "2015-12-01 16:34:14.962065"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'allain_angelina@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Angelina"], ["last_name", "Allain"], ["address", "[\"10700\", \"Salon\", \"48.6407\", \"4.0042\", \"3\"]"], ["encrypted_password", "$2a$10$GUnPwuXGxOgESL6.e7sLLu8aVPrlPG9ZJy40xsn/O9aFeiv6fhS.C"], ["picture", nil], ["email", "allain_angelina@gmail.com"], ["biography", "Vitae assumenda architecto totam voluptatem exercitationem expedita. Qui modi dolores id culpa tempore. Rerum repellat commodi consequatur."], ["company_name", ""], ["birth_date", "1984-03-27"], ["siren", ""], ["availability", "t"], ["speciality", "ut"], ["phone_number", "3925646786"], ["created_at", "2015-12-01 16:34:15.034496"], ["updated_at", "2015-12-01 16:34:15.034496"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'santos_sabrina@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Sabrina"], ["last_name", "santos"], ["address", "[\"58130\", \"Saint-Aubin-les-Forges\", \"47.1412\", \"3.2014\", \"3\"]"], ["encrypted_password", "$2a$10$sTqJ46yd7tzClI2pIqnnx.eXO7b6yI5MGiRJ6XBvLYzn4R5/vs3AW"], ["picture", nil], ["email", "santos_sabrina@yahoo.com"], ["biography", "Labore doloribus eius. Provident dignissimos rem aut consequuntur incidunt qui. Placeat vel molestias natus quia in. Autem impedit delectus tenetur."], ["company_name", ""], ["birth_date", "1993-11-05"], ["siren", ""], ["availability", "t"], ["speciality", "aperiam"], ["phone_number", "7940654270"], ["created_at", "2015-12-01 16:34:15.103403"], ["updated_at", "2015-12-01 16:34:15.103403"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'seignourel_michel@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Michel"], ["last_name", "Seignourel"], ["address", "[\"16470\", \"Saint-Michel\", \"45.65\", \"0.1\", \"5\"]"], ["encrypted_password", "$2a$10$iSZN.FPhnRGqFfQvoKFSLeUnMLuxfDtP905T1J1frBmAE3yCj/e3S"], ["picture", nil], ["email", "seignourel_michel@yahoo.com"], ["biography", "Voluptas eius odit nostrum tenetur dolorem aut voluptatum. Quaerat suscipit quis. At veritatis quibusdam earum et fuga delectus."], ["company_name", ""], ["birth_date", "1967-09-21"], ["siren", ""], ["availability", "t"], ["speciality", "velit"], ["phone_number", "8986219522"], ["created_at", "2015-12-01 16:34:15.172795"], ["updated_at", "2015-12-01 16:34:15.172795"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'ivan_janin@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Ivan"], ["last_name", "Janin"], ["address", "[\"86210\", \"Vouneuil-sur-Vienne\", \"46.7179\", \"0.5394\", \"5\"]"], ["encrypted_password", "$2a$10$kvzZXmdTOyb/Fj0ET2k/y.i5EfLfQuRbezQDLLLZUt3vx.CPcAa5S"], ["picture", nil], ["email", "ivan_janin@gmail.com"], ["biography", "Officia debitis et quia eos aut. Placeat fuga quos quod ea. Ut ab animi. Qui commodi aut nobis. Beatae vel distinctio qui reiciendis et aperiam a."], ["company_name", ""], ["birth_date", "1965-01-17"], ["siren", ""], ["availability", "t"], ["speciality", "et"], ["phone_number", "8735760728"], ["created_at", "2015-12-01 16:34:15.241972"], ["updated_at", "2015-12-01 16:34:15.241972"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'ali.kieffer@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Ali"], ["last_name", "Kieffer"], ["address", "[\"51350\", \"Cormontreuil\", \"49.2167\", \"4.05\", \"3\"]"], ["encrypted_password", "$2a$10$9MLYSLOpmHt100cFvRDlG.Cx8FqpXYMwShFysVO2qOzuc/I1dV3sK"], ["picture", nil], ["email", "ali.kieffer@yahoo.com"], ["biography", "Incidunt non ipsa ut. Non fuga quasi officia. Itaque animi perspiciatis."], ["company_name", "Quam Et Sarl"], ["birth_date", "1968-11-30"], ["siren", "714331709"], ["availability", "t"], ["speciality", "natus"], ["phone_number", "4142845607"], ["created_at", "2015-12-01 16:34:15.308345"], ["updated_at", "2015-12-01 16:34:15.308345"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'carlos_jaumonet@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Carlos"], ["last_name", "Jaumonet"], ["address", "[\"49350\", \"Chênehutte-Trèves-Cunault\", \"47.3108\", \"-0.1604\", \"2\"]"], ["encrypted_password", "$2a$10$qDLX./6SqvimrIbFLuOHjuwOIVJIgocKKHd6ZQi8cq6tKsQ5GEqDC"], ["picture", nil], ["email", "carlos_jaumonet@yahoo.com"], ["biography", "Eum quia sit vitae dolorem voluptatem magnam illum. Vitae quibusdam illo sunt dolorem dolores. Et eos sit non ut. Labore quia voluptatibus consequatur praesentium."], ["company_name", ""], ["birth_date", "1970-06-13"], ["siren", ""], ["availability", "t"], ["speciality", "perferendis"], ["phone_number", "8109836717"], ["created_at", "2015-12-01 16:34:15.374736"], ["updated_at", "2015-12-01 16:34:15.374736"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'perrot.adriana@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Adriana"], ["last_name", "Perrot"], ["address", "[\"80132\", \"Quesnoy-le-Montant\", \"50.1106\", \"1.6893\", \"3\"]"], ["encrypted_password", "$2a$10$LakMcRAPG.aEdUbin5JBn.a3MWiCEQdOAEpC.Lra2HUbQQB.1ft3y"], ["picture", nil], ["email", "perrot.adriana@hotmail.com"], ["biography", "Veniam voluptatum facere corrupti tempora aspernatur. Quasi aut temporibus a sunt. Voluptatem non consequatur eos aut. Sint quidem et dolore aspernatur quia nemo ut."], ["company_name", "Saepe Culpa Sarl"], ["birth_date", "1969-09-30"], ["siren", "333430288"], ["availability", "t"], ["speciality", "quam"], ["phone_number", "9953651438"], ["created_at", "2015-12-01 16:34:15.442177"], ["updated_at", "2015-12-01 16:34:15.442177"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'papin.milena@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Milena"], ["last_name", "Papin"], ["address", "[\"50860\", \"Le Mesnil-Opac\", \"49.013\", \"-1.0977\", \"2\"]"], ["encrypted_password", "$2a$10$tN1wesc7yYYOFX6JttEiVOuE7VZG8y91e3WUjpXKe1GuYJd7SiSre"], ["picture", nil], ["email", "papin.milena@gmail.com"], ["biography", "Sequi qui distinctio ipsam quis. Molestiae ut consequatur cupiditate architecto quis qui. Quis aut quam vel est voluptatum molestias."], ["company_name", ""], ["birth_date", "1974-03-30"], ["siren", ""], ["availability", "t"], ["speciality", "voluptates"], ["phone_number", "7908076202"], ["created_at", "2015-12-01 16:34:15.508410"], ["updated_at", "2015-12-01 16:34:15.508410"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'darius_vernet@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Darius"], ["last_name", "Vernet"], ["address", "[\"10800\", \"Villy-le-Maréchal\", \"48.1872\", \"4.0749\", \"3\"]"], ["encrypted_password", "$2a$10$QptXNH./HMtpsrjaZ4iE1.FMScJy/0x7diestxa79btiQGFvWpCGK"], ["picture", nil], ["email", "darius_vernet@gmail.com"], ["biography", "Dolore dolorum minima aut sapiente. Dolorem autem aut sapiente cupiditate mollitia labore dolore. Et dolor exercitationem quae nisi in."], ["company_name", ""], ["birth_date", "1968-07-14"], ["siren", ""], ["availability", "t"], ["speciality", "qui"], ["phone_number", "7034748071"], ["created_at", "2015-12-01 16:34:15.577918"], ["updated_at", "2015-12-01 16:34:15.577918"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'sofia.chatelain@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Sofia"], ["last_name", "Chatelain"], ["address", "[\"52310\", \"Meures\", \"48.1929\", \"5.0647\", \"3\"]"], ["encrypted_password", "$2a$10$ggEncAQVg7jB5sHJ.9L04euPkOWmc3LUMbnfJT5vm0MGWJVLpByyO"], ["picture", nil], ["email", "sofia.chatelain@gmail.com"], ["biography", "Tempora dolorum optio totam vero quia. Suscipit pariatur ab id quaerat repellendus. Magnam sapiente non officiis consequatur nostrum."], ["company_name", ""], ["birth_date", "1979-06-27"], ["siren", ""], ["availability", "t"], ["speciality", "harum"], ["phone_number", "9573398965"], ["created_at", "2015-12-01 16:34:15.646077"], ["updated_at", "2015-12-01 16:34:15.646077"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'felix_humbert@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Felix"], ["last_name", "Humbert"], ["address", "[\"30650\", \"Rochefort-du-Gard\", \"43.9765\", \"4.6902\", \"4\"]"], ["encrypted_password", "$2a$10$glFSfqv8kht6jIEEWxJRoOWlecxrYMNZZ40Rkd2.tt9miTNnD2726"], ["picture", nil], ["email", "felix_humbert@yahoo.com"], ["biography", "Recusandae in quia. Dolorem ad et. Soluta quasi est doloremque est."], ["company_name", ""], ["birth_date", "1972-07-29"], ["siren", ""], ["availability", "t"], ["speciality", "eaque"], ["phone_number", "3752583044"], ["created_at", "2015-12-01 16:34:15.711502"], ["updated_at", "2015-12-01 16:34:15.711502"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'pons_samira@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Samira"], ["last_name", "Pons"], ["address", "[\"59171\", \"Erre\", \"50.3625\", \"3.3156\", \"3\"]"], ["encrypted_password", "$2a$10$RLOoNo1P4I.CSDiTCkpqTeFPNMh318r1b8ov8fXXA7aqLf2zXFX1i"], ["picture", nil], ["email", "pons_samira@hotmail.com"], ["biography", "Quia voluptatem ad est enim id perferendis distinctio. Fuga minima debitis consequuntur vel sapiente consequatur inventore. Porro est vel nemo eaque adipisci qui. Repellendus dolor velit animi sit. Qui possimus tenetur cumque praesentium voluptatem."], ["company_name", "Quae Vel SA"], ["birth_date", "1960-12-02"], ["siren", "505966432"], ["availability", "t"], ["speciality", "maiores"], ["phone_number", "9674671951"], ["created_at", "2015-12-01 16:34:15.777804"], ["updated_at", "2015-12-01 16:34:15.777804"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'amir_sefiane@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Amir"], ["last_name", "Sefiane"], ["address", "[\"02870\", \"Fourdrain\", \"49.6108\", \"3.4718\", \"3\"]"], ["encrypted_password", "$2a$10$H9wav2QBDl62WQn0JqJFZ.Et/NaGO4f/s2gL6z/AaK824Iu1YUAAy"], ["picture", nil], ["email", "amir_sefiane@hotmail.com"], ["biography", "Minus odit cumque sapiente voluptas. Vel rerum ea. Accusantium veritatis dolor repudiandae voluptatem."], ["company_name", ""], ["birth_date", "1982-10-23"], ["siren", ""], ["availability", "t"], ["speciality", "vero"], ["phone_number", "9707459204"], ["created_at", "2015-12-01 16:34:15.844039"], ["updated_at", "2015-12-01 16:34:15.844039"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'buisson_emile@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Emile"], ["last_name", "Buisson"], ["address", "[\"88220\", \"Uzemain\", \"48.0857\", \"6.3444\", \"3\"]"], ["encrypted_password", "$2a$10$wtI//HdY/R0a1rKgl8wpaubYrPgL9tOkkuRuhyfONk5wDMHQ30bTe"], ["picture", nil], ["email", "buisson_emile@yahoo.com"], ["biography", "Quasi maxime voluptate voluptas sit dolores corporis quia. Eius ut porro sint eaque. Dolorem quia fugit doloribus voluptas quas doloremque quae. Cum ab voluptatem est."], ["company_name", ""], ["birth_date", "1973-01-07"], ["siren", ""], ["availability", "t"], ["speciality", "corrupti"], ["phone_number", "4218966286"], ["created_at", "2015-12-01 16:34:15.910370"], ["updated_at", "2015-12-01 16:34:15.910370"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'moreau_nicole@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Nicole"], ["last_name", "Moreau"], ["address", "[\"39500\", \"Champdivers\", \"47.0095\", \"5.3846\", \"3\"]"], ["encrypted_password", "$2a$10$hZCa3QZO3I/Q.4vzCoK7uO5UYrxUL2EF2bKMH3o7Gw1hqY5RcnGpC"], ["picture", nil], ["email", "moreau_nicole@gmail.com"], ["biography", "Provident ut nostrum nisi nemo impedit. Officiis provident cupiditate tempora eaque mollitia. Maiores numquam libero doloremque ut quod ullam. Repudiandae praesentium cum recusandae ratione."], ["company_name", ""], ["birth_date", "1982-01-21"], ["siren", ""], ["availability", "t"], ["speciality", "qui"], ["phone_number", "6566701692"], ["created_at", "2015-12-01 16:34:15.976676"], ["updated_at", "2015-12-01 16:34:15.976676"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'gonizzi_andr@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "André"], ["last_name", "Gonizzi"], ["address", "[\"28350\", \"Dampierre-sur-Avre\", \"48.7625\", \"1.1493\", \"2\"]"], ["encrypted_password", "$2a$10$gfTaCBNu3/HnYYIFfeFx0.Iwc6opis6Rhgfv.fe0rCu/1V27GWv3G"], ["picture", nil], ["email", "gonizzi_andr@yahoo.com"], ["biography", "Quidem aut voluptatem rerum at. Dignissimos doloribus blanditiis. Occaecati natus qui. Ullam similique eveniet eius impedit facilis."], ["company_name", "Debitis Est Sarl"], ["birth_date", "1972-11-23"], ["siren", "865238406"], ["availability", "t"], ["speciality", "odit"], ["phone_number", "7233785999"], ["created_at", "2015-12-01 16:34:16.046204"], ["updated_at", "2015-12-01 16:34:16.046204"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'duchemin_l_o@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Léo"], ["last_name", "Duchemin"], ["address", "[\"43290\", \"Saint-Bonnet-le-Froid\", \"45.1428\", \"4.4361\", \"4\"]"], ["encrypted_password", "$2a$10$sWsxjyZCOwKpGM4YvFaKRerY6IC3ZXpjKFfIsde6iwOR46P94aIKa"], ["picture", nil], ["email", "duchemin_l_o@hotmail.com"], ["biography", "Dolor qui blanditiis. Aspernatur debitis aut id repudiandae. Voluptas quia unde non. Nihil et rem tempore et suscipit itaque. Nulla quis possimus ullam expedita."], ["company_name", "Sed Debitis SA"], ["birth_date", "1987-08-29"], ["siren", "383215233"], ["availability", "t"], ["speciality", "commodi"], ["phone_number", "4034216030"], ["created_at", "2015-12-01 16:34:16.112830"], ["updated_at", "2015-12-01 16:34:16.112830"]]
+  [1m[35m (1.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'jacqueline_gonzalez@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Jacqueline"], ["last_name", "Gonzalez"], ["address", "[\"14460\", \"Colombelles\", \"49.2049\", \"-0.2957\", \"2\"]"], ["encrypted_password", "$2a$10$.tG70oRb3IKNuAdbPJuPD.OMKmZESxiBo72D.rcac5UhYeit/aWGW"], ["picture", nil], ["email", "jacqueline_gonzalez@yahoo.com"], ["biography", "Sit rerum ipsum minus. Est aliquid dolore totam est aut. Architecto iste ut. Sapiente ut vitae. Quasi consequatur voluptatem sit repudiandae."], ["company_name", ""], ["birth_date", "1979-12-25"], ["siren", ""], ["availability", "t"], ["speciality", "dolore"], ["phone_number", "6220111113"], ["created_at", "2015-12-01 16:34:16.185658"], ["updated_at", "2015-12-01 16:34:16.185658"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'jean.pierre.levasseur@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Jean-Pierre"], ["last_name", "Levasseur"], ["address", "[\"53260\", \"Parné-sur-Roc\", \"48.0062\", \"-0.6685\", \"2\"]"], ["encrypted_password", "$2a$10$.AKI/2qebly5fVoyzRTk2uwsy/LLtnio7QuwYObXylefdx9193dMq"], ["picture", nil], ["email", "jean.pierre.levasseur@gmail.com"], ["biography", "Sit qui expedita non dolorem et necessitatibus pariatur. Cum voluptatem soluta quidem. Sapiente alias tenetur. Omnis eaque esse enim dolores."], ["company_name", ""], ["birth_date", "1982-11-23"], ["siren", ""], ["availability", "t"], ["speciality", "repudiandae"], ["phone_number", "5509622857"], ["created_at", "2015-12-01 16:34:16.252045"], ["updated_at", "2015-12-01 16:34:16.252045"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'daniel.barbier@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Daniel"], ["last_name", "Barbier"], ["address", "[\"58500\", \"Billy-sur-Oisy\", \"47.4802\", \"3.4123\", \"3\"]"], ["encrypted_password", "$2a$10$UyAs/eSV9mUhzbkK89CQt.RRrXexQMGJDTGxP6ivsFdNg1S4POiGy"], ["picture", nil], ["email", "daniel.barbier@hotmail.com"], ["biography", "Expedita sed est doloremque odit at. Aut ad velit. Sed ipsa consequatur tempora voluptatem reprehenderit a."], ["company_name", ""], ["birth_date", "1970-10-22"], ["siren", ""], ["availability", "t"], ["speciality", "odit"], ["phone_number", "4095945752"], ["created_at", "2015-12-01 16:34:16.321317"], ["updated_at", "2015-12-01 16:34:16.321317"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'cousin_chantal@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Chantal"], ["last_name", "Cousin"], ["address", "[\"21400\", \"Noiron-sur-Seine\", \"47.95\", \"4.4833\", \"3\"]"], ["encrypted_password", "$2a$10$spLX4N1TpuzW/goZEAbZQOb3iN0wHD8lZBLQEXIhb8DRXYzkZ9qha"], ["picture", nil], ["email", "cousin_chantal@yahoo.com"], ["biography", "Rerum et modi id. Vitae saepe iure. Sapiente veritatis iusto."], ["company_name", ""], ["birth_date", "1963-12-13"], ["siren", ""], ["availability", "t"], ["speciality", "quia"], ["phone_number", "5528492924"], ["created_at", "2015-12-01 16:34:16.387653"], ["updated_at", "2015-12-01 16:34:16.387653"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'delahaye.opold.l@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Léopold"], ["last_name", "Delahaye"], ["address", "[\"77190\", \"Dammarie-les-Lys\", \"48.5167\", \"2.65\", \"1\"]"], ["encrypted_password", "$2a$10$rlRBeq110uQTS2m7lnpYUuuMFwEG8BxpJgidIhj4fOuteOVok9D6q"], ["picture", nil], ["email", "delahaye.opold.l@yahoo.com"], ["biography", "Illum explicabo voluptate quam. Molestiae quas non excepturi assumenda consequatur veritatis. Ea id magnam unde libero officiis."], ["company_name", ""], ["birth_date", "1961-05-02"], ["siren", ""], ["availability", "t"], ["speciality", "sit"], ["phone_number", "7325578521"], ["created_at", "2015-12-01 16:34:16.454103"], ["updated_at", "2015-12-01 16:34:16.454103"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'mia_blondeau@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Mia"], ["last_name", "Blondeau"], ["address", "[\"37520\", \"La Riche\", \"47.39\", \"0.6707\", \"2\"]"], ["encrypted_password", "$2a$10$xMXW41cxPRbikSQH9LkJGuUNsSmG6gs0ZvkqXHbA9JLBODPM0WvWy"], ["picture", nil], ["email", "mia_blondeau@yahoo.com"], ["biography", "Culpa alias rem corporis eligendi sunt et. Officia commodi voluptas earum. Quaerat qui dolor est velit quia quis."], ["company_name", ""], ["birth_date", "1985-05-12"], ["siren", ""], ["availability", "t"], ["speciality", "nostrum"], ["phone_number", "2506380266"], ["created_at", "2015-12-01 16:34:16.520470"], ["updated_at", "2015-12-01 16:34:16.520470"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'anne_razerbac@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Anne"], ["last_name", "Razerbac"], ["address", "[\"10280\", \"Fontaine-les-Grès\", \"48.4167\", \"3.9\", \"3\"]"], ["encrypted_password", "$2a$10$AlqDCXzTnQynHM8d9KSv0e0H2TiDtWknwgPZUstCajMRk1CIor1We"], ["picture", nil], ["email", "anne_razerbac@yahoo.com"], ["biography", "Vel ab voluptatum omnis voluptatem reprehenderit ex soluta. Et rerum error. Illum quisquam corrupti. Et et nulla dolore. Quibusdam iste assumenda ad fuga fugiat est."], ["company_name", ""], ["birth_date", "1971-10-27"], ["siren", ""], ["availability", "t"], ["speciality", "sapiente"], ["phone_number", "7444542316"], ["created_at", "2015-12-01 16:34:16.590764"], ["updated_at", "2015-12-01 16:34:16.590764"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'rio_isabelle@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Isabelle"], ["last_name", "Rio"], ["address", "[\"08130\", \"Mont-Laurent\", \"49.4697\", \"4.4816\", \"3\"]"], ["encrypted_password", "$2a$10$mcFMeGcKa0t5D/GV9eOyZ.XNXmtsR/dB2gAxCIl6mtTf5CFkGtyfS"], ["picture", nil], ["email", "rio_isabelle@yahoo.com"], ["biography", "Ducimus quae dolor voluptates. Ab neque quae et dolorum natus. Earum omnis dolor sit molestiae. Est sint neque accusamus laborum fugiat."], ["company_name", "Sint Delectus Sarl"], ["birth_date", "1972-07-16"], ["siren", "463311167"], ["availability", "t"], ["speciality", "dolores"], ["phone_number", "1617626033"], ["created_at", "2015-12-01 16:34:16.657304"], ["updated_at", "2015-12-01 16:34:16.657304"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'michel_lapierre@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Michel"], ["last_name", "Lapierre"], ["address", "[\"12100\", \"Comprégnac\", \"44.0828\", \"2.9615\", \"5\"]"], ["encrypted_password", "$2a$10$huBD05Jp2X9fYmi0vlVNnObVU31XnZc0mCvndOPPO4WsSxci.N5Nq"], ["picture", nil], ["email", "michel_lapierre@gmail.com"], ["biography", "Excepturi tenetur nemo laudantium temporibus. Nesciunt ipsa temporibus. Qui qui accusantium ut modi voluptatem. Dolorem laboriosam est aut."], ["company_name", ""], ["birth_date", "1978-03-07"], ["siren", ""], ["availability", "t"], ["speciality", "voluptatem"], ["phone_number", "3934136497"], ["created_at", "2015-12-01 16:34:16.726899"], ["updated_at", "2015-12-01 16:34:16.726899"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'blondeau_elena@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Elena"], ["last_name", "Blondeau"], ["address", "[\"48130\", \"Javols\", \"44.6934\", \"3.3427\", \"4\"]"], ["encrypted_password", "$2a$10$gQVeoWGrpBjpHovM2jmC4eqZK23uWF93xqW6noT95Cpl3xiej0V7u"], ["picture", nil], ["email", "blondeau_elena@hotmail.com"], ["biography", "Quis voluptas beatae rerum quasi repellat necessitatibus nemo. Et dignissimos placeat quo. Quo qui ab in. Debitis qui nisi. Distinctio nesciunt impedit dignissimos aut alias consequuntur odio."], ["company_name", ""], ["birth_date", "1971-11-06"], ["siren", ""], ["availability", "t"], ["speciality", "quaerat"], ["phone_number", "9390410990"], ["created_at", "2015-12-01 16:34:16.796155"], ["updated_at", "2015-12-01 16:34:16.796155"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'gallois_justin@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Justin"], ["last_name", "Gallois"], ["address", "[\"28220\", \"Boisgasson\", \"48.0491\", \"1.1514\", \"2\"]"], ["encrypted_password", "$2a$10$jmaZngexmg2V.9HHzMLbye8QPvdij3lx2/UAHqcLY2d./oXoTKaxa"], ["picture", nil], ["email", "gallois_justin@hotmail.com"], ["biography", "Autem ut enim. Iure aut quia qui. Est sed autem. Dicta est consequatur suscipit officia. Magnam ut exercitationem saepe voluptas a qui laborum."], ["company_name", ""], ["birth_date", "1966-10-23"], ["siren", ""], ["availability", "t"], ["speciality", "doloremque"], ["phone_number", "9301799818"], ["created_at", "2015-12-01 16:34:16.863474"], ["updated_at", "2015-12-01 16:34:16.863474"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'marta.legrand@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Marta"], ["last_name", "Legrand"], ["address", "[\"43550\", \"Saint-Front\", \"44.9771\", \"4.1416\", \"4\"]"], ["encrypted_password", "$2a$10$qDbGQB54KPMvMDMAlM/3G.71CY97eA.mZNDiX7thCxImJAunkWiiq"], ["picture", nil], ["email", "marta.legrand@hotmail.com"], ["biography", "Consequatur placeat deserunt mollitia non tempora voluptas. Consequatur expedita soluta ex nam odio eligendi. Ut sunt natus praesentium distinctio. Nobis cum dolor quasi. Itaque in enim accusamus molestias laudantium quo voluptatem."], ["company_name", ""], ["birth_date", "1986-10-16"], ["siren", ""], ["availability", "t"], ["speciality", "blanditiis"], ["phone_number", "5528870302"], ["created_at", "2015-12-01 16:34:16.929804"], ["updated_at", "2015-12-01 16:34:16.929804"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'zimmerman_damien@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Damien"], ["last_name", "Zimmerman"], ["address", "[\"40800\", \"Aire-sur-l'Adour\", \"43.7018\", \"-0.2645\", \"5\"]"], ["encrypted_password", "$2a$10$WDGbbSuNXTR0910afnvAje5fFqvHw7HR5OnAId.h.BefbUODkh3Ua"], ["picture", nil], ["email", "zimmerman_damien@hotmail.com"], ["biography", "Sunt sed eos tenetur. Architecto voluptatum velit repudiandae. Vero id ut alias consequatur tempore. Ipsum aperiam repellendus rerum est aliquid ex architecto. Dolores in dolore at unde quidem recusandae."], ["company_name", ""], ["birth_date", "1979-07-07"], ["siren", ""], ["availability", "t"], ["speciality", "cum"], ["phone_number", "4740052182"], ["created_at", "2015-12-01 16:34:16.996239"], ["updated_at", "2015-12-01 16:34:16.996239"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'karim.huet@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Karim"], ["last_name", "Huet"], ["address", "[\"59200\", \"Tourcoing\", \"50.7239\", \"3.1612\", \"3\"]"], ["encrypted_password", "$2a$10$.dPlNT7g3zdRu8K2FtS8GuFIz7ZKt3p28Nfkb/vAAaDFL8D/c1VOG"], ["picture", nil], ["email", "karim.huet@hotmail.com"], ["biography", "Ipsa delectus amet quia molestias voluptatem sed. Corporis incidunt officia perferendis rerum et temporibus inventore. Doloremque sint unde vel consequatur."], ["company_name", ""], ["birth_date", "1982-08-25"], ["siren", ""], ["availability", "t"], ["speciality", "quidem"], ["phone_number", "3732632644"], ["created_at", "2015-12-01 16:34:17.062516"], ["updated_at", "2015-12-01 16:34:17.062516"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'lemaire_maria@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Maria"], ["last_name", "Lemaire"], ["address", "[\"34500\", \"Villeneuve-lès-Béziers\", \"43.3152\", \"3.2806\", \"4\"]"], ["encrypted_password", "$2a$10$ktYUA3TA5IhdD0c8/eCrBevdBIx7KQPoKQpb8ZuHHHPn6g.u.SiBy"], ["picture", nil], ["email", "lemaire_maria@hotmail.com"], ["biography", "Sint optio et. Fuga sit non. Provident omnis eos alias id voluptatem. Consequatur suscipit exercitationem."], ["company_name", ""], ["birth_date", "1980-04-30"], ["siren", ""], ["availability", "t"], ["speciality", "aut"], ["phone_number", "3197902263"], ["created_at", "2015-12-01 16:34:17.135102"], ["updated_at", "2015-12-01 16:34:17.135102"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'lavigne.annabelle@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Annabelle"], ["last_name", "Lavigne"], ["address", "[\"27500\", \"Triqueville\", \"49.3368\", \"0.4421\", \"2\"]"], ["encrypted_password", "$2a$10$AHe1a1khMuZMEPzFEzXbl.WLZCmZ7S1qrG6CphR/OoDJZzXx2.U7G"], ["picture", nil], ["email", "lavigne.annabelle@hotmail.com"], ["biography", "Reprehenderit earum veniam consequatur eaque. Facilis voluptates et nihil. Quia enim eius enim porro deleniti similique. Nemo tempora repudiandae eos. Omnis accusamus consectetur optio sint."], ["company_name", "Et Eius SA"], ["birth_date", "1975-08-28"], ["siren", "312214844"], ["availability", "t"], ["speciality", "aut"], ["phone_number", "3642663972"], ["created_at", "2015-12-01 16:34:17.205161"], ["updated_at", "2015-12-01 16:34:17.205161"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'cedric_sultzer@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Cedric"], ["last_name", "Sultzer"], ["address", "[\"27000\", \"Évreux\", \"49.0241\", \"1.1508\", \"2\"]"], ["encrypted_password", "$2a$10$QdicMo6W4dpNUogiEQzza.SWTMAdEXmDgaoiiHhUzeim/L7JIlFga"], ["picture", nil], ["email", "cedric_sultzer@hotmail.com"], ["biography", "Voluptate et non voluptatum. Perspiciatis quo facere cumque maiores. Soluta cumque sunt alias quod."], ["company_name", ""], ["birth_date", "1974-05-08"], ["siren", ""], ["availability", "t"], ["speciality", "voluptatem"], ["phone_number", "3754141797"], ["created_at", "2015-12-01 16:34:17.277764"], ["updated_at", "2015-12-01 16:34:17.277764"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'dufour_jacob@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Jacob"], ["last_name", "Dufour"], ["address", "[\"60138\", \"Chiry-Ourscamp\", \"49.5438\", \"2.9472\", \"3\"]"], ["encrypted_password", "$2a$10$7N8aqcgJeoRbMXfTrnRP6OvGJG7tdaYr1FTcNrY4xH9WrMgHYs9.C"], ["picture", nil], ["email", "dufour_jacob@gmail.com"], ["biography", "Enim ab voluptatem sint recusandae aliquam. Assumenda illo doloribus voluptate. Dolores delectus accusamus et ea nihil quisquam rerum. Repellat temporibus sint provident eum."], ["company_name", "Amet Sarl"], ["birth_date", "1985-10-28"], ["siren", "117452672"], ["availability", "t"], ["speciality", "quia"], ["phone_number", "7601483385"], ["created_at", "2015-12-01 16:34:17.347390"], ["updated_at", "2015-12-01 16:34:17.347390"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'xavier.assi@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Xavier"], ["last_name", "Assi"], ["address", "[\"67990\", \"Osthoffen\", \"48.5869\", \"7.5561\", \"3\"]"], ["encrypted_password", "$2a$10$1grb2upmYe1Ue.Mg6D1HY.M3fpZyc.d7RTvvz3cA4bl.0CF8f2Q.6"], ["picture", nil], ["email", "xavier.assi@yahoo.com"], ["biography", "Impedit modi itaque sunt qui veritatis et. Molestiae beatae iusto omnis. Incidunt quis nobis autem porro modi et sit. Ut veritatis eos recusandae laboriosam ut sunt sed."], ["company_name", ""], ["birth_date", "1962-09-10"], ["siren", ""], ["availability", "t"], ["speciality", "delectus"], ["phone_number", "5834693503"], ["created_at", "2015-12-01 16:34:17.413368"], ["updated_at", "2015-12-01 16:34:17.413368"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'richard_prost@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Richard"], ["last_name", "Prost"], ["address", "[\"20239\", \"Murato\", \"42.5773\", \"9.3271\", \"4\"]"], ["encrypted_password", "$2a$10$ftLwOKXN7OJcu9uK0VdMlOh.UMpSEpWqEm/3aQzm9yxeVwUGNttvW"], ["picture", nil], ["email", "richard_prost@gmail.com"], ["biography", "Voluptas corporis quis laudantium perferendis omnis. Quod architecto aut earum placeat repudiandae. Qui tempore magni voluptates sed enim eum."], ["company_name", "Id SA"], ["birth_date", "1985-05-25"], ["siren", "701792020"], ["availability", "t"], ["speciality", "similique"], ["phone_number", "8338745873"], ["created_at", "2015-12-01 16:34:17.479740"], ["updated_at", "2015-12-01 16:34:17.479740"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'maria.alvarez@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Maria"], ["last_name", "Alvarez"], ["address", "[\"46190\", \"Comiac\", \"44.9409\", \"1.9897\", \"5\"]"], ["encrypted_password", "$2a$10$xwBCKldgZfuyUA23moKxTOas0R4/K1a42z9ReBYyiNB52m/6S9K8i"], ["picture", nil], ["email", "maria.alvarez@hotmail.com"], ["biography", "Officia minus commodi esse beatae. Sint aperiam ad. Voluptatem tenetur itaque dolor voluptate dolorum. Voluptas atque repellat ducimus ut natus."], ["company_name", "Rerum Sarl"], ["birth_date", "1963-08-23"], ["siren", "895051357"], ["availability", "t"], ["speciality", "sit"], ["phone_number", "3842038043"], ["created_at", "2015-12-01 16:34:17.549518"], ["updated_at", "2015-12-01 16:34:17.549518"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'chantal_brault@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Chantal"], ["last_name", "Brault"], ["address", "[\"47350\", \"Cambes\", \"44.5943\", \"0.2875\", \"5\"]"], ["encrypted_password", "$2a$10$527OABxFaEuT9mtSMv7UJu9BKh0pJG26XYwbrhzoLuMr7QiUz/46W"], ["picture", nil], ["email", "chantal_brault@hotmail.com"], ["biography", "Architecto sunt voluptatibus amet. Dolore a quasi sed porro sint et. Rerum id ut nisi mollitia culpa. Dolore qui et labore."], ["company_name", ""], ["birth_date", "1963-03-05"], ["siren", ""], ["availability", "t"], ["speciality", "dolorem"], ["phone_number", "4920152278"], ["created_at", "2015-12-01 16:34:17.615768"], ["updated_at", "2015-12-01 16:34:17.615768"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'carla_marty@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Carla"], ["last_name", "Marty"], ["address", "[\"90200\", \"Auxelles-Haut\", \"47.7436\", \"6.7703\", \"3\"]"], ["encrypted_password", "$2a$10$wGVMS0r5qbdiTonIEeYpJu9K0xP9frfbSC0y3OMhk0TlkqT0sz6nq"], ["picture", nil], ["email", "carla_marty@yahoo.com"], ["biography", "Quae facere possimus. Sed quidem ad nihil exercitationem. Explicabo numquam ad aut. Aut quo commodi architecto."], ["company_name", "Repellendus Suscipit Sarl"], ["birth_date", "1990-01-17"], ["siren", "157778630"], ["availability", "t"], ["speciality", "animi"], ["phone_number", "8495613369"], ["created_at", "2015-12-01 16:34:17.685280"], ["updated_at", "2015-12-01 16:34:17.685280"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'fontaine_dylan@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Dylan"], ["last_name", "Fontaine"], ["address", "[\"37130\", \"Saint-Patrice\", \"47.2844\", \"0.2941\", \"2\"]"], ["encrypted_password", "$2a$10$DiDnNoNkc6ILlVagOoBImOzz5Fuqb3q/eg2uHMltPKPCkIMS5cnCy"], ["picture", nil], ["email", "fontaine_dylan@gmail.com"], ["biography", "Asperiores officiis consectetur numquam. Ut optio omnis. Vero vitae pariatur molestiae consequatur."], ["company_name", "Id Sarl"], ["birth_date", "1979-08-13"], ["siren", "672955887"], ["availability", "t"], ["speciality", "explicabo"], ["phone_number", "9839143265"], ["created_at", "2015-12-01 16:34:17.751531"], ["updated_at", "2015-12-01 16:34:17.751531"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'proust_rosa@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Rosa"], ["last_name", "Proust"], ["address", "[\"54850\", \"Messein\", \"48.6113\", \"6.1407\", \"3\"]"], ["encrypted_password", "$2a$10$Foijrz5ASp74n.Dj/AQZ/.EOPGSt/P0lfkCBuQbQhG/qHpkLDyrUa"], ["picture", nil], ["email", "proust_rosa@hotmail.com"], ["biography", "Enim aliquam vel quis et dolor. At velit sapiente laudantium et. Et sapiente voluptatem ipsa est temporibus."], ["company_name", ""], ["birth_date", "1967-08-14"], ["siren", ""], ["availability", "t"], ["speciality", "nihil"], ["phone_number", "9972148349"], ["created_at", "2015-12-01 16:34:17.817935"], ["updated_at", "2015-12-01 16:34:17.817935"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'tradas.robert@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Robert"], ["last_name", "Tradas"], ["address", "[\"55600\", \"Quincy-Landzécourt\", \"49.4955\", \"5.2959\", \"3\"]"], ["encrypted_password", "$2a$10$U6DMqM/PNH8OZ5P/Zd.wwugX5qutPkkf.3YpVvduS5NgFO9fWRTd2"], ["picture", nil], ["email", "tradas.robert@yahoo.com"], ["biography", "Deserunt ab sed veritatis qui. Beatae officiis blanditiis possimus quia. Sit commodi consectetur aut. Ad deserunt impedit aut qui maiores perferendis unde."], ["company_name", ""], ["birth_date", "1993-07-22"], ["siren", ""], ["availability", "t"], ["speciality", "quia"], ["phone_number", "4951281810"], ["created_at", "2015-12-01 16:34:17.887398"], ["updated_at", "2015-12-01 16:34:17.887398"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'delorme_christophe@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Christophe"], ["last_name", "Delorme"], ["address", "[\"18310\", \"Saint-Outrille\", \"47.1438\", \"1.8408\", \"2\"]"], ["encrypted_password", "$2a$10$b23AQSVZD7N2oxHGC49gX.sxGKX0TcVJ5lYO94EgPhEys7UBOWadS"], ["picture", nil], ["email", "delorme_christophe@gmail.com"], ["biography", "Quos numquam dignissimos eum aperiam. Voluptate explicabo atque. Quis alias molestiae accusantium et quos aliquid dicta. Porro accusantium molestiae omnis eos. Sint placeat ipsa."], ["company_name", "Et Aut SA"], ["birth_date", "1963-10-20"], ["siren", "240545764"], ["availability", "t"], ["speciality", "illum"], ["phone_number", "4545648906"], ["created_at", "2015-12-01 16:34:17.953735"], ["updated_at", "2015-12-01 16:34:17.953735"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users"
