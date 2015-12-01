@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :omniauthable, omniauth_providers: [:facebook]
 
   has_many :posts, dependent: :destroy
+  has_many :posts, through: :favoris
 
   mount_uploader :picture, ImageUploader
 
