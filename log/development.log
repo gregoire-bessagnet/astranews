@@ -6791,3 +6791,393 @@ Started POST "/__better_errors/905f549ab2eec5d3/variables" for ::1 at 2015-12-01
 
 Started POST "/__better_errors/ffe21d8813f04501/variables" for ::1 at 2015-12-01 15:46:18 +0100
   [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"
+
+
+Started GET "/" for ::1 at 2015-12-01 15:53:09 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (376.6ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 103]]
+  Rendered shared/_navbar.html.erb (110.4ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+Completed 200 OK in 1014ms (Views: 1008.8ms | ActiveRecord: 5.1ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-12-01 15:53:27 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7qM99zEuYrZfVuO4YEWH4xZkrET58ack/Tt2WraXBbCwBBbUIqs7HkENYqF8TTbfj59HXDeDuvvT3Oa28hUY+Q=="}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 103]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPgSearch::Document Load (0.4ms)[0m  [1mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT 1[0m  [["searchable_id", 103], ["searchable_type", "User"]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 103]]
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 3.6ms)
+
+NoMethodError - undefined method `post' for #<User:0x007ff34142fbd0>:
+  activemodel (4.2.4) lib/active_model/attribute_methods.rb:433:in `method_missing'
+  pg_search (1.0.5) lib/pg_search.rb:77:in `method_missing'
+  pg_search (1.0.5) lib/pg_search/document.rb:33:in `block in update_content'
+  pg_search (1.0.5) lib/pg_search/document.rb:33:in `update_content'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:432:in `block in make_lambda'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:145:in `block in halting_and_conditional'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:504:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:504:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_validation_callbacks'
+  activemodel (4.2.4) lib/active_model/validations/callbacks.rb:113:in `run_validations!'
+  activemodel (4.2.4) lib/active_model/validations.rb:337:in `valid?'
+  activerecord (4.2.4) lib/active_record/validations.rb:58:in `valid?'
+  activerecord (4.2.4) lib/active_record/validations.rb:83:in `perform_validations'
+  activerecord (4.2.4) lib/active_record/validations.rb:37:in `save'
+  activerecord (4.2.4) lib/active_record/attribute_methods/dirty.rb:21:in `save'
+  activerecord (4.2.4) lib/active_record/transactions.rb:286:in `block (2 levels) in save'
+  activerecord (4.2.4) lib/active_record/transactions.rb:351:in `block in with_transaction_returning_status'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/database_statements.rb:211:in `transaction'
+  activerecord (4.2.4) lib/active_record/transactions.rb:220:in `transaction'
+  activerecord (4.2.4) lib/active_record/transactions.rb:348:in `with_transaction_returning_status'
+  activerecord (4.2.4) lib/active_record/transactions.rb:286:in `block in save'
+  activerecord (4.2.4) lib/active_record/transactions.rb:301:in `rollback_active_record_state!'
+  activerecord (4.2.4) lib/active_record/transactions.rb:285:in `save'
+  activerecord (4.2.4) lib/active_record/associations/singular_association.rb:73:in `_create_record'
+  activerecord (4.2.4) lib/active_record/associations/singular_association.rb:21:in `create'
+  activerecord (4.2.4) lib/active_record/associations/builder/singular_association.rb:22:in `create_pg_search_document'
+  pg_search (1.0.5) lib/pg_search/multisearchable.rb:26:in `update_pg_search_document'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:432:in `block in make_lambda'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:228:in `block in halting_and_conditional'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:506:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:506:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_save_callbacks'
+  activerecord (4.2.4) lib/active_record/callbacks.rb:302:in `create_or_update'
+  activerecord (4.2.4) lib/active_record/persistence.rb:120:in `save'
+  activerecord (4.2.4) lib/active_record/validations.rb:37:in `save'
+  activerecord (4.2.4) lib/active_record/attribute_methods/dirty.rb:21:in `save'
+  activerecord (4.2.4) lib/active_record/transactions.rb:286:in `block (2 levels) in save'
+  activerecord (4.2.4) lib/active_record/transactions.rb:351:in `block in with_transaction_returning_status'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/database_statements.rb:213:in `block in transaction'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/transaction.rb:184:in `within_new_transaction'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/database_statements.rb:213:in `transaction'
+  activerecord (4.2.4) lib/active_record/transactions.rb:220:in `transaction'
+  activerecord (4.2.4) lib/active_record/transactions.rb:348:in `with_transaction_returning_status'
+  activerecord (4.2.4) lib/active_record/transactions.rb:286:in `block in save'
+  activerecord (4.2.4) lib/active_record/transactions.rb:301:in `rollback_active_record_state!'
+  activerecord (4.2.4) lib/active_record/transactions.rb:285:in `save'
+  devise (3.5.2) lib/devise/models/rememberable.rb:62:in `forget_me!'
+  devise (3.5.2) lib/devise/controllers/rememberable.rb:23:in `forget_me'
+  devise (3.5.2) lib/devise/hooks/forgetable.rb:7:in `block in <top (required)>'
+  warden (1.2.3) lib/warden/hooks.rb:14:in `block in _run_callbacks'
+  warden (1.2.3) lib/warden/hooks.rb:9:in `_run_callbacks'
+  warden (1.2.3) lib/warden/manager.rb:53:in `_run_callbacks'
+  warden (1.2.3) lib/warden/proxy.rb:262:in `block in logout'
+  warden (1.2.3) lib/warden/proxy.rb:260:in `logout'
+  devise (3.5.2) lib/devise/controllers/sign_in_out.rb:75:in `sign_out_all_scopes'
+  devise (3.5.2) lib/devise/controllers/sign_in_out.rb:57:in `sign_out'
+  devise (3.5.2) app/controllers/devise/sessions_controller.rb:26:in `destroy'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/mapper.rb:49:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (2.15.3) lib/puma/server.rb:541:in `handle_request'
+  puma (2.15.3) lib/puma/server.rb:388:in `process_client'
+  puma (2.15.3) lib/puma/server.rb:270:in `block in run'
+  puma (2.15.3) lib/puma/thread_pool.rb:106:in `block in spawn_thread'
+
+
+
+Started POST "/__better_errors/13883413c96a03ec/variables" for ::1 at 2015-12-01 15:53:27 +0100
+
+
+Started POST "/__better_errors/13883413c96a03ec/variables" for ::1 at 2015-12-01 15:53:38 +0100
+
+
+Started POST "/__better_errors/13883413c96a03ec/variables" for ::1 at 2015-12-01 15:53:44 +0100
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1  [["id", 103]]
+
+
+Started POST "/__better_errors/13883413c96a03ec/variables" for ::1 at 2015-12-01 15:53:45 +0100
+
+
+Started POST "/__better_errors/13883413c96a03ec/variables" for ::1 at 2015-12-01 15:53:46 +0100
+
+
+Started POST "/__better_errors/13883413c96a03ec/variables" for ::1 at 2015-12-01 15:53:48 +0100
+
+
+Started POST "/__better_errors/13883413c96a03ec/variables" for ::1 at 2015-12-01 15:53:50 +0100
+
+
+Started POST "/__better_errors/13883413c96a03ec/variables" for ::1 at 2015-12-01 15:53:51 +0100
+
+
+Started POST "/__better_errors/13883413c96a03ec/variables" for ::1 at 2015-12-01 15:53:52 +0100
+
+
+Started POST "/__better_errors/13883413c96a03ec/variables" for ::1 at 2015-12-01 15:53:53 +0100
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-12-01 15:54:29 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7qM99zEuYrZfVuO4YEWH4xZkrET58ack/Tt2WraXBbCwBBbUIqs7HkENYqF8TTbfj59HXDeDuvvT3Oa28hUY+Q=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 103]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPgSearch::Document Load (0.3ms)[0m  [1mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT 1[0m  [["searchable_id", 103], ["searchable_type", "User"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 103]]
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.3ms)
+
+NoMethodError - undefined method `post' for #<User:0x007ff33fefb6b0>:
+  activemodel (4.2.4) lib/active_model/attribute_methods.rb:433:in `method_missing'
+  pg_search (1.0.5) lib/pg_search.rb:77:in `method_missing'
+  pg_search (1.0.5) lib/pg_search/document.rb:33:in `block in update_content'
+  pg_search (1.0.5) lib/pg_search/document.rb:33:in `update_content'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:432:in `block in make_lambda'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:145:in `block in halting_and_conditional'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:504:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:504:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_validation_callbacks'
+  activemodel (4.2.4) lib/active_model/validations/callbacks.rb:113:in `run_validations!'
+  activemodel (4.2.4) lib/active_model/validations.rb:337:in `valid?'
+  activerecord (4.2.4) lib/active_record/validations.rb:58:in `valid?'
+  activerecord (4.2.4) lib/active_record/validations.rb:83:in `perform_validations'
+  activerecord (4.2.4) lib/active_record/validations.rb:37:in `save'
+  activerecord (4.2.4) lib/active_record/attribute_methods/dirty.rb:21:in `save'
+  activerecord (4.2.4) lib/active_record/transactions.rb:286:in `block (2 levels) in save'
+  activerecord (4.2.4) lib/active_record/transactions.rb:351:in `block in with_transaction_returning_status'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/database_statements.rb:211:in `transaction'
+  activerecord (4.2.4) lib/active_record/transactions.rb:220:in `transaction'
+  activerecord (4.2.4) lib/active_record/transactions.rb:348:in `with_transaction_returning_status'
+  activerecord (4.2.4) lib/active_record/transactions.rb:286:in `block in save'
+  activerecord (4.2.4) lib/active_record/transactions.rb:301:in `rollback_active_record_state!'
+  activerecord (4.2.4) lib/active_record/transactions.rb:285:in `save'
+  activerecord (4.2.4) lib/active_record/associations/singular_association.rb:73:in `_create_record'
+  activerecord (4.2.4) lib/active_record/associations/singular_association.rb:21:in `create'
+  activerecord (4.2.4) lib/active_record/associations/builder/singular_association.rb:22:in `create_pg_search_document'
+  pg_search (1.0.5) lib/pg_search/multisearchable.rb:26:in `update_pg_search_document'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:432:in `block in make_lambda'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:228:in `block in halting_and_conditional'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:506:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:506:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_save_callbacks'
+  activerecord (4.2.4) lib/active_record/callbacks.rb:302:in `create_or_update'
+  activerecord (4.2.4) lib/active_record/persistence.rb:120:in `save'
+  activerecord (4.2.4) lib/active_record/validations.rb:37:in `save'
+  activerecord (4.2.4) lib/active_record/attribute_methods/dirty.rb:21:in `save'
+  activerecord (4.2.4) lib/active_record/transactions.rb:286:in `block (2 levels) in save'
+  activerecord (4.2.4) lib/active_record/transactions.rb:351:in `block in with_transaction_returning_status'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/database_statements.rb:213:in `block in transaction'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/transaction.rb:184:in `within_new_transaction'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/database_statements.rb:213:in `transaction'
+  activerecord (4.2.4) lib/active_record/transactions.rb:220:in `transaction'
+  activerecord (4.2.4) lib/active_record/transactions.rb:348:in `with_transaction_returning_status'
+  activerecord (4.2.4) lib/active_record/transactions.rb:286:in `block in save'
+  activerecord (4.2.4) lib/active_record/transactions.rb:301:in `rollback_active_record_state!'
+  activerecord (4.2.4) lib/active_record/transactions.rb:285:in `save'
+  devise (3.5.2) lib/devise/models/rememberable.rb:62:in `forget_me!'
+  devise (3.5.2) lib/devise/controllers/rememberable.rb:23:in `forget_me'
+  devise (3.5.2) lib/devise/hooks/forgetable.rb:7:in `block in <top (required)>'
+  warden (1.2.3) lib/warden/hooks.rb:14:in `block in _run_callbacks'
+  warden (1.2.3) lib/warden/hooks.rb:9:in `_run_callbacks'
+  warden (1.2.3) lib/warden/manager.rb:53:in `_run_callbacks'
+  warden (1.2.3) lib/warden/proxy.rb:262:in `block in logout'
+  warden (1.2.3) lib/warden/proxy.rb:260:in `logout'
+  devise (3.5.2) lib/devise/controllers/sign_in_out.rb:75:in `sign_out_all_scopes'
+  devise (3.5.2) lib/devise/controllers/sign_in_out.rb:57:in `sign_out'
+  devise (3.5.2) app/controllers/devise/sessions_controller.rb:26:in `destroy'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/mapper.rb:49:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (2.15.3) lib/puma/server.rb:541:in `handle_request'
+  puma (2.15.3) lib/puma/server.rb:388:in `process_client'
+  puma (2.15.3) lib/puma/server.rb:270:in `block in run'
+  puma (2.15.3) lib/puma/thread_pool.rb:106:in `block in spawn_thread'
+
+
+
+Started POST "/__better_errors/7839300c91e357d7/variables" for ::1 at 2015-12-01 15:54:29 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePgSearchDocuments (20151201132333)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (8.4ms)[0m  DROP TABLE "pg_search_documents"
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20151201132333"]]
+  [1m[35m (4.2ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (4.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'posts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'uploads'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
