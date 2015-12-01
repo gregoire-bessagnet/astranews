@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'omniauth-facebook'
 gem 'redcarpet'
+gem 'pg_search'
 
 gem 'faker'
 gem 'faker_extension_fr'
