@@ -11812,3 +11812,275 @@ Processing by PostsController#show as HTML
   Rendered shared/_flashes.html.erb (0.1ms)
 Completed 200 OK in 168ms (Views: 163.8ms | ActiveRecord: 1.0ms)
 >>>>>>> 616ef437771b0c1292814266d9afb80d1085a158
+
+
+Started GET "/posts" for ::1 at 2015-12-01 13:55:29 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 216]]
+  [1m[36mPost Load (0.7ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 176]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 180]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 185]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 167]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 186]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 194]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 173]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 179]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 172]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 166]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 196]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 170]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 203]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 200]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 196]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 190]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 171]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 180]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 184]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 176]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 216]]
+  Rendered posts/index.html.erb within layouts/application (74.5ms)
+  Rendered shared/_navbar.html.erb (316.6ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 891ms (Views: 829.8ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/posts/67" for ::1 at 2015-12-01 13:55:32 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"67"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 67]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 216]]
+  [1m[36mUpload Load (0.4ms)[0m  [1mSELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1[0m  [["post_id", 67]]
+  Rendered posts/show.html.erb within layouts/application (16.5ms)
+  Rendered shared/_navbar.html.erb (2.7ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 142ms (Views: 137.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/67/uploads/new" for ::1 at 2015-12-01 13:55:39 +0100
+Processing by UploadsController#new as HTML
+  Parameters: {"post_id"=>"67"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 216]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 67]]
+  Rendered uploads/new.html.erb within layouts/application (56.8ms)
+  Rendered shared/_navbar.html.erb (4.0ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 218ms (Views: 208.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/posts/67/uploads" for ::1 at 2015-12-01 13:55:46 +0100
+Processing by UploadsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CGSxFKPaUADo/DVN2ezhzubOUp/HSjj8lwcUzIuIULp8lSOyLFqQg3lMw4e+bzaIHIPwfb8s2NY31iC0AHOlqA==", "upload"=>{"photo"=>#<ActionDispatch::Http::UploadedFile:0x007fa9781ec570 @tempfile=#<Tempfile:/var/folders/_6/00pq8hgn20n_sm6hs83f4sc40000gn/T/RackMultipart20151201-12517-1in5frv.jpg>, @original_filename="FoodTruck.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"upload[photo]\"; filename=\"FoodTruck.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>""}, "commit"=>"Télécharger", "post_id"=>"67"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 216]]
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 67]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "uploads" ("description", "photo", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["photo", "70182920666340.jpg"], ["post_id", 67], ["created_at", "2015-12-01 12:55:46.385809"], ["updated_at", "2015-12-01 12:55:46.385809"]]
+  [1m[35mSQL (0.3ms)[0m  UPDATE "uploads" SET "photo" = 'image/upload/v1448974549/70182920666340.jpg' WHERE "uploads"."id" = $1  [["id", 4]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/67
+Completed 302 Found in 4057ms (ActiveRecord: 8.1ms)
+
+
+Started GET "/posts/67" for ::1 at 2015-12-01 13:55:50 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"67"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 67]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 216]]
+  [1m[35mUpload Load (0.9ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 67]]
+  Rendered posts/show.html.erb within layouts/application (4.1ms)
+  Rendered shared/_navbar.html.erb (3.4ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 171ms (Views: 157.7ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/posts/67/uploads/4" for ::1 at 2015-12-01 13:55:56 +0100
+Processing by UploadsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+g34PnE+6SoZlmUcKa8itOyjNVBtnp67Oz8VLNvUjaeO/GqY/r4pqYgmk9ZOLPXyFu6XshX4fpGb7iFUUC94tQ==", "post_id"=>"67", "id"=>"4"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 216]]
+  [1m[35mPost Load (0.5ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 67]]
+  [1m[36mUpload Load (0.7ms)[0m  [1mSELECT  "uploads".* FROM "uploads" WHERE "uploads"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "uploads" WHERE "uploads"."id" = $1[0m  [["id", 4]]
+  [1m[35m (6.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/posts/67
+Completed 302 Found in 480ms (ActiveRecord: 8.9ms)
+
+
+Started GET "/posts/67" for ::1 at 2015-12-01 13:55:56 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"67"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 67]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 216]]
+  [1m[36mUpload Load (0.2ms)[0m  [1mSELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1[0m  [["post_id", 67]]
+  Rendered posts/show.html.erb within layouts/application (1.9ms)
+  Rendered shared/_navbar.html.erb (2.5ms)
+  Rendered shared/_flashes.html.erb (0.2ms)
+Completed 200 OK in 168ms (Views: 165.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2015-12-01 13:55:59 +0100
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (3.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 216]]
+  Rendered shared/_navbar.html.erb (5.6ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 151ms (Views: 150.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for ::1 at 2015-12-01 13:57:01 +0100
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 216]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 176]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 180]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 185]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 167]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 186]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 194]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 173]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 179]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 172]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 166]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 196]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 170]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 203]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 200]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 196]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 190]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 171]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 180]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 184]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 176]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 216]]
+  Rendered posts/index.html.erb within layouts/application (43.5ms)
+  Rendered shared/_navbar.html.erb (2.4ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 201ms (Views: 194.6ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/posts" for ::1 at 2015-12-01 13:57:01 +0100
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 216]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 176]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 180]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 185]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 167]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 186]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 194]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 173]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 179]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 172]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 166]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 196]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 170]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 203]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 200]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 196]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 190]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 171]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 180]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 184]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 176]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 216]]
+  Rendered posts/index.html.erb within layouts/application (41.0ms)
+  Rendered shared/_navbar.html.erb (2.3ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 182ms (Views: 174.9ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/posts/66" for ::1 at 2015-12-01 13:57:03 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"66"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 66]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 216]]
+  [1m[36mUpload Load (0.2ms)[0m  [1mSELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1[0m  [["post_id", 66]]
+  Rendered posts/show.html.erb within layouts/application (1.9ms)
+  Rendered shared/_navbar.html.erb (2.2ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 148ms (Views: 143.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/66" for ::1 at 2015-12-01 14:00:06 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"66"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 66]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 216]]
+  [1m[35mUpload Load (0.2ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 66]]
+  Rendered posts/show.html.erb within layouts/application (3.4ms)
+  Rendered shared/_navbar.html.erb (2.5ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 134ms (Views: 131.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/66" for ::1 at 2015-12-01 14:00:09 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"66"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 66]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 216]]
+  [1m[36mUpload Load (0.2ms)[0m  [1mSELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1[0m  [["post_id", 66]]
+  Rendered posts/show.html.erb within layouts/application (1.8ms)
+  Rendered shared/_navbar.html.erb (2.5ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 121ms (Views: 118.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/66" for ::1 at 2015-12-01 14:00:19 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"66"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 66]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 216]]
+  [1m[35mUpload Load (0.2ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 66]]
+  Rendered posts/show.html.erb within layouts/application (4.5ms)
+  Rendered shared/_navbar.html.erb (2.4ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 130ms (Views: 127.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/66" for ::1 at 2015-12-01 14:00:51 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"66"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 66]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 216]]
+  [1m[36mUpload Load (0.2ms)[0m  [1mSELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1[0m  [["post_id", 66]]
+  Rendered posts/show.html.erb within layouts/application (2.9ms)
+  Rendered shared/_navbar.html.erb (2.5ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 125ms (Views: 121.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/66" for ::1 at 2015-12-01 14:01:03 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"66"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 66]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 216]]
+  [1m[35mUpload Load (0.2ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 66]]
+  Rendered posts/show.html.erb within layouts/application (2.6ms)
+  Rendered shared/_navbar.html.erb (2.4ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 141ms (Views: 138.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/66" for ::1 at 2015-12-01 14:01:14 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"66"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 66]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 216]]
+  [1m[36mUpload Load (0.2ms)[0m  [1mSELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1[0m  [["post_id", 66]]
+  Rendered posts/show.html.erb within layouts/application (3.2ms)
+  Rendered shared/_navbar.html.erb (1.9ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 131ms (Views: 128.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/66" for ::1 at 2015-12-01 14:01:43 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"66"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 66]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 216]]
+  [1m[35mUpload Load (0.2ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 66]]
+  Rendered posts/show.html.erb within layouts/application (2.7ms)
+  Rendered shared/_navbar.html.erb (2.4ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 126ms (Views: 123.2ms | ActiveRecord: 0.6ms)
