@@ -14,7 +14,7 @@
           </p>
         <% end %>
         <p><%= link_to "" do %>
-          <i class="fa fa-envelope-o"></i> <%= t ".profile", default: "Envoyer un message privé" %>
+          <i class="fa fa-envelope-o"></i> <a href="mailto:<%= @user.email %>"><%= Envoyer un message privé %></a>
           <% end %>
         </p>
         <ul class="list-unstyled">
@@ -76,7 +76,7 @@
         <hr>
 
         <div class="">
-          <h5>email: <a href="mailto:<%= @user.email %>"><%= @user.email %></a></h5>
+          <h5>email: </h5>
 
 
 
