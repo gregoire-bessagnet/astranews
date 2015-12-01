@@ -1,13 +1,12 @@
 class PostsController < ApplicationController
 
-before_filter :authenticate_user!, except: [:index, :show]
-before_action :find_post, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:index, :show]
+  before_action :find_post, only: [:show, :edit, :update, :destroy]
 
   def index
-     @posts = policy_scope(Post)
-    if params[:search] and not params[:search][:title].blank?
-      @pg_searches = PgSearch.multisearch(params[:query])
-      @search_title = params[:search][:title]
+    @posts = policy_scope(Post)
+    if params[:search] and not params[:search][:query].blank?
+      @posts = Post.search params[:search][:query]
     else
       @posts = Post.all
     end

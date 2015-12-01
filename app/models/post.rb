@@ -20,6 +20,10 @@ class Post < ActiveRecord::Base
   mount_uploader :cover, ImageUploader
 
   include PgSearch
-  multisearchable :against => [:title, :content, :synopsis, :category]
+  pg_search_scope :search,
+    against: [ :title, :synopsis, :content ],
+    associated_against: {
+      uploads: [ :description ]
+    }
 
 end
