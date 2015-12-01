@@ -16,7 +16,7 @@
 
       <div class="bloctwo">
         <%= simple_form_for :search, url: posts_path, method: :get, :html => { :class => 'form-inline' } do |f| %>
-        <%= f.input :title, label: false, placeholder: "Taper un titre" %>
+        <%= f.input :query, label: false, placeholder: "Taper un titre" %>
         <%= f.submit "Rechercher",  class: "btn btn-default" %>
         <% end %>
       </div>
