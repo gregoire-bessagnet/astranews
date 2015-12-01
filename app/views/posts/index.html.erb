@@ -23,7 +23,7 @@
             </h6>
             <% if policy(post).destroy? %>
             <%= link_to "supprimer l'article", post_path(post),
-            data: { confirm: 'Are you sure?' }, method: :delete %>
+              data: { confirm: 'Are you sure?' }, method: :delete %>
             <% end %>
           </div>
         </div>
