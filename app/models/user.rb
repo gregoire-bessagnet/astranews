@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   mount_uploader :picture, ImageUploader
 
   include PgSearch
-  multisearchable against: [:post, :upload]
+  multisearchable against: [:first_name, :last_name]
 
   # validates :speciality, presence: true
 
