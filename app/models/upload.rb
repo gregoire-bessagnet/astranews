@@ -3,4 +3,8 @@ class Upload < ActiveRecord::Base
   validates :photo, presence: true
   mount_uploader :photo, ImageUploader
 
+
+  include PgSearch
+  multisearchable :against => [:description]
+
 end
