@@ -4,4 +4,4 @@
 //= require_tree .
 //= require simplemde
 
-var simplemde = new SimpleMDE({ element: $("#post_content")[0] });
+var simplemde = new SimpleMDE({ spellChecker: false, element: $("#post_content")[0] });
