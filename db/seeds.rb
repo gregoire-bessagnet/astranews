@@ -21,9 +21,11 @@ puts "----Seeding Users"
 50.times do   genre = ["men", "women"].sample
    last_name = Faker::Name.fr_last_name
 
-   if genre == "men"
+  if genre == "men"
     first_name = Faker::Name.fr_first_name_m
-  else    first_name = Faker::Name.fr_first_name_f   end
+  else
+    first_name = Faker::Name.fr_first_name_f
+  end
 
   job = ["media", "journalist", "journalist", "journalist"].sample
   if job == "journalist"
@@ -73,7 +75,7 @@ puts "----Seeding Posts"
       category:["Société", "Culture", "Science", "Arts", "Médias", "Finance", "Economie"].sample,
       character_number:Faker::Number.between(80, 300),
       city: Faker::Address.fr_zip_and_city_in_region(10),
-      price:Faker::Number.between(1, 10),
+      price_cents:Faker::Number.between(1, 10),
       licence:["Copyright", "Creative Commons", "Libre"].sample,
       user_id: users[rand(40)].id,
       remote_cover_url: get_picture_url()
