@@ -6,7 +6,8 @@ before_action :find_post, only: [:show, :edit, :update, :destroy]
   def index
      @posts = policy_scope(Post)
     if params[:search] and not params[:search][:title].blank?
-      @posts = PgSearch.multisearch( params[:q] )
+      @posts = Post.where("title ILIKE ?", "%" + params[:search][:title] + "%")
+      @search_title = params[:search][:title]
     else
       @posts = Post.all
     end
