@@ -75,7 +75,7 @@ puts "----Seeding Posts"
       category:["Société", "Culture", "Science", "Arts", "Médias", "Finance", "Economie"].sample,
       character_number:Faker::Number.between(80, 300),
       city: Faker::Address.fr_zip_and_city_in_region(10),
-      price:Faker::Number.between(1, 10),
+      price_cents:Faker::Number.between(1, 10),
       licence:["Copyright", "Creative Commons", "Libre"].sample,
       user_id: users[rand(40)].id,
       remote_cover_url: get_picture_url()
