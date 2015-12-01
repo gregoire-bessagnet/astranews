@@ -9498,3 +9498,1209 @@ Completed 200 OK in 182ms (Views: 181.2ms | ActiveRecord: 0.0ms)
 Completed 200 OK in 282ms (Views: 281.9ms | ActiveRecord: 0.0ms)
 >>>>>>> tuesday
 >>>>>>> 3581bb7b9c8f51f60ced757411061f9e9423ee4d
+
+
+Started GET "/posts" for ::1 at 2015-12-01 13:33:54 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 165]]
+  [1m[36mPost Load (0.7ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 165]]
+  Rendered posts/index.html.erb within layouts/application (42.4ms)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 5.2ms)
+
+ActionController::UrlGenerationError - No route matches {:action=>"show", :controller=>"uploads", :id=>nil, :post_id=>nil} missing required keys: [:id, :post_id]:
+  actionpack (4.2.4) lib/action_dispatch/journey/formatter.rb:46:in `generate'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:729:in `generate'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:760:in `generate'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:803:in `url_for'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:282:in `call'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:225:in `call'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:347:in `block (2 levels) in define_url_helper'
+  app/views/posts/index.html.erb:25:in `block in _app_views_posts_index_html_erb__1997057069491766017_70304732937400'
+  activerecord (4.2.4) lib/active_record/relation/delegation.rb:46:in `each'
+  app/views/posts/index.html.erb:3:in `_app_views_posts_index_html_erb__1997057069491766017_70304732937400'
+  actionview (4.2.4) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.4) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.4) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.4) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.4) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.4) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.4) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.4) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.4) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.4) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/raphaelbiondi/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (2.15.3) lib/puma/server.rb:541:in `handle_request'
+  puma (2.15.3) lib/puma/server.rb:388:in `process_client'
+  puma (2.15.3) lib/puma/server.rb:270:in `block in run'
+  puma (2.15.3) lib/puma/thread_pool.rb:106:in `block in spawn_thread'
+
+
+
+Started POST "/__better_errors/a8ce261b806e84b8/variables" for ::1 at 2015-12-01 13:33:54 +0100
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+
+
+Started GET "/posts" for ::1 at 2015-12-01 13:33:55 +0100
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 165]]
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 165]]
+  Rendered posts/index.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.7ms)
+
+ActionController::UrlGenerationError - No route matches {:action=>"show", :controller=>"uploads", :id=>nil, :post_id=>nil} missing required keys: [:id, :post_id]:
+  actionpack (4.2.4) lib/action_dispatch/journey/formatter.rb:46:in `generate'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:729:in `generate'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:760:in `generate'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:803:in `url_for'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:282:in `call'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:225:in `call'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:347:in `block (2 levels) in define_url_helper'
+  app/views/posts/index.html.erb:25:in `block in _app_views_posts_index_html_erb__1997057069491766017_70304732937400'
+  activerecord (4.2.4) lib/active_record/relation/delegation.rb:46:in `each'
+  app/views/posts/index.html.erb:3:in `_app_views_posts_index_html_erb__1997057069491766017_70304732937400'
+  actionview (4.2.4) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.4) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.4) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.4) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.4) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.4) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.4) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.4) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.4) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.4) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/raphaelbiondi/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (2.15.3) lib/puma/server.rb:541:in `handle_request'
+  puma (2.15.3) lib/puma/server.rb:388:in `process_client'
+  puma (2.15.3) lib/puma/server.rb:270:in `block in run'
+  puma (2.15.3) lib/puma/thread_pool.rb:106:in `block in spawn_thread'
+
+
+
+Started POST "/__better_errors/be22750769c96f9b/variables" for ::1 at 2015-12-01 13:33:55 +0100
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+
+
+Started GET "/" for ::1 at 2015-12-01 13:34:04 +0100
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (366.0ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 165]]
+  Rendered shared/_navbar.html.erb (7.5ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 720ms (Views: 718.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts" for ::1 at 2015-12-01 13:34:13 +0100
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 165]]
+  [1m[35mPost Load (0.9ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 165]]
+  Rendered posts/index.html.erb within layouts/application (9.5ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 3.0ms)
+
+ActionController::UrlGenerationError - No route matches {:action=>"show", :controller=>"uploads", :id=>nil, :post_id=>nil} missing required keys: [:id, :post_id]:
+  actionpack (4.2.4) lib/action_dispatch/journey/formatter.rb:46:in `generate'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:729:in `generate'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:760:in `generate'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:803:in `url_for'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:282:in `call'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:225:in `call'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:347:in `block (2 levels) in define_url_helper'
+  app/views/posts/index.html.erb:25:in `block in _app_views_posts_index_html_erb__1997057069491766017_70304732937400'
+  activerecord (4.2.4) lib/active_record/relation/delegation.rb:46:in `each'
+  app/views/posts/index.html.erb:3:in `_app_views_posts_index_html_erb__1997057069491766017_70304732937400'
+  actionview (4.2.4) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.4) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.4) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.4) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.4) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.4) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.4) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.4) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.4) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.4) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/raphaelbiondi/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (2.15.3) lib/puma/server.rb:541:in `handle_request'
+  puma (2.15.3) lib/puma/server.rb:388:in `process_client'
+  puma (2.15.3) lib/puma/server.rb:270:in `block in run'
+  puma (2.15.3) lib/puma/thread_pool.rb:106:in `block in spawn_thread'
+
+
+
+Started POST "/__better_errors/db2c173941a74759/variables" for ::1 at 2015-12-01 13:34:13 +0100
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'posts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'uploads'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 142]]
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 142]]
+  [1m[36m (5.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 143]]
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 143]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 144]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 144]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 145]]
+  [1m[35mUpload Load (0.2ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 56]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 56]]
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 145]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 146]]
+  [1m[35mUpload Load (0.2ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 46]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 46]]
+  [1m[35mUpload Load (0.1ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 47]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 47]]
+  [1m[35mUpload Load (0.1ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 54]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 54]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 146]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 147]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 147]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 148]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 148]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 149]]
+  [1m[35mUpload Load (0.2ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 52]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 52]]
+  [1m[35mUpload Load (0.3ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 49]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 49]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 149]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 150]]
+  [1m[35mUpload Load (0.1ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 62]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 62]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 150]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 151]]
+  [1m[35mUpload Load (0.1ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 53]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 53]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 151]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 152]]
+  [1m[35mUpload Load (0.1ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 59]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 59]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 152]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 153]]
+  [1m[35mUpload Load (0.2ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 61]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 61]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 153]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 154]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 154]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 155]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 155]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 156]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 156]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 157]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 157]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 158]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 158]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 115]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 115]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 116]]
+  [1m[35mUpload Load (0.1ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 60]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 60]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 116]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 117]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 117]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 118]]
+  [1m[35mUpload Load (0.1ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 58]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 58]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 118]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 119]]
+  [1m[35mUpload Load (0.1ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 57]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 57]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 119]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 120]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 120]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 121]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 121]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 122]]
+  [1m[35mUpload Load (0.1ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 44]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 44]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 122]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 123]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 123]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 124]]
+  [1m[35mUpload Load (0.1ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 50]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 50]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 124]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 125]]
+  [1m[35mUpload Load (0.2ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 51]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 51]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 125]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 126]]
+  [1m[35mUpload Load (0.1ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 48]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 48]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 126]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 127]]
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 127]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 128]]
+  [1m[35mUpload Load (0.1ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 55]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 55]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 128]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 129]]
+  [1m[35mUpload Load (0.2ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 63]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 63]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 129]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 130]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 130]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 131]]
+  [1m[35mUpload Load (0.2ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 45]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 45]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 131]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 132]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 132]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 133]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 133]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 134]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 134]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 135]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 135]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 136]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 136]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 137]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 137]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 138]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 138]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 139]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 139]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 140]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 140]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 141]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 141]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 159]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 159]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 160]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 160]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 161]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 161]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 162]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 162]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 163]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 163]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 164]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 164]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 165]]
+  [1m[35mUpload Load (0.1ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 65]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 65]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 165]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'sahra_huet@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Sahra"], ["last_name", "Huet"], ["address", "[\"40090\", \"Cère\", \"43.9918\", \"-0.5328\", \"5\"]"], ["encrypted_password", "$2a$10$9.sQ86j0.lJpP4lj3ZhGheR4LVl4h8Iek5Zg//M5NUvp6wpECeS4G"], ["picture", nil], ["email", "sahra_huet@yahoo.com"], ["biography", "Ut velit repellat ipsam vel alias doloremque. Sit quibusdam rerum et. Iusto dolor nihil. Quam eveniet est."], ["company_name", "Laudantium SA"], ["birth_date", "1961-10-29"], ["siren", "584124564"], ["availability", "t"], ["speciality", "sed"], ["phone_number", "2554435605"], ["created_at", "2015-12-01 12:34:59.925555"], ["updated_at", "2015-12-01 12:34:59.925555"]]
+  [1m[35m (6.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'dani.favre.le@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Danièle"], ["last_name", "Favre"], ["address", "[\"14430\", \"Heuland\", \"49.278\", \"-0.0025\", \"2\"]"], ["encrypted_password", "$2a$10$7853/DNiZXC3UwCaNm9qi.4tUmSP8Me.6prCtmiDQhyw1o4h9nAvS"], ["picture", nil], ["email", "dani.favre.le@gmail.com"], ["biography", "Quia animi non et reprehenderit. Sit sapiente architecto. Eaque quaerat reiciendis libero repellendus."], ["company_name", ""], ["birth_date", "1988-10-07"], ["siren", ""], ["availability", "t"], ["speciality", "non"], ["phone_number", "1034598835"], ["created_at", "2015-12-01 12:35:00.001169"], ["updated_at", "2015-12-01 12:35:00.001169"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'leila_vallet@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Leila"], ["last_name", "Vallet"], ["address", "[\"67206\", \"Mittelhausbergen\", \"48.6144\", \"7.6901\", \"3\"]"], ["encrypted_password", "$2a$10$Wfil.0D2yWueWJdFVDOEa.nlD7Mdid6pYrQkZK5RAZmbMk4gKt.QG"], ["picture", nil], ["email", "leila_vallet@yahoo.com"], ["biography", "Corrupti optio nihil minus. Officiis quis impedit quia molestiae quia labore. Perferendis vel dolores commodi maiores. Corporis quibusdam natus. Sapiente velit aliquid perferendis accusantium aut beatae."], ["company_name", "Et Beatae SA"], ["birth_date", "1965-06-06"], ["siren", "476943360"], ["availability", "t"], ["speciality", "quae"], ["phone_number", "7251836427"], ["created_at", "2015-12-01 12:35:00.069676"], ["updated_at", "2015-12-01 12:35:00.069676"]]
+  [1m[35m (1.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'dani.lebon.le@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Danièle"], ["last_name", "Lebon"], ["address", "[\"67630\", \"Niederlauterbach\", \"48.9711\", \"8.0981\", \"3\"]"], ["encrypted_password", "$2a$10$9m.AGnpWmhCG351TGeMWUuYwj6q6Jc6eyWG0/2AV5MaB5O58MPoaS"], ["picture", nil], ["email", "dani.lebon.le@yahoo.com"], ["biography", "Autem consequatur consequatur quod modi velit quidem quam. Officiis nihil omnis. Deserunt dolore vel rerum similique. Modi sit vel dicta et. Voluptatem qui ducimus qui blanditiis."], ["company_name", "Qui SA"], ["birth_date", "1968-05-02"], ["siren", "804081289"], ["availability", "t"], ["speciality", "eos"], ["phone_number", "5427344265"], ["created_at", "2015-12-01 12:35:00.139829"], ["updated_at", "2015-12-01 12:35:00.139829"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'miguel_lacroix@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Miguel"], ["last_name", "Lacroix"], ["address", "[\"68780\", \"Mortzwiller\", \"47.74\", \"7.0388\", \"3\"]"], ["encrypted_password", "$2a$10$zICERR5t4XTpCheeNvxOTuU8J/rfq1PIktd3ASXzOZI3aaWam.3xe"], ["picture", nil], ["email", "miguel_lacroix@gmail.com"], ["biography", "Voluptates fugiat aut dolorum et a. Nemo at voluptas perspiciatis sequi nulla est reiciendis. Et magni tempore quia rerum voluptatibus reprehenderit."], ["company_name", ""], ["birth_date", "1985-02-22"], ["siren", ""], ["availability", "t"], ["speciality", "autem"], ["phone_number", "5814756613"], ["created_at", "2015-12-01 12:35:00.207658"], ["updated_at", "2015-12-01 12:35:00.207658"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'villette_liliane@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Liliane"], ["last_name", "Villette"], ["address", "[\"83120\", \"Le Plan-de-la-Tour\", \"43.3333\", \"6.55\", \"4\"]"], ["encrypted_password", "$2a$10$LrrG1jblt9nvffVaq4WP7.n/eDrhEvHSf2HSO9ZstTvIM7A8CKWu2"], ["picture", nil], ["email", "villette_liliane@gmail.com"], ["biography", "In consequatur iure enim sit iusto. Nihil corporis quaerat rerum dolorum temporibus provident. Non sunt veritatis officiis sit nam aut."], ["company_name", ""], ["birth_date", "1986-06-30"], ["siren", ""], ["availability", "t"], ["speciality", "rerum"], ["phone_number", "9224747704"], ["created_at", "2015-12-01 12:35:00.278409"], ["updated_at", "2015-12-01 12:35:00.278409"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'julien_bourdin@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Julien"], ["last_name", "Bourdin"], ["address", "[\"10310\", \"Ville-sous-la-Ferté\", \"48.1206\", \"4.7896\", \"3\"]"], ["encrypted_password", "$2a$10$mInoxHZ3HWHiVZbGgHM49.Fp7jAjfOYdlztcYReZST/9rJK9ccfGS"], ["picture", nil], ["email", "julien_bourdin@hotmail.com"], ["biography", "Placeat aut tenetur mollitia reiciendis molestiae repellendus temporibus. Maxime ipsum sint molestiae corrupti. Magni dolore et dolorem. Culpa rerum numquam maiores omnis."], ["company_name", ""], ["birth_date", "1971-03-06"], ["siren", ""], ["availability", "t"], ["speciality", "ea"], ["phone_number", "8931188616"], ["created_at", "2015-12-01 12:35:00.348286"], ["updated_at", "2015-12-01 12:35:00.348286"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'coulon_justine@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Justine"], ["last_name", "Coulon"], ["address", "[\"25520\", \"Évillers\", \"47.0007\", \"6.2276\", \"3\"]"], ["encrypted_password", "$2a$10$6zRFrSY7NhXaqZNJqPD0FOA0a0QsPV6UTp37h6lsLekATmosKKrYC"], ["picture", nil], ["email", "coulon_justine@hotmail.com"], ["biography", "Et magnam delectus dignissimos at perspiciatis. Quasi aut quia numquam eius quis est. Et in ipsam iste ipsum est architecto. Velit aut dolor. Et voluptatem eveniet."], ["company_name", ""], ["birth_date", "1989-05-14"], ["siren", ""], ["availability", "t"], ["speciality", "minus"], ["phone_number", "5294311448"], ["created_at", "2015-12-01 12:35:00.415334"], ["updated_at", "2015-12-01 12:35:00.415334"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'karl.caillet@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Karl"], ["last_name", "Caillet"], ["address", "[\"20237\", \"Giocatojo\", \"42.4423\", \"9.3489\", \"4\"]"], ["encrypted_password", "$2a$10$MSVUFaH52wu0wD9o144ykef7.DT9FtJdJkHSXSpDBgm45c9J8BiOS"], ["picture", nil], ["email", "karl.caillet@hotmail.com"], ["biography", "Non voluptas sit blanditiis aliquid ut neque. Fuga molestias minima libero magni officiis architecto ducimus. At odio tempore porro velit dicta molestiae."], ["company_name", ""], ["birth_date", "1975-07-20"], ["siren", ""], ["availability", "t"], ["speciality", "nesciunt"], ["phone_number", "1903065204"], ["created_at", "2015-12-01 12:35:00.486558"], ["updated_at", "2015-12-01 12:35:00.486558"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'wagner_lea@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Lea"], ["last_name", "Wagner"], ["address", "[\"01410\", \"Champfromier\", \"46.1925\", \"5.8162\", \"4\"]"], ["encrypted_password", "$2a$10$eXHkQDvcF.zVRnnNsY8xc.z8ggHFZl4GYTuJG1tsc.2s7.BiU0flS"], ["picture", nil], ["email", "wagner_lea@gmail.com"], ["biography", "Deleniti autem labore harum aperiam qui voluptas. Blanditiis ut vel et. Cumque consequatur blanditiis aliquid nemo."], ["company_name", "Voluptatem Error Sarl"], ["birth_date", "1991-07-09"], ["siren", "851859074"], ["availability", "t"], ["speciality", "enim"], ["phone_number", "2132989513"], ["created_at", "2015-12-01 12:35:00.554466"], ["updated_at", "2015-12-01 12:35:00.554466"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'bauer_henriette@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Henriette"], ["last_name", "Bauer"], ["address", "[\"25200\", \"Montbéliard\", \"47.5167\", \"6.8\", \"3\"]"], ["encrypted_password", "$2a$10$K/1nCKU1mJsMyTJAAWbSIu51wB.NMlTlD/aJ3jvBgITqBWqs78NOu"], ["picture", nil], ["email", "bauer_henriette@yahoo.com"], ["biography", "Est consequatur incidunt aut eaque architecto ut. Mollitia enim sunt et neque rem. Et sed aliquam sapiente voluptatem vitae."], ["company_name", ""], ["birth_date", "1992-02-04"], ["siren", ""], ["availability", "t"], ["speciality", "expedita"], ["phone_number", "8719679114"], ["created_at", "2015-12-01 12:35:00.626501"], ["updated_at", "2015-12-01 12:35:00.626501"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'lelong_alfred@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Alfred"], ["last_name", "Lelong"], ["address", "[\"47520\", \"Le Passage\", \"44.2014\", \"0.6027\", \"5\"]"], ["encrypted_password", "$2a$10$8aBhEjvjPGP9vKTKLQ.6S.3jz9lLn1uW7nK78DalRbkTuI3833khK"], ["picture", nil], ["email", "lelong_alfred@yahoo.com"], ["biography", "Laudantium rem repudiandae voluptatibus. Maiores dicta praesentium. Rem sint quia culpa. Et commodi ullam et aut."], ["company_name", ""], ["birth_date", "1970-04-12"], ["siren", ""], ["availability", "t"], ["speciality", "consectetur"], ["phone_number", "5266045111"], ["created_at", "2015-12-01 12:35:00.699409"], ["updated_at", "2015-12-01 12:35:00.699409"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'brault_juliane@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Juliane"], ["last_name", "Brault"], ["address", "[\"75006\", \"Paris\", \"48.8493\", \"2.33\", \"1\"]"], ["encrypted_password", "$2a$10$YYiQ7pS/ipBoVWCZ5QcJi.5VWyS4y.qsaJnKXMcJVs9xSFPE24BAm"], ["picture", nil], ["email", "brault_juliane@gmail.com"], ["biography", "Omnis exercitationem sed et magnam. Odio in laboriosam. Vero ex repellendus. Necessitatibus natus dolores quia."], ["company_name", ""], ["birth_date", "1972-08-19"], ["siren", ""], ["availability", "t"], ["speciality", "non"], ["phone_number", "7016727680"], ["created_at", "2015-12-01 12:35:00.770765"], ["updated_at", "2015-12-01 12:35:00.770765"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'da.laila@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Laila"], ["last_name", "Da"], ["address", "[\"64260\", \"Rébénacq\", \"43.1667\", \"-0.3833\", \"5\"]"], ["encrypted_password", "$2a$10$hxLPInP1r4A5vtfCW9tAAux6ZssWOhU91W7SMTvX9WUAK.xR/gwJ2"], ["picture", nil], ["email", "da.laila@yahoo.com"], ["biography", "Et doloremque architecto ut. Architecto reiciendis cumque velit animi impedit. Architecto eos non aut."], ["company_name", "Vel Officia Sarl"], ["birth_date", "1990-10-23"], ["siren", "627433055"], ["availability", "t"], ["speciality", "sit"], ["phone_number", "5979486190"], ["created_at", "2015-12-01 12:35:00.844617"], ["updated_at", "2015-12-01 12:35:00.844617"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'duboix.fiona@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Fiona"], ["last_name", "Duboix"], ["address", "[\"11250\", \"Clermont-sur-Lauquet\", \"43.0447\", \"2.4229\", \"4\"]"], ["encrypted_password", "$2a$10$iHMhtIfm7ZppXQOtMFwqAOtAw8GIIg5NQtJB7iiADvTE4T7W1G2oK"], ["picture", nil], ["email", "duboix.fiona@yahoo.com"], ["biography", "Corporis qui doloribus. Quibusdam laborum esse. Corrupti facere rem laudantium non deleniti. Et nihil facere velit laboriosam commodi."], ["company_name", ""], ["birth_date", "1984-05-28"], ["siren", ""], ["availability", "t"], ["speciality", "iure"], ["phone_number", "6929831878"], ["created_at", "2015-12-01 12:35:00.918244"], ["updated_at", "2015-12-01 12:35:00.918244"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'l_rapha_nicolle@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Raphaël"], ["last_name", "Nicolle"], ["address", "[\"05800\", \"Aspres-lès-Corps\", \"44.8018\", \"5.9818\", \"4\"]"], ["encrypted_password", "$2a$10$JAUbgM9713bygNgtzQMUmueo9HwuIE4wdbRqr.fko3vlJoylIL9lq"], ["picture", nil], ["email", "l_rapha_nicolle@yahoo.com"], ["biography", "Ut dolorum voluptas quam quis in fugiat. Architecto eius et error dolore atque. Eius ipsum voluptas laborum quos. Explicabo dolores consequuntur eos. Omnis quos ut dolores."], ["company_name", ""], ["birth_date", "1970-11-21"], ["siren", ""], ["availability", "t"], ["speciality", "maxime"], ["phone_number", "4108563380"], ["created_at", "2015-12-01 12:35:00.988859"], ["updated_at", "2015-12-01 12:35:00.988859"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'felix.marques@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Felix"], ["last_name", "Marques"], ["address", "[\"23150\", \"Maisonnisses\", \"46.0619\", \"1.8981\", \"5\"]"], ["encrypted_password", "$2a$10$7imeGRFqdYBureuAYuwxOueo8YP2UWMMzxpMuWQvlAmIPsozo4rdi"], ["picture", nil], ["email", "felix.marques@gmail.com"], ["biography", "Recusandae quo natus expedita quia libero vel. Est quis maxime autem. Harum deleniti dolor id numquam voluptatem nemo corporis. Libero iste ipsum et magni id consectetur ut."], ["company_name", ""], ["birth_date", "1971-12-21"], ["siren", ""], ["availability", "t"], ["speciality", "tenetur"], ["phone_number", "3910868411"], ["created_at", "2015-12-01 12:35:01.059497"], ["updated_at", "2015-12-01 12:35:01.059497"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'maxime_velder@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Maxime"], ["last_name", "velder"], ["address", "[\"22230\", \"Loscouët-sur-Meu\", \"48.1781\", \"-2.2423\", \"2\"]"], ["encrypted_password", "$2a$10$IHkr8ZZwqj.5Vo5my2gB3.MpIx5936vAjXP46LrsgPHMLmpHdZ/TC"], ["picture", nil], ["email", "maxime_velder@yahoo.com"], ["biography", "Repellendus sit iure pariatur natus ut delectus. Repellat aperiam dicta asperiores impedit placeat dignissimos. Non doloribus voluptates commodi. Qui officia non odit nesciunt reiciendis. Velit maxime perferendis aut accusamus enim ipsam vero."], ["company_name", ""], ["birth_date", "1965-10-05"], ["siren", ""], ["availability", "t"], ["speciality", "itaque"], ["phone_number", "3313820230"], ["created_at", "2015-12-01 12:35:01.127726"], ["updated_at", "2015-12-01 12:35:01.127726"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'faivre.val.rie@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Valérie"], ["last_name", "Faivre"], ["address", "[\"56560\", \"Guiscriff\", \"48.0494\", \"-3.6436\", \"2\"]"], ["encrypted_password", "$2a$10$6NeyKltYHXAHXwoofq4gwe.2AgKTScYs5djP3RA1eWwh69CdAJjxO"], ["picture", nil], ["email", "faivre.val.rie@yahoo.com"], ["biography", "Accusamus aut est rerum rem error sapiente magnam. Praesentium omnis delectus enim ducimus sequi. Cumque qui officiis quia libero aut."], ["company_name", ""], ["birth_date", "1982-03-13"], ["siren", ""], ["availability", "t"], ["speciality", "at"], ["phone_number", "8394680243"], ["created_at", "2015-12-01 12:35:01.195993"], ["updated_at", "2015-12-01 12:35:01.195993"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'nathanael.navarro@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Nathanael"], ["last_name", "Navarro"], ["address", "[\"34130\", \"Lansargues\", \"43.6516\", \"4.0749\", \"4\"]"], ["encrypted_password", "$2a$10$Dr2wYx7IOBBbxlWlsVOVj.rsDwpqm2xX2PUGWa7sCgKXkLI0eviI2"], ["picture", nil], ["email", "nathanael.navarro@gmail.com"], ["biography", "Reiciendis ex iure voluptatem aut voluptas fugiat dicta. Esse id quod. Fuga ullam ut sunt id repellendus ab. Animi voluptatem vel non a."], ["company_name", ""], ["birth_date", "1985-10-06"], ["siren", ""], ["availability", "t"], ["speciality", "est"], ["phone_number", "4131030251"], ["created_at", "2015-12-01 12:35:01.270252"], ["updated_at", "2015-12-01 12:35:01.270252"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'charles_dranesas@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Charles"], ["last_name", "Dranesas"], ["address", "[\"10190\", \"Palis\", \"48.2833\", \"3.7\", \"3\"]"], ["encrypted_password", "$2a$10$dfQNkK8.TuGlzwrHdy6fB.gE1z6DRJZQPWpLnKMlZhc2iU1rCmqj."], ["picture", nil], ["email", "charles_dranesas@yahoo.com"], ["biography", "Molestiae in quisquam cupiditate corrupti placeat dolor ipsam. Illum nihil molestiae autem. Necessitatibus nostrum doloremque. Totam quisquam sit."], ["company_name", ""], ["birth_date", "1970-08-16"], ["siren", ""], ["availability", "t"], ["speciality", "veritatis"], ["phone_number", "9519697380"], ["created_at", "2015-12-01 12:35:01.337470"], ["updated_at", "2015-12-01 12:35:01.337470"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'said.baudry@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Said"], ["last_name", "Baudry"], ["address", "[\"19200\", \"Alleyrat\", \"45.5833\", \"2.2167\", \"5\"]"], ["encrypted_password", "$2a$10$tEp.1vxor/T0OZ.0oYljd.I4YGZ53GGePEXM38CVhOslBafsShEuW"], ["picture", nil], ["email", "said.baudry@yahoo.com"], ["biography", "Eum tenetur deleniti nesciunt et corporis. Sed architecto voluptatum ipsa nisi nulla. Rerum perspiciatis aliquam. Sed nihil modi."], ["company_name", ""], ["birth_date", "1977-03-20"], ["siren", ""], ["availability", "t"], ["speciality", "consequatur"], ["phone_number", "7049792128"], ["created_at", "2015-12-01 12:35:01.407572"], ["updated_at", "2015-12-01 12:35:01.407572"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'rosa.torres@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Rosa"], ["last_name", "Torres"], ["address", "[\"73640\", \"Villaroger\", \"45.5913\", \"6.8747\", \"4\"]"], ["encrypted_password", "$2a$10$WMt3j6GJKGYQ8t13Ai7vM.1pbx62SasMePOFK7sINFyhxAwv2pLs."], ["picture", nil], ["email", "rosa.torres@hotmail.com"], ["biography", "Dolorem omnis accusantium. Deleniti velit amet ex quisquam mollitia ipsa. Expedita sapiente eum voluptas officia et."], ["company_name", ""], ["birth_date", "1978-08-18"], ["siren", ""], ["availability", "t"], ["speciality", "similique"], ["phone_number", "7008080470"], ["created_at", "2015-12-01 12:35:01.478166"], ["updated_at", "2015-12-01 12:35:01.478166"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'granger_yannick@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Yannick"], ["last_name", "Granger"], ["address", "[\"33420\", \"Moulon\", \"44.85\", \"-0.2167\", \"5\"]"], ["encrypted_password", "$2a$10$rUAbaqpkMJxvWFzMPd3MBun5w09a6bixpEhXMNm6HNbTb8mhVvp4W"], ["picture", nil], ["email", "granger_yannick@yahoo.com"], ["biography", "Sunt aut neque itaque vel. Officia consequuntur earum. Tenetur vel odit quaerat."], ["company_name", ""], ["birth_date", "1970-10-31"], ["siren", ""], ["availability", "t"], ["speciality", "dolores"], ["phone_number", "9917639727"], ["created_at", "2015-12-01 12:35:01.550031"], ["updated_at", "2015-12-01 12:35:01.550031"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'leroux_lucie@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Lucie"], ["last_name", "Leroux"], ["address", "[\"76510\", \"Saint-Aubin-le-Cauf\", \"49.8674\", \"1.1849\", \"2\"]"], ["encrypted_password", "$2a$10$48uE/zl9SM5eXa4rLVohGeEGGT2lxXJ8yAviJ4R7lQZlUMX6iecoe"], ["picture", nil], ["email", "leroux_lucie@hotmail.com"], ["biography", "Accusamus eligendi sed excepturi consequuntur provident dolorem. Ut occaecati voluptatibus consequatur sed enim. Et eum reprehenderit aliquid nihil rerum. Enim quis quisquam consequatur et."], ["company_name", ""], ["birth_date", "1977-05-28"], ["siren", ""], ["availability", "t"], ["speciality", "sit"], ["phone_number", "6519909154"], ["created_at", "2015-12-01 12:35:01.623420"], ["updated_at", "2015-12-01 12:35:01.623420"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'grand_thomas@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Thomas"], ["last_name", "Grand"], ["address", "[\"85140\", \"Sainte-Florence\", \"46.7969\", \"-1.1532\", \"2\"]"], ["encrypted_password", "$2a$10$x/G6BfBpuHr9tlgvCD7R/.bHNkFWfrJ/9UaIKGcFWZhmIaH4kJR.G"], ["picture", nil], ["email", "grand_thomas@gmail.com"], ["biography", "Cumque voluptatibus magnam perferendis voluptas accusamus ea in. Dolore aut necessitatibus earum sint sit sunt. Cupiditate consectetur et dolores consequatur architecto. Voluptatem quos eos dolorum dignissimos esse voluptas. Officiis quasi dolorem voluptas deserunt."], ["company_name", ""], ["birth_date", "1980-12-26"], ["siren", ""], ["availability", "t"], ["speciality", "dolores"], ["phone_number", "1499815139"], ["created_at", "2015-12-01 12:35:01.694075"], ["updated_at", "2015-12-01 12:35:01.694075"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'said_esteve@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Said"], ["last_name", "Esteve"], ["address", "[\"75116\", \"Paris\", \"48.8637\", \"2.2769\", \"1\"]"], ["encrypted_password", "$2a$10$8f1MNnJWUdV.S6qOv9C1PO1DB4vTe76Sn1r7CPPXqBIzz3BNrC4oK"], ["picture", nil], ["email", "said_esteve@hotmail.com"], ["biography", "Ipsum repellendus voluptates praesentium quibusdam. Aut provident sapiente exercitationem saepe dolores nemo. Id nihil fuga vel autem eaque. Illum commodi dolor delectus."], ["company_name", ""], ["birth_date", "1982-02-21"], ["siren", ""], ["availability", "t"], ["speciality", "aliquid"], ["phone_number", "2398469285"], ["created_at", "2015-12-01 12:35:01.766423"], ["updated_at", "2015-12-01 12:35:01.766423"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'chevrier_arthur@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Arthur"], ["last_name", "Chevrier"], ["address", "[\"69460\", \"Vaux-en-Beaujolais\", \"46.0567\", \"4.5919\", \"4\"]"], ["encrypted_password", "$2a$10$3RYDmEoGuWdD.06r9XiQluk5NQS4pkGwJHQxeTpYcl6odjcB7K/GG"], ["picture", nil], ["email", "chevrier_arthur@yahoo.com"], ["biography", "Voluptates modi optio rerum. Quisquam similique optio laudantium. Omnis quaerat voluptatibus. Quos est sit voluptas aut."], ["company_name", ""], ["birth_date", "1990-01-07"], ["siren", ""], ["availability", "t"], ["speciality", "velit"], ["phone_number", "7139281117"], ["created_at", "2015-12-01 12:35:01.834935"], ["updated_at", "2015-12-01 12:35:01.834935"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'daniel.asain@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Daniel"], ["last_name", "Asain"], ["address", "[\"58000\", \"Challuy\", \"46.9497\", \"3.1481\", \"3\"]"], ["encrypted_password", "$2a$10$I9vXLFUMtG3av061w2cNyuXWgaIgG09ai1P7ZIR.5NSiX4J1nRLKi"], ["picture", nil], ["email", "daniel.asain@gmail.com"], ["biography", "Numquam quae aspernatur. Accusamus quibusdam laboriosam aut vel aut beatae. Architecto tenetur omnis eius minus cum neque."], ["company_name", ""], ["birth_date", "1983-09-11"], ["siren", ""], ["availability", "t"], ["speciality", "quo"], ["phone_number", "7301927781"], ["created_at", "2015-12-01 12:35:01.904245"], ["updated_at", "2015-12-01 12:35:01.904245"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'xavier_jourdain@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Xavier"], ["last_name", "Jourdain"], ["address", "[\"18270\", \"Sidiailles\", \"46.5066\", \"2.3197\", \"2\"]"], ["encrypted_password", "$2a$10$xPzClLN3/D20kJVrOV0bZOTdjVvztBgC9l6sdKfYSGakOKj8iMCpK"], ["picture", nil], ["email", "xavier_jourdain@yahoo.com"], ["biography", "Laudantium nobis mollitia tempore veniam ut provident sed. Dolorem rerum voluptatibus ut sequi ab et. Sed qui itaque."], ["company_name", "Architecto Officiis SA"], ["birth_date", "1964-06-08"], ["siren", "318480829"], ["availability", "t"], ["speciality", "asperiores"], ["phone_number", "7119319358"], ["created_at", "2015-12-01 12:35:01.972806"], ["updated_at", "2015-12-01 12:35:01.972806"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'carlos_delaunay@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Carlos"], ["last_name", "Delaunay"], ["address", "[\"20247\", \"Rogliano\", \"42.9561\", \"9.4184\", \"4\"]"], ["encrypted_password", "$2a$10$z7JZ4.IQHCTSgLl3Ybdsfu9veMTrHs3uymWILHncfHPWItqdPJBle"], ["picture", nil], ["email", "carlos_delaunay@gmail.com"], ["biography", "Quos quae aliquid nihil voluptatum sint non. Deleniti aliquid architecto. Repellat molestiae aperiam accusantium sapiente. Et molestiae magnam at fugiat atque."], ["company_name", ""], ["birth_date", "1986-07-26"], ["siren", ""], ["availability", "t"], ["speciality", "consequatur"], ["phone_number", "1021850599"], ["created_at", "2015-12-01 12:35:02.041141"], ["updated_at", "2015-12-01 12:35:02.041141"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'karim_cornet@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Karim"], ["last_name", "Cornet"], ["address", "[\"57310\", \"Bertrange\", \"49.3077\", \"6.1789\", \"3\"]"], ["encrypted_password", "$2a$10$4huYqkP/7G.0CtQ4freS/e5egRE6OcwDI.19Dlht3.szc56pcpmwS"], ["picture", nil], ["email", "karim_cornet@yahoo.com"], ["biography", "Omnis nobis qui consequuntur dolor expedita. Ut ut qui occaecati nulla. Nihil reiciendis impedit."], ["company_name", ""], ["birth_date", "1975-05-21"], ["siren", ""], ["availability", "t"], ["speciality", "ducimus"], ["phone_number", "2608757736"], ["created_at", "2015-12-01 12:35:02.114237"], ["updated_at", "2015-12-01 12:35:02.114237"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'nicole_valette@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Nicole"], ["last_name", "Valette"], ["address", "[\"24220\", \"Meyrals\", \"44.8984\", \"1.0637\", \"5\"]"], ["encrypted_password", "$2a$10$l83xoJ9kFI4J5mg5RH4/depyfkyjgN4ilzNdZuMl.8sCTVpWo2YUC"], ["picture", nil], ["email", "nicole_valette@gmail.com"], ["biography", "Rerum quos voluptatum odit similique consequatur tempore distinctio. Est et deleniti. Velit deleniti rem vitae totam quo. Error maiores dolorem velit voluptates."], ["company_name", ""], ["birth_date", "1988-02-24"], ["siren", ""], ["availability", "t"], ["speciality", "qui"], ["phone_number", "8999392615"], ["created_at", "2015-12-01 12:35:02.181397"], ["updated_at", "2015-12-01 12:35:02.181397"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'julia_ferreira@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Julia"], ["last_name", "Ferreira"], ["address", "[\"18220\", \"Parassy\", \"47.2335\", \"2.5478\", \"2\"]"], ["encrypted_password", "$2a$10$F1ojVJttBuRObYFaqkr67e0K/btkCHCCyVy9aWwmly9ukXrW2vBqC"], ["picture", nil], ["email", "julia_ferreira@yahoo.com"], ["biography", "Et enim in. Libero nostrum in id ab sit ea nemo. Quia non laudantium ipsam quo sunt ipsa quisquam. Adipisci ipsa voluptates."], ["company_name", ""], ["birth_date", "1965-09-22"], ["siren", ""], ["availability", "t"], ["speciality", "quia"], ["phone_number", "1729273306"], ["created_at", "2015-12-01 12:35:02.250930"], ["updated_at", "2015-12-01 12:35:02.250930"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'martin_j_me_r@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Jérôme"], ["last_name", "Martin"], ["address", "[\"30120\", \"Mandagout\", \"44.0207\", \"3.6275\", \"4\"]"], ["encrypted_password", "$2a$10$3WXHstrm99EfV9c7KjMzr.r65msTRWEuE2XDstT0OYJAGdt4OKL86"], ["picture", nil], ["email", "martin_j_me_r@gmail.com"], ["biography", "Voluptatem sunt eos nemo dolores voluptatem debitis. Molestiae dolores fugit accusantium aperiam eaque omnis sunt. Incidunt itaque quisquam in fugiat. Illum nesciunt aut adipisci."], ["company_name", ""], ["birth_date", "1965-01-29"], ["siren", ""], ["availability", "t"], ["speciality", "et"], ["phone_number", "8322148210"], ["created_at", "2015-12-01 12:35:02.318151"], ["updated_at", "2015-12-01 12:35:02.318151"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'cros_mohamed@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Mohamed"], ["last_name", "Cros"], ["address", "[\"52300\", \"Guindrecourt-aux-Ormes\", \"48.4597\", \"5.0338\", \"3\"]"], ["encrypted_password", "$2a$10$Ndrb41GMd7T5WIzOGbVIM.YigIZtgU6p8VsQBsNIu28Ab3IfoDZ4i"], ["picture", nil], ["email", "cros_mohamed@yahoo.com"], ["biography", "Eos corrupti rerum natus repellat dolorem quasi consequatur. Sit et id voluptatibus occaecati autem eos libero. Iure perspiciatis nam voluptatem voluptas quidem laboriosam."], ["company_name", ""], ["birth_date", "1966-09-05"], ["siren", ""], ["availability", "t"], ["speciality", "ad"], ["phone_number", "1328011497"], ["created_at", "2015-12-01 12:35:02.386067"], ["updated_at", "2015-12-01 12:35:02.386067"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'prevost.emma@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Emma"], ["last_name", "Prevost"], ["address", "[\"18110\", \"Allogny\", \"47.2254\", \"2.3201\", \"2\"]"], ["encrypted_password", "$2a$10$EmN0WMt8PIFffURsPzlYAuDhn5i622un7Q7HMfA2ceNeGTUiktil."], ["picture", nil], ["email", "prevost.emma@hotmail.com"], ["biography", "Maxime ut rerum et vel aliquam corrupti omnis. Enim quam aut explicabo. Nemo reprehenderit nulla maxime."], ["company_name", ""], ["birth_date", "1993-05-30"], ["siren", ""], ["availability", "t"], ["speciality", "ab"], ["phone_number", "1243669096"], ["created_at", "2015-12-01 12:35:02.453296"], ["updated_at", "2015-12-01 12:35:02.453296"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'vidal.benjamin@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Benjamin"], ["last_name", "Vidal"], ["address", "[\"20165\", \"Loreto-di-Tallano\", \"41.7183\", \"9.0382\", \"4\"]"], ["encrypted_password", "$2a$10$Kk47BYKL1xr57fgfFM5IoubSmwTLOHyFw4DaispWFLzqPKGMRZS6K"], ["picture", nil], ["email", "vidal.benjamin@hotmail.com"], ["biography", "Qui quis quia non. Maxime placeat et illo harum repellendus non. Recusandae qui eligendi velit rerum. Aliquid quo sit sed id ut dignissimos."], ["company_name", ""], ["birth_date", "1982-08-10"], ["siren", ""], ["availability", "t"], ["speciality", "fugit"], ["phone_number", "1453893256"], ["created_at", "2015-12-01 12:35:02.527479"], ["updated_at", "2015-12-01 12:35:02.527479"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'dominique_roth@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Dominique"], ["last_name", "Roth"], ["address", "[\"70700\", \"Cugney\", \"47.3658\", \"5.7191\", \"3\"]"], ["encrypted_password", "$2a$10$3jsLrW3hzSS78U2dtjBsYu1Zv4v.2KVi5UHQviAaLN0h0rUuu94Ne"], ["picture", nil], ["email", "dominique_roth@yahoo.com"], ["biography", "Sed voluptatibus sed deleniti qui. Impedit dolores voluptatem. Dolores earum ipsum ut ut ut. Libero eum recusandae harum quasi voluptatem ea."], ["company_name", "Alias Sarl"], ["birth_date", "1974-06-30"], ["siren", "973795289"], ["availability", "t"], ["speciality", "deleniti"], ["phone_number", "4727815187"], ["created_at", "2015-12-01 12:35:02.596209"], ["updated_at", "2015-12-01 12:35:02.596209"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'tina_leveque@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Tina"], ["last_name", "Leveque"], ["address", "[\"01190\", \"Ozan\", \"46.3915\", \"4.9153\", \"4\"]"], ["encrypted_password", "$2a$10$aJ1jlCupAaivcaq7ktuZwef/fy7izP03wR5.QsVnfcVYIgFRubvMu"], ["picture", nil], ["email", "tina_leveque@yahoo.com"], ["biography", "Velit est quia harum quasi. Earum saepe dolores modi. Vel qui veniam cumque. Corporis ex quam."], ["company_name", ""], ["birth_date", "1967-08-05"], ["siren", ""], ["availability", "t"], ["speciality", "exercitationem"], ["phone_number", "9020174968"], ["created_at", "2015-12-01 12:35:02.667548"], ["updated_at", "2015-12-01 12:35:02.667548"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'michel_chretien@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Michel"], ["last_name", "Chretien"], ["address", "[\"63530\", \"Volvic\", \"44.821\", \"3.0383\", \"4\"]"], ["encrypted_password", "$2a$10$vuUWrFwxTdJHCF1/BdXru.lu5GKdu4YvWm1asWisPDkRjpxqGl.h."], ["picture", nil], ["email", "michel_chretien@hotmail.com"], ["biography", "Et quisquam blanditiis. Exercitationem amet et. Odio aut pariatur eligendi eveniet. Dolorem doloribus perferendis. Vitae sint officiis autem reiciendis eaque."], ["company_name", "Facere Incidunt SA"], ["birth_date", "1973-07-15"], ["siren", "711827352"], ["availability", "t"], ["speciality", "nisi"], ["phone_number", "8077847068"], ["created_at", "2015-12-01 12:35:02.737536"], ["updated_at", "2015-12-01 12:35:02.737536"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'victoire.duval@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Victoire"], ["last_name", "Duval"], ["address", "[\"39380\", \"Souvans\", \"46.9931\", \"5.5565\", \"3\"]"], ["encrypted_password", "$2a$10$RciAiwsmYNgN/DDOkd319eScS67DlYJYlITJiB8NfQuaJGaGPKlo6"], ["picture", nil], ["email", "victoire.duval@gmail.com"], ["biography", "Est sint temporibus est. Et aut debitis consectetur. Facilis aut omnis. Similique quod est quis error delectus aperiam."], ["company_name", ""], ["birth_date", "1981-07-09"], ["siren", ""], ["availability", "t"], ["speciality", "quidem"], ["phone_number", "2089159132"], ["created_at", "2015-12-01 12:35:02.806560"], ["updated_at", "2015-12-01 12:35:02.806560"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'monique.durand@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Monique"], ["last_name", "Durand"], ["address", "[\"68910\", \"Labaroche\", \"48.1108\", \"7.1924\", \"3\"]"], ["encrypted_password", "$2a$10$JLhNxnXo3IUpUF26z.JIg.O/QVjysPVsPLzI9YYt7lEtXbw69/fda"], ["picture", nil], ["email", "monique.durand@hotmail.com"], ["biography", "Ipsa laboriosam nostrum quia cumque. Sit itaque magnam qui sit quo aut. Explicabo eius ipsam accusantium quibusdam necessitatibus labore reiciendis. Qui eius fuga suscipit quisquam."], ["company_name", ""], ["birth_date", "1992-01-14"], ["siren", ""], ["availability", "t"], ["speciality", "maxime"], ["phone_number", "5110810557"], ["created_at", "2015-12-01 12:35:02.881427"], ["updated_at", "2015-12-01 12:35:02.881427"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'gallet.e.doroth@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Dorothée"], ["last_name", "Gallet"], ["address", "[\"76980\", \"Veules-les-Roses\", \"49.8728\", \"0.8\", \"2\"]"], ["encrypted_password", "$2a$10$jLmTgF14diIbfiw/c48R0.VESUlRg/NeTg28Ibz8mVNmcx2N6X4p."], ["picture", nil], ["email", "gallet.e.doroth@yahoo.com"], ["biography", "Perferendis incidunt deserunt cumque aperiam. Eveniet rem ex aut. Sequi ut labore earum consequatur."], ["company_name", ""], ["birth_date", "1962-12-10"], ["siren", ""], ["availability", "t"], ["speciality", "incidunt"], ["phone_number", "6448890494"], ["created_at", "2015-12-01 12:35:02.954405"], ["updated_at", "2015-12-01 12:35:02.954405"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'amir_gonizzi@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Amir"], ["last_name", "Gonizzi"], ["address", "[\"67550\", \"Eckwersheim\", \"48.6817\", \"7.6969\", \"3\"]"], ["encrypted_password", "$2a$10$PxGjXmULpm7C3DgJNvQj.u7QtRNHM99ZbO.Crs2W6xkEptqkbUNKi"], ["picture", nil], ["email", "amir_gonizzi@hotmail.com"], ["biography", "Minus iste excepturi rem amet ea nihil. Deserunt fuga ut repellendus doloremque. Et harum error eum sequi. Suscipit veniam sed nihil voluptate repudiandae doloribus quia."], ["company_name", ""], ["birth_date", "1991-10-18"], ["siren", ""], ["availability", "t"], ["speciality", "enim"], ["phone_number", "8805738058"], ["created_at", "2015-12-01 12:35:03.022689"], ["updated_at", "2015-12-01 12:35:03.022689"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'jacques.pruvost@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Jacques"], ["last_name", "Pruvost"], ["address", "[\"54100\", \"Nancy\", \"48.6833\", \"6.2\", \"3\"]"], ["encrypted_password", "$2a$10$5uVsvJayzyM4CX6IP4FNe.D104ziwJpWBAYZJCgdp7n94oRK5wily"], ["picture", nil], ["email", "jacques.pruvost@gmail.com"], ["biography", "Quasi id vel et ut sapiente. Accusantium cupiditate distinctio deleniti saepe similique placeat. Velit culpa omnis molestiae cum. A nesciunt temporibus. Commodi non voluptas."], ["company_name", ""], ["birth_date", "1993-02-12"], ["siren", ""], ["availability", "t"], ["speciality", "provident"], ["phone_number", "4111372428"], ["created_at", "2015-12-01 12:35:03.091225"], ["updated_at", "2015-12-01 12:35:03.091225"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'humbert.arthur@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Arthur"], ["last_name", "Humbert"], ["address", "[\"72500\", \"Vaas\", \"47.6689\", \"0.3168\", \"2\"]"], ["encrypted_password", "$2a$10$yruFl1ePVdvjva5eu5RbjOHwOcS.9iiUY0GLeM8DeF0C40q/vr/z2"], ["picture", nil], ["email", "humbert.arthur@yahoo.com"], ["biography", "Sapiente totam ut provident. Et cupiditate error dolorem et quam. Tenetur sed eius nostrum expedita. Fuga aut labore voluptatum ab. Distinctio voluptate quo atque eos tempora vel."], ["company_name", "Sint Sunt Sarl"], ["birth_date", "1965-04-05"], ["siren", "981584998"], ["availability", "t"], ["speciality", "aut"], ["phone_number", "1872697274"], ["created_at", "2015-12-01 12:35:03.158974"], ["updated_at", "2015-12-01 12:35:03.158974"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'saunier_julia@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Julia"], ["last_name", "Saunier"], ["address", "[\"20250\", \"Corte\", \"42.3\", \"9.15\", \"4\"]"], ["encrypted_password", "$2a$10$ZOZC6JDtN/2RIxwHdZv9DeTEQQtgq3HLAdt.Bq/8HWGuVXhokiz/G"], ["picture", nil], ["email", "saunier_julia@gmail.com"], ["biography", "Velit tempora odit. Nihil possimus voluptatem est quia excepturi. Amet minus reprehenderit et dolore ab sapiente."], ["company_name", ""], ["birth_date", "1976-02-20"], ["siren", ""], ["availability", "t"], ["speciality", "dicta"], ["phone_number", "9740714161"], ["created_at", "2015-12-01 12:35:03.228823"], ["updated_at", "2015-12-01 12:35:03.228823"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'isabelle.monetto@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Isabelle"], ["last_name", "Monetto"], ["address", "[\"36310\", \"Tilly\", \"46.4065\", \"1.2022\", \"2\"]"], ["encrypted_password", "$2a$10$3D5R8tgjPd6yHvL2pM5MteGIkOBQY6CvzMf0yAj7A21L0HeFPgSAe"], ["picture", nil], ["email", "isabelle.monetto@hotmail.com"], ["biography", "Mollitia pariatur laudantium quo deserunt temporibus quis. Esse necessitatibus explicabo molestias incidunt repudiandae mollitia hic. Adipisci sit et fugiat dignissimos consectetur culpa."], ["company_name", ""], ["birth_date", "1989-12-05"], ["siren", ""], ["availability", "t"], ["speciality", "harum"], ["phone_number", "4782887928"], ["created_at", "2015-12-01 12:35:03.300753"], ["updated_at", "2015-12-01 12:35:03.300753"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'treyt.ahmet@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "address", "encrypted_password", "picture", "email", "biography", "company_name", "birth_date", "siren", "availability", "speciality", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "Ahmet"], ["last_name", "Treyt"], ["address", "[\"22240\", \"Plévenon\", \"48.6539\", \"-2.3312\", \"2\"]"], ["encrypted_password", "$2a$10$qwprwKiBIDr0Y8ChC92DYO6kkrrhrXonOG1yGa60mEuUk353u1bs2"], ["picture", nil], ["email", "treyt.ahmet@yahoo.com"], ["biography", "Praesentium ratione odit quia magni sapiente ipsum. Et similique quod quibusdam omnis veritatis. Commodi cupiditate unde nemo rerum. Aperiam sed blanditiis autem nesciunt voluptatem."], ["company_name", ""], ["birth_date", "1971-04-22"], ["siren", ""], ["availability", "t"], ["speciality", "molestiae"], ["phone_number", "4023131521"], ["created_at", "2015-12-01 12:35:03.371553"], ["updated_at", "2015-12-01 12:35:03.371553"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = 'Debitis voluptatem eos reprehenderit deserunt sit.' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "introduction", "content", "date", "synopsis", "status", "category", "character_number", "city", "price", "licence", "user_id", "cover", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["title", "Debitis voluptatem eos reprehenderit deserunt sit."], ["introduction", "Architecto atque laboriosam. Quo dolores recusandae consequatur aperiam porro mollitia. Consequuntur iusto rerum sint inventore mollitia. Possimus non aliquid ipsum. In dolore sit nulla vitae voluptas rem."], ["content", "[\"Voluptas dignissimos est maxime veniam quae officia. Dignissimos corporis impedit placeat eaque perspiciatis. Ut autem accusantium aut ratione quasi distinctio saepe.\", \"Odio illo quae tenetur eius. Ut aut quas voluptas et. Tempora doloremque et. Est quisquam iusto. Harum unde temporibus incidunt nam iusto corrupti.\", \"Praesentium quia optio. Commodi et ducimus sapiente quos eum est. Culpa saepe reiciendis consectetur. Aut itaque eligendi. Qui ullam amet adipisci sint quam autem facilis.\"]"], ["date", "2015-10-01"], ["synopsis", "Casus basium dolorem enim."], ["status", "Brouillon"], ["category", "Science"], ["character_number", 167], ["city", "[\"50390\", \"Orglandes\", \"49.4223\", \"-1.4502\", \"2\"]"], ["price", 4.0], ["licence", "Libre"], ["user_id", 176], ["cover", "debitis-voluptatem-eos-reprehenderit-deserunt-sit.jpg"], ["created_at", "2015-12-01 12:35:04.571770"], ["updated_at", "2015-12-01 12:35:04.571770"]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "posts" SET "cover" = 'image/upload/v1448973305/debitis-voluptatem-eos-reprehenderit-deserunt-sit.jpg' WHERE "posts"."id" = $1[0m  [["id", 66]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = 'Optio consequatur sapiente fugiat inventore vel facere deleniti totam.' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "introduction", "content", "date", "synopsis", "status", "category", "character_number", "city", "price", "licence", "user_id", "cover", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["title", "Optio consequatur sapiente fugiat inventore vel facere deleniti totam."], ["introduction", "Id est aperiam voluptatem nesciunt. Nisi est rerum minus rerum. Quam nam repellendus. Quidem hic corrupti."], ["content", "[\"Fugit ut eius blanditiis similique voluptatem accusantium error. Dolore ut omnis quia magnam. Aut explicabo mollitia quia qui. Modi dolorum et magni voluptatem facere sed recusandae. Dolores nulla delectus.\", \"Consequatur deserunt asperiores voluptatem eligendi saepe. Nostrum pariatur itaque. Et aspernatur eaque qui reiciendis. Perspiciatis explicabo reiciendis quas quos tempora rerum.\", \"Sed consequatur maxime. Iusto aut earum quidem quaerat cum dolore. Placeat nostrum qui itaque harum. Aut ea sed qui tempora. Magnam molestiae ut eaque similique et.\"]"], ["date", "2015-10-02"], ["synopsis", "Thymbra voluptatibus despecto damno vinitor aut vel color vinculum."], ["status", "Publié"], ["category", "Science"], ["character_number", 86], ["city", "[\"58500\", \"Billy-sur-Oisy\", \"47.4802\", \"3.4123\", \"3\"]"], ["price", 6.0], ["licence", "Copyright"], ["user_id", 180], ["cover", "optio-consequatur-sapiente-fugiat-inventore-vel-facere-deleniti-totam"], ["created_at", "2015-12-01 12:35:06.209057"], ["updated_at", "2015-12-01 12:35:06.209057"]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "cover" = 'image/upload/v1448973307/optio-consequatur-sapiente-fugiat-inventore-vel-facere-deleniti-totam.jpg' WHERE "posts"."id" = $1[0m  [["id", 67]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = 'Rerum modi reiciendis qui.' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "introduction", "content", "date", "synopsis", "status", "category", "character_number", "city", "price", "licence", "user_id", "cover", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["title", "Rerum modi reiciendis qui."], ["introduction", "Nostrum placeat temporibus aut soluta. Ipsam explicabo voluptatem. In ratione illo velit sunt ipsam."], ["content", "[\"Accusantium quia eum iste et maxime nostrum deserunt. Fugit dolorem quia ea aut iusto libero. Voluptate saepe excepturi optio. Consequatur animi qui perspiciatis molestias explicabo maiores. Tempora esse debitis praesentium qui eligendi ex ab.\", \"Ullam incidunt occaecati assumenda facilis. Id laborum est. Ratione ut est sit tempore nemo qui adipisci. Et sed voluptate. Autem non ut ullam consequatur nostrum fuga quibusdam.\", \"Consectetur quis harum necessitatibus libero modi ipsa. Voluptatem illo velit velit. Dolor et molestias deleniti qui quo vel.\"]"], ["date", "2015-11-01"], ["synopsis", "Damno aiunt valens."], ["status", "Publié"], ["category", "Finance"], ["character_number", 114], ["city", "[\"08410\", \"Boulzicourt\", \"49.6956\", \"4.6962\", \"3\"]"], ["price", 8.0], ["licence", "Libre"], ["user_id", 185], ["cover", "rerum-modi-reiciendis-qui"], ["created_at", "2015-12-01 12:35:08.155741"], ["updated_at", "2015-12-01 12:35:08.155741"]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "posts" SET "cover" = 'image/upload/v1448973308/rerum-modi-reiciendis-qui.jpg' WHERE "posts"."id" = $1[0m  [["id", 68]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = 'Explicabo iusto deserunt deleniti labore.' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "introduction", "content", "date", "synopsis", "status", "category", "character_number", "city", "price", "licence", "user_id", "cover", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["title", "Explicabo iusto deserunt deleniti labore."], ["introduction", "Recusandae rem earum cupiditate a voluptates. Eius provident unde modi nisi suscipit aliquam. Ea soluta molestiae corporis at dolorem ut. Debitis quidem pariatur ut unde voluptatibus veritatis. Est ipsa debitis."], ["content", "[\"Minima cupiditate mollitia. Mollitia est eum. Molestias odit voluptates possimus fugiat. Saepe aut tempore at. Doloribus cumque velit dolores et ut eveniet.\", \"Vero sapiente voluptas maxime consequatur sed dolorum. Harum excepturi et earum minus quia. Ad nobis necessitatibus magnam. Quisquam quia ut consequuntur quidem accusantium ipsa.\", \"Optio voluptas itaque quia nostrum aut ex ipsam. Laborum explicabo qui occaecati. Neque minima debitis consequatur. Eum unde veritatis aliquam. Tempora rerum nisi esse.\"]"], ["date", "2015-09-17"], ["synopsis", "Creator solum rem ut caterva."], ["status", "Publié"], ["category", "Economie"], ["character_number", 122], ["city", "[\"67730\", \"La Vancelle\", \"48.2854\", \"7.3014\", \"3\"]"], ["price", 5.0], ["licence", "Creative Commons"], ["user_id", 167], ["cover", "explicabo-iusto-deserunt-deleniti-labore.jpg"], ["created_at", "2015-12-01 12:35:09.428032"], ["updated_at", "2015-12-01 12:35:09.428032"]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "posts" SET "cover" = 'image/upload/v1448973309/explicabo-iusto-deserunt-deleniti-labore.jpg' WHERE "posts"."id" = $1[0m  [["id", 69]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = 'Consequatur quis beatae quis quisquam recusandae.' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "introduction", "content", "date", "synopsis", "status", "category", "character_number", "city", "price", "licence", "user_id", "cover", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["title", "Consequatur quis beatae quis quisquam recusandae."], ["introduction", "Est eaque ratione laborum quia. Voluptatum voluptates incidunt. Eveniet sit et."], ["content", "[\"Deserunt vero amet ipsa impedit tenetur qui. Culpa in autem ratione aperiam ullam aut. Et aut voluptates vero nihil. Dicta sit eum eos et quia.\", \"Voluptatem iusto rerum. Deleniti commodi consequatur qui qui magnam aliquam. Aut voluptas magni.\", \"Et sequi id quia amet atque voluptatem. Omnis dolore est et qui modi nihil facilis. Impedit accusamus voluptas recusandae perspiciatis velit harum sit. Impedit voluptas consequatur velit voluptas voluptatem aut.\"]"], ["date", "2015-11-28"], ["synopsis", "Suffoco caute derideo studio denique apud succedo."], ["status", "Publié"], ["category", "Finance"], ["character_number", 181], ["city", "[\"04700\", \"Lurs\", \"43.9699\", \"5.8885\", \"4\"]"], ["price", 3.0], ["licence", "Creative Commons"], ["user_id", 186], ["cover", "consequatur-quis-beatae-quis-quisquam-recusandae.jpg"], ["created_at", "2015-12-01 12:35:10.715489"], ["updated_at", "2015-12-01 12:35:10.715489"]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "cover" = 'image/upload/v1448973311/consequatur-quis-beatae-quis-quisquam-recusandae.jpg' WHERE "posts"."id" = $1[0m  [["id", 70]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = 'Voluptas tenetur odit a.' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "introduction", "content", "date", "synopsis", "status", "category", "character_number", "city", "price", "licence", "user_id", "cover", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["title", "Voluptas tenetur odit a."], ["introduction", "Rerum unde ut ea harum. Accusamus sit sit. Voluptas itaque cupiditate inventore. Dignissimos omnis fugit. Eveniet ea amet odio."], ["content", "[\"Esse perferendis quod. Qui laudantium voluptas est dignissimos numquam. Ab suscipit et quisquam eveniet vitae et. Voluptas aut quia ducimus. In animi consequuntur accusamus iste voluptates fugit aliquid.\", \"Numquam quia consequuntur. Nam veniam aut est quia non. Quasi quia laborum recusandae ratione quis occaecati. Tempora tenetur exercitationem sint.\", \"Iste accusantium maiores. Ipsum debitis nisi veritatis ullam. Ab ullam et. Maxime possimus quia. Voluptatem alias dolor autem.\"]"], ["date", "2015-11-17"], ["synopsis", "Audeo sopor thymbra talis triginta corporis virtus tonsor."], ["status", "Publié"], ["category", "Médias"], ["character_number", 213], ["city", "[\"50710\", \"Créances\", \"49.1987\", \"-1.5694\", \"2\"]"], ["price", 4.0], ["licence", "Libre"], ["user_id", 194], ["cover", "voluptas-tenetur-odit-a.jpg"], ["created_at", "2015-12-01 12:35:12.252371"], ["updated_at", "2015-12-01 12:35:12.252371"]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "posts" SET "cover" = 'image/upload/v1448973312/voluptas-tenetur-odit-a.jpg' WHERE "posts"."id" = $1[0m  [["id", 71]]
+  [1m[35m (1.4ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = 'Culpa corrupti enim architecto quod.' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "introduction", "content", "date", "synopsis", "status", "category", "character_number", "city", "price", "licence", "user_id", "cover", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["title", "Culpa corrupti enim architecto quod."], ["introduction", "Reiciendis et rem est sapiente fugit. Minima quo est. Cumque quis necessitatibus asperiores. Consequatur voluptatem sequi velit aspernatur."], ["content", "[\"Officia qui nulla ea ut alias veniam. Cupiditate tempora dolore commodi doloribus qui. In quo rerum exercitationem commodi.\", \"Adipisci porro impedit voluptas voluptatem delectus. Sunt maiores ut. Est molestiae corrupti magnam consequatur facilis ex illo. Perferendis repudiandae cupiditate iste ut ut. Et quasi ad est nobis eaque.\", \"Est ipsum nulla quae doloribus. Quia possimus dolore totam. Est aut sequi atque nam sit possimus adipisci. Optio quis recusandae consequatur accusantium tempore quo.\"]"], ["date", "2015-11-28"], ["synopsis", "Deleniti necessitatibus averto voluptates."], ["status", "Brouillon"], ["category", "Société"], ["character_number", 278], ["city", "[\"20140\", \"Serra-di-Ferro\", \"41.7248\", \"8.7968\", \"4\"]"], ["price", 5.0], ["licence", "Creative Commons"], ["user_id", 173], ["cover", "culpa-corrupti-enim-architecto-quod.jpg"], ["created_at", "2015-12-01 12:35:13.889066"], ["updated_at", "2015-12-01 12:35:13.889066"]]
+  [1m[36mSQL (0.9ms)[0m  [1mUPDATE "posts" SET "cover" = 'image/upload/v1448973314/culpa-corrupti-enim-architecto-quod.jpg' WHERE "posts"."id" = $1[0m  [["id", 72]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = 'Aut et quidem et incidunt et.' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "introduction", "content", "date", "synopsis", "status", "category", "character_number", "city", "price", "licence", "user_id", "cover", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["title", "Aut et quidem et incidunt et."], ["introduction", "Quaerat molestias exercitationem fuga. Ratione reprehenderit eum. Atque sequi minus quisquam accusantium."], ["content", "[\"Accusantium consequatur occaecati optio. Atque sint dolorum earum aut harum. Veniam quos amet ratione. Necessitatibus quae enim.\", \"Id repudiandae voluptatem nobis aut ratione. Nostrum exercitationem minus. Amet ut quam. Ab aut aspernatur qui veniam aliquid quidem porro.\", \"Ut aut ut et. Illum modi ipsa quo ex tempore et aspernatur. Dolores vel molestias et. Vel cum quia.\"]"], ["date", "2015-10-27"], ["synopsis", "Aequus tui vindico ipsum vinco depromo certe amplus."], ["status", "Publié"], ["category", "Arts"], ["character_number", 283], ["city", "[\"47160\", \"Monheurt\", \"44.34\", \"0.3083\", \"5\"]"], ["price", 1.0], ["licence", "Copyright"], ["user_id", 179], ["cover", "aut-et-quidem-et-incidunt-et.jpg"], ["created_at", "2015-12-01 12:35:15.220706"], ["updated_at", "2015-12-01 12:35:15.220706"]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "cover" = 'image/upload/v1448973315/aut-et-quidem-et-incidunt-et.jpg' WHERE "posts"."id" = $1[0m  [["id", 73]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = 'Qui laborum doloribus cumque reprehenderit qui optio aspernatur quis.' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "introduction", "content", "date", "synopsis", "status", "category", "character_number", "city", "price", "licence", "user_id", "cover", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["title", "Qui laborum doloribus cumque reprehenderit qui optio aspernatur quis."], ["introduction", "Laboriosam nam quo aperiam. Cumque excepturi consequuntur officiis. Aut qui accusamus et quasi. Unde laboriosam suscipit eum. Corrupti et tempore ipsum explicabo."], ["content", "[\"Rem atque rerum ipsa assumenda. Qui aspernatur odio illum aut incidunt sunt. Voluptate eum ut et dolor non.\", \"Laboriosam dolores ut cumque enim natus tenetur. Blanditiis et ratione dolorem atque eos repellat et. Qui fuga velit quis illo. Eligendi nesciunt quo ab ad. Eum illum ea et quia tempore.\", \"Veniam quos at rerum. Non ad nobis eaque dicta. Modi consectetur sapiente. Corporis quos quia at sit et.\"]"], ["date", "2015-10-13"], ["synopsis", "Talus confero caterva cum."], ["status", "Publié"], ["category", "Société"], ["character_number", 125], ["city", "[\"79700\", \"La Petite-Boissière\", \"46.8838\", \"-0.7419\", \"5\"]"], ["price", 5.0], ["licence", "Libre"], ["user_id", 172], ["cover", "qui-laborum-doloribus-cumque-reprehenderit-qui-optio-aspernatur-quis.jpg"], ["created_at", "2015-12-01 12:35:16.859125"], ["updated_at", "2015-12-01 12:35:16.859125"]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "cover" = 'image/upload/v1448973317/qui-laborum-doloribus-cumque-reprehenderit-qui-optio-aspernatur-quis.jpg' WHERE "posts"."id" = $1[0m  [["id", 74]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = 'Perferendis nihil quisquam quia quod.' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "introduction", "content", "date", "synopsis", "status", "category", "character_number", "city", "price", "licence", "user_id", "cover", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["title", "Perferendis nihil quisquam quia quod."], ["introduction", "Quis vel suscipit. Fugit et deserunt dignissimos maxime quibusdam. Autem at nam molestiae. Ut occaecati eos itaque repellendus."], ["content", "[\"Velit nihil mollitia praesentium numquam. Nihil velit ea et maxime est. Unde facilis occaecati quis eos iste omnis quidem. Non ab quibusdam at ducimus animi maxime reiciendis. Accusantium eos consequatur dolore.\", \"Quisquam praesentium voluptas. Sed dolores nihil sit voluptas qui numquam itaque. Expedita et rem ut. Officia sunt eius deserunt et. Doloribus soluta ipsum quia.\", \"Iusto odio corrupti. Vitae qui perspiciatis. Corporis dolores dolor excepturi aliquid.\"]"], ["date", "2015-10-06"], ["synopsis", "Adinventitias utilis uter casus amitto."], ["status", "Brouillon"], ["category", "Science"], ["character_number", 215], ["city", "[\"02790\", \"Seraucourt-le-Grand\", \"49.7833\", \"3.2167\", \"3\"]"], ["price", 7.0], ["licence", "Creative Commons"], ["user_id", 166], ["cover", "perferendis-nihil-quisquam-quia-quod.jpg"], ["created_at", "2015-12-01 12:35:19.419077"], ["updated_at", "2015-12-01 12:35:19.419077"]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "cover" = 'image/upload/v1448973319/perferendis-nihil-quisquam-quia-quod.jpg' WHERE "posts"."id" = $1[0m  [["id", 75]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mPost Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = 'Nihil est in commodi aut.' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "introduction", "content", "date", "synopsis", "status", "category", "character_number", "city", "price", "licence", "user_id", "cover", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["title", "Nihil est in commodi aut."], ["introduction", "Aperiam quia praesentium sed inventore ex voluptate aut. Porro exercitationem ullam earum explicabo. Praesentium cumque at consectetur quo eligendi. Vero et quasi ex dignissimos."], ["content", "[\"Rerum est minima cumque alias nemo cupiditate. Provident adipisci velit. Qui aut nulla tempora totam ut. Dolor et nihil id officia.\", \"Velit voluptatum beatae debitis nemo dolorum explicabo. Sint quis vero voluptas sed. Similique modi libero totam.\", \"Ut sit quia est. Voluptatem voluptatem esse veritatis dolorem ut quos nihil. Qui tenetur ipsam ullam minima cumque autem animi. Unde sunt eum est reiciendis inventore. Occaecati nulla repudiandae sapiente beatae temporibus et vel.\"]"], ["date", "2015-11-23"], ["synopsis", "Utroque statim abstergo consequuntur."], ["status", "Brouillon"], ["category", "Société"], ["character_number", 270], ["city", "[\"02620\", \"Buironfosse\", \"49.9666\", \"3.8359\", \"3\"]"], ["price", 4.0], ["licence", "Libre"], ["user_id", 196], ["cover", "nihil-est-in-commodi-aut.jpg"], ["created_at", "2015-12-01 12:35:21.161095"], ["updated_at", "2015-12-01 12:35:21.161095"]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "cover" = 'image/upload/v1448973321/nihil-est-in-commodi-aut.jpg' WHERE "posts"."id" = $1[0m  [["id", 76]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = 'Provident illum accusamus temporibus non.' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "introduction", "content", "date", "synopsis", "status", "category", "character_number", "city", "price", "licence", "user_id", "cover", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["title", "Provident illum accusamus temporibus non."], ["introduction", "Eos iste eius fugiat fugit consequatur. Accusantium in impedit est dolores. Qui et dolorum distinctio non aut mollitia est. Unde voluptas a sit perferendis culpa. Quas numquam molestias."], ["content", "[\"Labore assumenda pariatur minima impedit alias. Dolor tempore unde est veniam quia ut fugit. Vel repellendus at reiciendis velit. Est molestiae repellendus consequatur soluta a.\", \"Quibusdam non voluptas voluptatum. Odio inventore illum aliquam sed aperiam vitae. Aut omnis non voluptatem nihil eos. Quia qui officiis modi exercitationem nemo accusamus facilis. Et ducimus autem.\", \"Odio accusantium molestiae. Dolorum quis consequatur laboriosam. Sit et voluptatum ullam et. Dicta quia non minima quasi atque voluptas. Qui rem tempora adipisci.\"]"], ["date", "2015-10-12"], ["synopsis", "Suspendo voluptates dolor delego natus."], ["status", "Brouillon"], ["category", "Economie"], ["character_number", 195], ["city", "[\"44670\", \"Juigné-des-Moutiers\", \"47.6792\", \"-1.1853\", \"2\"]"], ["price", 3.0], ["licence", "Copyright"], ["user_id", 170], ["cover", "provident-illum-accusamus-temporibus-non.jpg"], ["created_at", "2015-12-01 12:35:22.593613"], ["updated_at", "2015-12-01 12:35:22.593613"]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "cover" = 'image/upload/v1448973323/provident-illum-accusamus-temporibus-non.jpg' WHERE "posts"."id" = $1[0m  [["id", 77]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = 'Voluptatem vel quam amet nihil ut earum.' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "introduction", "content", "date", "synopsis", "status", "category", "character_number", "city", "price", "licence", "user_id", "cover", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["title", "Voluptatem vel quam amet nihil ut earum."], ["introduction", "Reiciendis adipisci aut nulla ad error id voluptas. Sit consectetur suscipit expedita tempora. Voluptas quo et incidunt velit praesentium. Incidunt odio commodi quas voluptate vel ut. Veniam in laborum alias sint aliquam."], ["content", "[\"Explicabo quis labore debitis esse iste dignissimos dolorum. Possimus beatae consequatur. Cum voluptatum nihil facilis nihil sint. Ea aliquid ipsum est voluptas. Nulla enim recusandae et officia sit nesciunt.\", \"Nostrum praesentium optio repellendus ipsum sit odit et. Non id officiis est repudiandae consequatur hic. Quia minus fugiat fugit asperiores ratione.\", \"Et et qui omnis enim quo consequatur tempore. Quo vel minima recusandae. Molestias est error dolores ut sint. Aliquid a earum cupiditate iste harum et.\"]"], ["date", "2015-10-17"], ["synopsis", "Cattus enim molestiae accedo causa peccatus acer amaritudo."], ["status", "Brouillon"], ["category", "Finance"], ["character_number", 114], ["city", "[\"58530\", \"Dornecy\", \"47.4361\", \"3.5848\", \"3\"]"], ["price", 5.0], ["licence", "Libre"], ["user_id", 203], ["cover", "voluptatem-vel-quam-amet-nihil-ut-earum.jpg"], ["created_at", "2015-12-01 12:35:23.822229"], ["updated_at", "2015-12-01 12:35:23.822229"]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "cover" = 'image/upload/v1448973324/voluptatem-vel-quam-amet-nihil-ut-earum.jpg' WHERE "posts"."id" = $1[0m  [["id", 78]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = 'Tempore facere et alias odio consequuntur.' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "introduction", "content", "date", "synopsis", "status", "category", "character_number", "city", "price", "licence", "user_id", "cover", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["title", "Tempore facere et alias odio consequuntur."], ["introduction", "Vel expedita commodi. Maiores sit ea magni fugiat voluptates. Debitis officia inventore labore amet eum. Incidunt veniam quidem perferendis qui sapiente."], ["content", "[\"Nihil quibusdam vel incidunt. Dolor sint natus maiores ad maxime. Ea omnis tempore vel fuga voluptatem maiores. Aut quod dolorem et architecto laboriosam qui tempora.\", \"Assumenda unde corrupti voluptates. Similique qui velit eligendi eum et. Vel esse sunt. Eligendi officiis deserunt cum numquam accusantium quaerat non. Qui molestiae culpa illo vero quae.\", \"Est labore magnam culpa nemo. Numquam odio voluptatem officiis. Est autem voluptatem.\"]"], ["date", "2015-09-27"], ["synopsis", "Acerbitas supplanto traho tergum."], ["status", "Brouillon"], ["category", "Société"], ["character_number", 236], ["city", "[\"58350\", \"Chasnay\", \"47.2455\", \"3.1843\", \"3\"]"], ["price", 1.0], ["licence", "Creative Commons"], ["user_id", 200], ["cover", "tempore-facere-et-alias-odio-consequuntur.jpg"], ["created_at", "2015-12-01 12:35:25.154592"], ["updated_at", "2015-12-01 12:35:25.154592"]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "cover" = 'image/upload/v1448973325/tempore-facere-et-alias-odio-consequuntur.jpg' WHERE "posts"."id" = $1[0m  [["id", 79]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = 'Excepturi ipsum molestiae esse voluptates nostrum qui.' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "introduction", "content", "date", "synopsis", "status", "category", "character_number", "city", "price", "licence", "user_id", "cover", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["title", "Excepturi ipsum molestiae esse voluptates nostrum qui."], ["introduction", "Vel tenetur et doloribus facere voluptas ex. Voluptas dignissimos earum dolores. Alias cumque quia et sed dolores non minus."], ["content", "[\"Accusantium quis earum blanditiis non aut veritatis. Rerum reiciendis culpa earum. Impedit ea vel officia non. Quia nemo culpa.\", \"Harum quas eos nihil. Aliquid neque sed autem non porro in. Excepturi voluptates corporis odio accusamus doloremque officiis. Ad dolorem reiciendis assumenda dolorem aut at.\", \"Minus neque dolorem aut. Dolorem quis dolorem nam facilis. Aperiam hic accusantium harum quia. Aut tempora cum consequatur. Nobis harum inventore officia omnis et est commodi.\"]"], ["date", "2015-10-16"], ["synopsis", "Quia eum denique tres."], ["status", "Brouillon"], ["category", "Médias"], ["character_number", 229], ["city", "[\"53260\", \"Parné-sur-Roc\", \"48.0062\", \"-0.6685\", \"2\"]"], ["price", 6.0], ["licence", "Copyright"], ["user_id", 196], ["cover", "excepturi-ipsum-molestiae-esse-voluptates-nostrum-qui"], ["created_at", "2015-12-01 12:35:26.484998"], ["updated_at", "2015-12-01 12:35:26.484998"]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "cover" = 'image/upload/v1448973326/excepturi-ipsum-molestiae-esse-voluptates-nostrum-qui.jpg' WHERE "posts"."id" = $1[0m  [["id", 80]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mPost Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = 'Velit molestiae perspiciatis aut perferendis deleniti officiis reprehenderit.' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "posts" ("title", "introduction", "content", "date", "synopsis", "status", "category", "character_number", "city", "price", "licence", "user_id", "cover", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["title", "Velit molestiae perspiciatis aut perferendis deleniti officiis reprehenderit."], ["introduction", "Porro modi corporis officia praesentium ea. Nihil voluptatem ad. Distinctio illo in cupiditate quia dolores tempora. Voluptate quae autem aut dolorem. Dolores et enim itaque provident asperiores."], ["content", "[\"Eveniet et voluptatem. Modi autem ratione qui et quo. Eos dolorem illo consequatur id.\", \"Dolorem eius vero consequuntur. Necessitatibus non nisi dolor velit et quaerat. Esse et et molestiae. Omnis voluptatem nostrum et sit sed ab. Repellat eos aliquid itaque vitae facilis.\", \"Qui vel aut est reiciendis deserunt. Architecto dolore aut aut dolor consequatur qui. Nulla eaque reiciendis laborum exercitationem et molestiae quia. Et aut corrupti. Quia nisi soluta non omnis ullam inventore beatae.\"]"], ["date", "2015-11-18"], ["synopsis", "Repellat vindico aro curiositas suffoco alveus tolero curia sumo."], ["status", "Brouillon"], ["category", "Médias"], ["character_number", 205], ["city", "[\"51300\", \"Pringy\", \"48.7833\", \"4.5167\", \"3\"]"], ["price", 1.0], ["licence", "Copyright"], ["user_id", 190], ["cover", "velit-molestiae-perspiciatis-aut-perferendis-deleniti-officiis-reprehenderit.jpg"], ["created_at", "2015-12-01 12:35:27.816075"], ["updated_at", "2015-12-01 12:35:27.816075"]]
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "posts" SET "cover" = 'image/upload/v1448973328/velit-molestiae-perspiciatis-aut-perferendis-deleniti-officiis-reprehenderit.jpg' WHERE "posts"."id" = $1[0m  [["id", 81]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = 'Nisi reprehenderit sint ipsa minus.' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "introduction", "content", "date", "synopsis", "status", "category", "character_number", "city", "price", "licence", "user_id", "cover", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["title", "Nisi reprehenderit sint ipsa minus."], ["introduction", "Accusamus omnis repellendus. Exercitationem qui cumque quas omnis. Vitae corporis quia facilis deserunt a dolore quasi."], ["content", "[\"Perspiciatis a nostrum consectetur. Quas error sunt maiores officiis inventore placeat praesentium. Rem ducimus voluptatem dolore. Qui harum dolor quisquam recusandae et porro. Aliquid porro sed ut vitae voluptatibus.\", \"Est eveniet et ad distinctio. Laudantium commodi rerum sunt quos consequatur. Iste et neque. Rerum vel consequatur voluptas.\", \"Nulla ipsum et ut autem sit. Est molestiae debitis adipisci. Non non ducimus voluptas facere.\"]"], ["date", "2015-11-14"], ["synopsis", "Soluta statim super quidem."], ["status", "Brouillon"], ["category", "Finance"], ["character_number", 209], ["city", "[\"02260\", \"Englancourt\", \"49.9167\", \"3.8013\", \"3\"]"], ["price", 5.0], ["licence", "Copyright"], ["user_id", 171], ["cover", "nisi-reprehenderit-sint-ipsa-minus.jpg3Fq3D7526w3D108026h3D108026fit3Dmax26fm3Djpg26s3D6b8722ac8e52c097328e80d266d1926d"], ["created_at", "2015-12-01 12:35:29.045047"], ["updated_at", "2015-12-01 12:35:29.045047"]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "posts" SET "cover" = 'image/upload/v1448973329/nisi-reprehenderit-sint-ipsa-minus.jpg' WHERE "posts"."id" = $1[0m  [["id", 82]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = 'Expedita ut impedit ea molestiae ipsam.' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "introduction", "content", "date", "synopsis", "status", "category", "character_number", "city", "price", "licence", "user_id", "cover", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["title", "Expedita ut impedit ea molestiae ipsam."], ["introduction", "Odio fugiat veritatis placeat ex porro enim assumenda. Quaerat sequi eos. Corrupti et dolor ratione nisi sapiente. Voluptas nobis est dolor eos non et culpa. Rerum quia quia consequatur."], ["content", "[\"Eius reiciendis ut est molestiae. Ut quas praesentium in architecto quia. Nemo eius illo aut ad doloribus. Facere beatae ab tempora iste saepe.\", \"Temporibus tenetur qui. Autem est quas dolores est ipsum et. Et repudiandae ratione. Aliquam itaque molestiae. Et et quisquam qui commodi consequatur sit.\", \"Consequatur beatae qui tempore amet. Voluptatem et ut dolor molestiae debitis. Et aut beatae perspiciatis assumenda similique libero quasi. Consequatur voluptatibus inventore iste nam.\"]"], ["date", "2015-11-03"], ["synopsis", "Termes temptatio."], ["status", "Publié"], ["category", "Finance"], ["character_number", 114], ["city", "[\"70700\", \"Cugney\", \"47.3658\", \"5.7191\", \"3\"]"], ["price", 4.0], ["licence", "Copyright"], ["user_id", 180], ["cover", "expedita-ut-impedit-ea-molestiae-ipsam.jpg"], ["created_at", "2015-12-01 12:35:30.274175"], ["updated_at", "2015-12-01 12:35:30.274175"]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "cover" = 'image/upload/v1448973330/expedita-ut-impedit-ea-molestiae-ipsam.jpg' WHERE "posts"."id" = $1[0m  [["id", 83]]
+  [1m[35m (1.4ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPost Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = 'Veniam non ad autem.' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "introduction", "content", "date", "synopsis", "status", "category", "character_number", "city", "price", "licence", "user_id", "cover", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["title", "Veniam non ad autem."], ["introduction", "Quibusdam dicta explicabo reiciendis. Animi harum suscipit accusamus quis. Atque hic rerum voluptatibus. Assumenda iure in."], ["content", "[\"Eum cumque animi esse dolores occaecati. Et in deleniti fuga mollitia et voluptas. Dicta sint animi sed sed dolorem dolore. Porro omnis repellat minima earum necessitatibus ut excepturi. Rerum hic recusandae molestiae praesentium nemo.\", \"Ipsam consequatur eveniet aut tempora dolor nobis. Pariatur ab labore natus assumenda omnis. Quidem perferendis hic optio dicta qui ut non. Eaque blanditiis eos ratione dolor sint. Omnis ipsum soluta quis iusto ullam.\", \"Non eos sed voluptate sequi. Et autem qui incidunt amet molestiae possimus sed. Dicta neque consequatur. Sed voluptatem possimus earum magni.\"]"], ["date", "2015-11-06"], ["synopsis", "Aspernatur canto terminatio valde culpo eius."], ["status", "Brouillon"], ["category", "Science"], ["character_number", 168], ["city", "[\"13830\", \"Roquefort-la-Bédoule\", \"43.2488\", \"5.5902\", \"4\"]"], ["price", 6.0], ["licence", "Libre"], ["user_id", 184], ["cover", "veniam-non-ad-autem"], ["created_at", "2015-12-01 12:35:31.502356"], ["updated_at", "2015-12-01 12:35:31.502356"]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "posts" SET "cover" = 'image/upload/v1448973332/veniam-non-ad-autem.jpg' WHERE "posts"."id" = $1[0m  [["id", 84]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mPost Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = 'Expedita reprehenderit numquam fugiat unde quae qui illum ea.' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "introduction", "content", "date", "synopsis", "status", "category", "character_number", "city", "price", "licence", "user_id", "cover", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["title", "Expedita reprehenderit numquam fugiat unde quae qui illum ea."], ["introduction", "Illo exercitationem quia est. Animi aperiam qui sit quam. Provident et beatae saepe odio voluptates iure."], ["content", "[\"Commodi omnis quis autem impedit. Et nisi quo sint aut natus corporis. Maxime quam ducimus animi quos odit.\", \"Animi ipsa magni laborum nemo iure reiciendis. Officia commodi voluptas ea ipsam et quod. Magnam et soluta aut ut sed aspernatur architecto.\", \"Nihil eum repellendus id voluptate labore nobis tempore. Dolores assumenda laudantium inventore. Et consequuntur rerum sunt iure fugit illum rerum. Rem ea et.\"]"], ["date", "2015-09-21"], ["synopsis", "Volup adaugeo et venustas aetas voluntarius."], ["status", "Brouillon"], ["category", "Culture"], ["character_number", 112], ["city", "[\"20121\", \"Rosazia\", \"42.1298\", \"8.8713\", \"4\"]"], ["price", 2.0], ["licence", "Copyright"], ["user_id", 176], ["cover", "expedita-reprehenderit-numquam-fugiat-unde-quae-qui-illum-ea.jpg"], ["created_at", "2015-12-01 12:35:32.936924"], ["updated_at", "2015-12-01 12:35:32.936924"]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "posts" SET "cover" = 'image/upload/v1448973334/expedita-reprehenderit-numquam-fugiat-unde-quae-qui-illum-ea.jpg' WHERE "posts"."id" = $1[0m  [["id", 85]]
+  [1m[35m (1.3ms)[0m  COMMIT
+
+
+Started GET "/" for ::1 at 2015-12-01 13:35:50 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (315.7ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 165]]
+  Rendered shared/_navbar.html.erb (29.0ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+Completed 200 OK in 695ms (Views: 690.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-12-01 13:35:53 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (31.8ms)
+  Rendered shared/_navbar.html.erb (3.7ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 206ms (Views: 165.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-12-01 13:35:54 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQDOrbjMrjlYtZvgqaizs0Y_tuDShJ8MyjIjCmG5Z0oJelauo8-KGcrVXMV-miYh1ACzmsPhUodkzx9rZ6AkHJ0XbKeAGrbGTFSTSIwVM8VAatIITMjK4rFoNZul50PZiGCcDXR8-Cf6vq1vUf4jXGiUYRH2lATsfXcW0P_4UkvQlrtLCcnOy6rm3VPJl9ZgFH-P_S4XYl8gzcgx1P4BwCW3-YfT5gT13SEiqWslvBCmeFhGgFw8_RntstJ1NG2L5Z8f4e39hUcZbZG3kCTiLCaVJW73RHDsiLqCRlwUh3-3wdkktxwOmBdhqk3Vr3UMZto&state=66b794b0122d698b6058dffd6807d643ce29065f2fca101d" for ::1 at 2015-12-01 13:35:54 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDOrbjMrjlYtZvgqaizs0Y_tuDShJ8MyjIjCmG5Z0oJelauo8-KGcrVXMV-miYh1ACzmsPhUodkzx9rZ6AkHJ0XbKeAGrbGTFSTSIwVM8VAatIITMjK4rFoNZul50PZiGCcDXR8-Cf6vq1vUf4jXGiUYRH2lATsfXcW0P_4UkvQlrtLCcnOy6rm3VPJl9ZgFH-P_S4XYl8gzcgx1P4BwCW3-YfT5gT13SEiqWslvBCmeFhGgFw8_RntstJ1NG2L5Z8f4e39hUcZbZG3kCTiLCaVJW73RHDsiLqCRlwUh3-3wdkktxwOmBdhqk3Vr3UMZto", "state"=>"66b794b0122d698b6058dffd6807d643ce29065f2fca101d"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10205356638536998"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'raf_972@live.fr' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("provider", "uid", "email", "encrypted_password", "first_name", "last_name", "picture", "token", "token_expiry", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["provider", "facebook"], ["uid", "10205356638536998"], ["email", "raf_972@live.fr"], ["encrypted_password", "$2a$10$gFvnrX.9UpzCSWRXmZZJj.0ELNmH8kqnyKo59UEPPSUFp7kd8LVEO"], ["first_name", "Raphaël"], ["last_name", "Nostress"], ["picture", nil], ["token", "CAAXP7Xu20qkBAJ6wJDb49JZB1WIGoggmXLSuK7OTecLATh3IQhVIg9GNcL8ZAxgTySREUzyLLZCcouZA5P7gwPNjwdK5CYCHgC8JBwWu0jaa1YdkJf5m03plJg2RFT864wnbZA0iYlH6wHY8YCVCC3NfKz1MqDwpw5npxQ3oZCslsDWc3aJRWdsZCJ4hOVsvWZCufCTPqPUZChwZDZD"], ["token_expiry", "2016-01-30 09:02:09.000000"], ["created_at", "2015-12-01 12:35:55.537849"], ["updated_at", "2015-12-01 12:35:55.537849"]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["last_sign_in_at", "2015-12-01 12:35:55.542012"], ["current_sign_in_at", "2015-12-01 12:35:55.542012"], ["last_sign_in_ip", "::1/128"], ["current_sign_in_ip", "::1/128"], ["sign_in_count", 1], ["updated_at", "2015-12-01 12:35:55.543047"], ["id", 216]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 96ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/posts" for ::1 at 2015-12-01 13:35:55 +0100
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 216]]
+  [1m[35mPost Load (0.7ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 176]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 180]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 185]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 167]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 186]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 194]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 173]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 179]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 172]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 166]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 196]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 170]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 203]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 200]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 196]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 190]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 171]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 180]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 184]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 176]]
+  Rendered posts/index.html.erb within layouts/application (77.7ms)
+  Rendered shared/_navbar.html.erb (2.7ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 215ms (Views: 205.5ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/posts/69" for ::1 at 2015-12-01 13:36:01 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"69"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 69]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 216]]
+  [1m[36mUpload Load (0.3ms)[0m  [1mSELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1[0m  [["post_id", 69]]
+  Rendered posts/show.html.erb within layouts/application (13.0ms)
+  Rendered shared/_navbar.html.erb (2.4ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 155ms (Views: 151.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-12-01 13:36:12 +0100
+Processing by PostsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 216]]
+  Rendered posts/_form.html.erb (22.4ms)
+  Rendered posts/new.html.erb within layouts/application (24.1ms)
+  Rendered shared/_navbar.html.erb (2.3ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 153ms (Views: 150.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts" for ::1 at 2015-12-01 13:36:39 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"STxfUJ4AmK0mB6HWfDzweNmmdqQW9H4INLJbUHIGbmY9zc32EYBYLre3Vxwbvyc+I+vURm6SniKUY28o+f2bdA==", "post"=>{"cover"=>#<ActionDispatch::Http::UploadedFile:0x007ffb03b48240 @tempfile=#<Tempfile:/var/folders/_6/00pq8hgn20n_sm6hs83f4sc40000gn/T/RackMultipart20151201-10536-8sdetm.jpg>, @original_filename="food-truck-mozza-and-co-2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[cover]\"; filename=\"food-truck-mozza-and-co-2.jpg\"\r\nContent-Type: image/jpeg\r\n">, "title"=>"COUCOU", "content"=>"http://localhost:3000", "synopsis"=>"coucou", "status"=>"Publié", "category"=>"Société", "city"=>"Paris", "price"=>"19", "licence"=>"Copyright"}, "commit"=>"Mettre en ligne l'article"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 216]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPost Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = 'COUCOU' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "content", "status", "synopsis", "city", "category", "price", "licence", "cover", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"  [["title", "COUCOU"], ["content", "http://localhost:3000"], ["status", "Publié"], ["synopsis", "coucou"], ["city", "Paris"], ["category", "Société"], ["price", 19.0], ["licence", "Copyright"], ["cover", "coucou.jpg"], ["user_id", 216], ["created_at", "2015-12-01 12:36:40.027403"], ["updated_at", "2015-12-01 12:36:40.027403"]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "cover" = 'image/upload/v1448973401/coucou.jpg' WHERE "posts"."id" = $1[0m  [["id", 86]]
+  [1m[35m (6.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/posts/86
+Completed 302 Found in 2279ms (ActiveRecord: 8.1ms)
+
+
+Started GET "/posts/86" for ::1 at 2015-12-01 13:36:42 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"86"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 86]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 216]]
+  [1m[36mUpload Load (0.2ms)[0m  [1mSELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1[0m  [["post_id", 86]]
+  Rendered posts/show.html.erb within layouts/application (1.9ms)
+  Rendered shared/_navbar.html.erb (2.4ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 121ms (Views: 118.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/86/uploads/new" for ::1 at 2015-12-01 13:36:55 +0100
+Processing by UploadsController#new as HTML
+  Parameters: {"post_id"=>"86"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 216]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 86]]
+  Rendered uploads/new.html.erb within layouts/application (5.6ms)
+  Rendered shared/_navbar.html.erb (14.7ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 150ms (Views: 143.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/posts/86/uploads" for ::1 at 2015-12-01 13:37:00 +0100
+Processing by UploadsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gTbkhoq0isQY7juyUTI0qhAX00Kp/zqOY1i2FUuyMXT1x3YgBTRKR4lezXg2sePs6lpxoNGZ2qTDiYJtwEnEZg==", "upload"=>{"photo"=>#<ActionDispatch::Http::UploadedFile:0x007ffb0c1693b0 @tempfile=#<Tempfile:/var/folders/_6/00pq8hgn20n_sm6hs83f4sc40000gn/T/RackMultipart20151201-10536-1qr6k3u.jpeg>, @original_filename="foodtruck3.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"upload[photo]\"; filename=\"foodtruck3.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>""}, "commit"=>"Télécharger", "post_id"=>"86"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 216]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 86]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "uploads" ("description", "photo", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["photo", "70358108030340.jpg"], ["post_id", 86], ["created_at", "2015-12-01 12:37:00.896268"], ["updated_at", "2015-12-01 12:37:00.896268"]]
+  [1m[35mSQL (0.4ms)[0m  UPDATE "uploads" SET "photo" = 'image/upload/v1448973425/70358108030340.jpg' WHERE "uploads"."id" = $1  [["id", 3]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/86
+Completed 302 Found in 5686ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/posts/86" for ::1 at 2015-12-01 13:37:06 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"86"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 86]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 216]]
+  [1m[35mUpload Load (0.2ms)[0m  SELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1  [["post_id", 86]]
+  Rendered posts/show.html.erb within layouts/application (2.6ms)
+  Rendered shared/_navbar.html.erb (2.3ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 126ms (Views: 123.6ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/posts/86/uploads/3" for ::1 at 2015-12-01 13:37:12 +0100
+Processing by UploadsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BATKk13d4j/kInTPBCBkIEpt9QEderwd+kYUW+GXPCNw9Vg10l0ivHWSggVjo7NmsCBX42UcXDdalyAjamzJMQ==", "post_id"=>"86", "id"=>"3"}
+  [1m[36mUser Load (3.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 216]]
+  [1m[35mPost Load (1.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 86]]
+  [1m[36mUpload Load (0.5ms)[0m  [1mSELECT  "uploads".* FROM "uploads" WHERE "uploads"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (1.2ms)[0m  [1mDELETE FROM "uploads" WHERE "uploads"."id" = $1[0m  [["id", 3]]
+  [1m[35m (1.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/posts/86
+Completed 302 Found in 919ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/posts/86" for ::1 at 2015-12-01 13:37:13 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"86"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 86]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 216]]
+  [1m[36mUpload Load (0.3ms)[0m  [1mSELECT "uploads".* FROM "uploads" WHERE "uploads"."post_id" = $1[0m  [["post_id", 86]]
+  Rendered posts/show.html.erb within layouts/application (2.8ms)
+  Rendered shared/_navbar.html.erb (1.9ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 107ms (Views: 104.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2015-12-01 13:37:17 +0100
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 216]]
+  Rendered shared/_navbar.html.erb (3.2ms)
+  Rendered shared/_flashes.html.erb (0.1ms)
+Completed 200 OK in 150ms (Views: 149.3ms | ActiveRecord: 0.2ms)
