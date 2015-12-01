@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  resources :results, only: [:index, :show]
 
   resources :posts do
     resources :uploads
