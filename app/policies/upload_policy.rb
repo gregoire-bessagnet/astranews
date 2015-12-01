@@ -1,4 +1,5 @@
 class UploadPolicy < ApplicationPolicy
+
   class Scope < Scope
     def resolve
       scope
@@ -14,17 +15,16 @@ class UploadPolicy < ApplicationPolicy
   end
 
   def update?
-    is_owner?
+    true
   end
 
   def destroy?
-    is_owner?
+    true
   end
 
   private
 
   def is_owner?
-    record.user == user
+    record.post.user == user
   end
-
 end
