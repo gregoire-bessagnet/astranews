@@ -52,6 +52,12 @@ ActiveRecord::Schema.define(version: 20151202105042) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "cover"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.integer  "price_cents",      default: 0,     null: false
+    t.string   "price_currency",   default: "EUR", null: false
     t.float    "latitude"
     t.float    "longitude"
   end
