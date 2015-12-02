@@ -19,6 +19,9 @@ class Post < ActiveRecord::Base
 
   mount_uploader :cover, ImageUploader
 
+  geocoded_by :city
+  after_validation :geocode
+
   include PgSearch
   pg_search_scope :search,
     against: [ :title, :synopsis, :content ],
