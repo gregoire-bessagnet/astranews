@@ -24,7 +24,7 @@ class Post < ActiveRecord::Base
 
   include PgSearch
   pg_search_scope :search,
-    against: [ :title, :synopsis, :content ],
+    against: [ :title, :synopsis, :content, :city ],
     associated_against: {
       uploads: [ :description ]
     }
