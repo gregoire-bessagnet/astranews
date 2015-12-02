@@ -22,10 +22,16 @@
               <%= post.synopsis %>
             </h6>
             <p>
-              <% if post.is_faved_by(current_user) %>
-                <%= link_to "</3", fav_path(post.is_faved_by(current_user)), method: :delete %>
-              <% else %>
-                <%= link_to "<3", post_favs_path(post) , method: :post %>
+              <% if current_user %>
+                <% if post.is_faved_by(current_user) %>
+                  <%= link_to fav_path(post.is_faved_by(current_user)), method: :delete do %>
+                    <i class="fa fa-heart faved faved-on"></i>
+                  <% end %>
+                <% else %>
+                  <%= link_to post_favs_path(post), method: :post do %>
+                    <i class="fa fa-heart faved faved-off"></i>
+                  <% end %>
+                <% end %>
               <% end %>
             </p>
             <% if policy(post).destroy? %>
