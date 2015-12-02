@@ -9,9 +9,6 @@ class User < ActiveRecord::Base
 
   mount_uploader :picture, ImageUploader
 
-  include PgSearch
-  multisearchable against: [:first_name, :last_name]
-
   # validates :speciality, presence: true
 
   def self.find_for_facebook_oauth(auth)
