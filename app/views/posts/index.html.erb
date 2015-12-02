@@ -21,6 +21,13 @@
               Synopsis :
               <%= post.synopsis %>
             </h6>
+            <p>
+              <% if post.is_faved_by(current_user) %>
+                <%= link_to "</3", fav_path(post.is_faved_by(current_user)), method: :delete %>
+              <% else %>
+                <%= link_to "<3", post_favs_path(post) , method: :post %>
+              <% end %>
+            </p>
             <% if policy(post).destroy? %>
             <%= link_to "supprimer l'article", post_path(post),
               data: { confirm: 'Are you sure?' }, method: :delete %>

@@ -2,8 +2,8 @@ class Post < ActiveRecord::Base
   has_many :uploads, dependent: :destroy
   belongs_to :user
 
-  has_many :fav_posts
-  has_many :favorited_by, through: :fav_posts, source: :user
+  has_many :favs
+
 
   CATEGORIES = ["Société", "Culture", "Science", "Arts", "Médias", "Finance", "Economie"]
   STATUS = ["Publié", "Brouillon"]
@@ -29,4 +29,7 @@ class Post < ActiveRecord::Base
       uploads: [ :description ]
     }
 
+  def is_faved_by(user)
+    self.favs.where(user: user).take
+  end
 end

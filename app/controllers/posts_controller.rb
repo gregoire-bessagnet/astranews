@@ -4,11 +4,9 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = policy_scope(Post)
+    @posts = policy_scope(Post).includes(:favs)
     if params[:search] and not params[:search][:query].blank?
-      @posts = Post.search params[:search][:query]
-    else
-      @posts = Post.all
+      @posts = @posts.search params[:search][:query]
     end
   end
 
