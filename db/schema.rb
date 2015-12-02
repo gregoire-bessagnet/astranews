@@ -16,16 +16,6 @@ ActiveRecord::Schema.define(version: 20151202105042) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "favoris", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "favoris", ["post_id"], name: "index_favoris_on_post_id", using: :btree
-  add_index "favoris", ["user_id"], name: "index_favoris_on_user_id", using: :btree
-
   create_table "favs", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "post_id"
@@ -35,18 +25,6 @@ ActiveRecord::Schema.define(version: 20151202105042) do
 
   add_index "favs", ["post_id"], name: "index_favs_on_post_id", using: :btree
   add_index "favs", ["user_id"], name: "index_favs_on_user_id", using: :btree
-
-  create_table "orders", force: :cascade do |t|
-    t.string   "state"
-    t.integer  "post_id"
-    t.integer  "amount_cents",    default: 0,     null: false
-    t.string   "amount_currency", default: "EUR", null: false
-    t.json     "payment"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-  end
-
-  add_index "orders", ["post_id"], name: "index_orders_on_post_id", using: :btree
 
   create_table "pg_search_documents", force: :cascade do |t|
     t.text     "content"
@@ -68,13 +46,16 @@ ActiveRecord::Schema.define(version: 20151202105042) do
     t.string   "category"
     t.integer  "character_number"
     t.string   "city"
+    t.float    "price"
     t.string   "licence"
     t.integer  "user_id"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.string   "cover"
-    t.integer  "price_cents",      default: 0,     null: false
-    t.string   "price_currency",   default: "EUR", null: false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
     t.float    "latitude"
     t.float    "longitude"
   end
@@ -130,11 +111,8 @@ ActiveRecord::Schema.define(version: 20151202105042) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "favoris", "posts"
-  add_foreign_key "favoris", "users"
   add_foreign_key "favs", "posts"
   add_foreign_key "favs", "users"
-  add_foreign_key "orders", "posts"
   add_foreign_key "posts", "users"
   add_foreign_key "uploads", "posts"
 end
