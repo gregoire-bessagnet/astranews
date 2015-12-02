@@ -2,6 +2,9 @@ class Post < ActiveRecord::Base
   has_many :uploads, dependent: :destroy
   belongs_to :user
 
+  has_many :fav_posts
+  has_many :favorited_by, through: :fav_posts, source: :user
+
   CATEGORIES = ["Société", "Culture", "Science", "Arts", "Médias", "Finance", "Economie"]
   STATUS = ["Publié", "Brouillon"]
   LICENCE = ["Copyright", "Creative Commons", "Libre"]

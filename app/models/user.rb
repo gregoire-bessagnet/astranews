@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
 
   has_many :posts, dependent: :destroy
 
+  has_many :fav_posts
+  has_many :favs, through: :fav_posts, source: :post
+
   mount_uploader :picture, ImageUploader
 
   include PgSearch

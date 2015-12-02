@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
 
+  get 'favs/create'
+
+  get 'favs/destroy'
+
   root to: 'pages#home'
 
 
   resources :posts do
+    resources :favs, only: [:create, :destroy]
     resources :uploads
   end
 
