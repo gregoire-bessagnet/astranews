@@ -4,7 +4,4 @@ class Upload < ActiveRecord::Base
   mount_uploader :photo, ImageUploader
 
 
-  include PgSearch
-  multisearchable :against => [:description]
-
 end

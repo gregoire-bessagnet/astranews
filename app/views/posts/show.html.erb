@@ -63,6 +63,14 @@
               <% end %>
             </ul>
           </div>
+
+            <%= javascript_tag do %>
+                $(document).ready(function() {
+                alert('<%= j @alert_message %>');
+                                                });
+            <% end %>
+
+
       </div>
   </div>
 </div>

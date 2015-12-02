@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @alert_message = "Vous lisez #{@post.title}"
   end
 
   def new
