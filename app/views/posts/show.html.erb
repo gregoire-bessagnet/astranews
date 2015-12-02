@@ -19,7 +19,18 @@
              <h4><%= @post.introduction %></h4>
 
 
-               <p><%= markdown @post.content %></p>
+            <% if user_signed_in? %>
+
+                <p><%= markdown @post.content %></p>
+
+            <% else %>
+
+                <p class="post-content-unlogged"><%= markdown @post.content %></p>
+
+            <% end %>
+
+
+
 
              <div class="synops">
               <h5>
