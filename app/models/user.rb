@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :posts, dependent: :destroy
 
-  has_many :favs
+  has_many :favs, dependent: :destroy
 
   mount_uploader :picture, ImageUploader
 

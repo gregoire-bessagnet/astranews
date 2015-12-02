@@ -12,9 +12,9 @@ end
 
 
 puts "----Destroying Users"
-User.destroy_all
+  User.destroy_all
 puts "----Destroying Posts"
-Post.destroy_all
+  Post.destroy_all
 
 puts "----Seeding Users"
 
@@ -74,7 +74,7 @@ puts "----Seeding Posts"
       status:["Publié", "Brouillon"].sample,
       category:["Société", "Culture", "Science", "Arts", "Médias", "Finance", "Economie"].sample,
       character_number:Faker::Number.between(80, 300),
-      city: Faker::Address.fr_city(10),
+      city: Faker::Address.city,
       price_cents:Faker::Number.between(1, 10),
       licence:["Copyright", "Creative Commons", "Libre"].sample,
       user_id: users[rand(40)].id,
