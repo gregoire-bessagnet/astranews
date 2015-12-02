@@ -49,9 +49,11 @@ ActiveRecord::Schema.define(version: 20151202105042) do
     t.float    "price"
     t.string   "licence"
     t.integer  "user_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "cover"
+    t.integer  "price_cents",      default: 0,     null: false
+    t.string   "price_currency",   default: "EUR", null: false
     t.float    "latitude"
     t.float    "longitude"
   end
