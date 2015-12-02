@@ -14,7 +14,6 @@ class Post < ActiveRecord::Base
   validates :city, presence: true
   validates :category, inclusion: { in: Post::CATEGORIES, allow_nil: false }
   validates :status, inclusion: { in: Post::STATUS, allow_nil: false }
-  validates :price_cents, presence: true
   validates :licence, presence: true, inclusion: { in: Post::LICENCE, allow_nil: false }
 
   mount_uploader :cover, ImageUploader
