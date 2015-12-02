@@ -8,7 +8,7 @@
           <div class="cover-filter"></div>
         </div>
 
-        <!-- <h4><%= @post.city %></h4> -->
+
 
           <div class="article">
 
@@ -55,7 +55,7 @@
               <%= link_to "Acheter l'article", edit_post_path(@post), class:'btn btn-primary btn-sm' %> <%= link_to "Modifier l'article", edit_post_path(@post), class:"btn btn-primary btn-sm" %> <%= link_to "Voir tous les articles", posts_path, class:'btn btn-default btn-sm' %>
             </div>
           <div class="col-md-12">
-            <h2>Les photos associées</h2>
+            <h2>Les photos associées    <h4><%= @post.city %></h4> </h2>
             <%= link_to "Add photo", new_post_upload_path(@post), class: "btn btn-default" %>
 
             <ul class="list-unstyled">

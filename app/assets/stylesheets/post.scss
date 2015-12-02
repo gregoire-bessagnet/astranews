@@ -5,14 +5,23 @@
 
 
 .card {
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background: rgba(0, 0, 0, 0.8);
+  opacity:0.5;
   border:1px solid grey;
   border-radius:3px;
   padding: 15px;
   margin: 15px auto;
   height:250px;
   position: relative;
+  display:block;
   padding-bottom: 200px;
   margin-bottom: 40px;
+  color:white;
+  padding: 185px 10px 74px 73px;
 }
 
 .card h2 {
@@ -20,9 +29,16 @@
   text-transform:uppercase;
 }
 
-.card p {
-  font-size:14px;
+.card-filter-home span {
+  font-size:18px;
+  text-decoration:none;
+  color:white;
+  position:absolute;
+  display:block;
+  z-index:1;
+
 }
+
 
 .carding h1 {
   text-align: center;
@@ -47,14 +63,14 @@
 }
 
 .card-filter {
-color: #7FB8C8;
-padding: 15px;
-position: absolute;
-top:0;
-bottom:0;
-left:0;
-right:0;
-background: rgba(0.1, 0.1, 0.1, 0.5);
+  color: #7FB8C8;
+  padding: 15px;
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background: rgba(0.1, 0.1, 0.1, 0.5);
   a {
   color:white;
   }
@@ -183,4 +199,15 @@ font-size: 26px;
 
 .img-responsive {
 margin-top: 22px;
+}
+
+.card-filter-home {
+
+  // background: #abbaab; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(to left, #abbaab , #ffffff); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(to left, #abbaab , #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card-filter-home a:hover {
+  text-decoration:none;
 }
