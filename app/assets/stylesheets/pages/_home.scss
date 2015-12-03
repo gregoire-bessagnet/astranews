@@ -143,16 +143,33 @@
     height: 240px;
     overflow: hidden;
 
-    &:hover {
-      .card-filter-home {
-        &:after {
-          transform: translateY(0);
-        }
-      }
-
-      .card-details {
-        transform: translateY(0);
-      }
+    .card-fav {
+      position: absolute;
+      right: 40px;
+      bottom: 25px;
+    }
+    .card-post-author {
+      color: white;
+      font-style: italic;
+    }
+    .card-post-date {
+      color: white;
+      position: absolute;
+      bottom: 20px;
+      left: 40px;
+      font-size: 12px;
+    }
+    .card-post-cat {
+      color:white;
+      text-transform: uppercase;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      background: #E22;
+      display: inline-block;
+      padding: 0 4px;
+      color: white;
+      font-family: Oswald;
     }
 
     a { text-decoration: none; }
@@ -162,6 +179,15 @@
       height: 220px;
       margin: 0 10px;
       overflow: hidden;
+      border-radius: 5px;
+      a {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
 
       &:after {
         content: "";
@@ -170,18 +196,12 @@
         bottom: 0;
         left: 0;
         right: 0;
-        //background-color: rgba(0,0,0,0.4);
-        background-color: rgba(50, 183, 150, 0.6);
-        transform: translateY(-100%);
+        background-color: rgba(0,0,0,0.4);
+        // transform: translateY(-100%);
 
-        transition-property: all;
-        transition-duration: .5s;
-        transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-      }
-
-      .card-fav {
-        position: absolute;
-        right: 40px;
+        // transition-property: all;
+        // transition-duration: .5s;
+        // transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
       }
     }
 
@@ -194,10 +214,10 @@
       right: 0;
       left: 0;
 
-      transform: translateY(100%);
-      transition-property: all;
-      transition-duration: .5s;
-      transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+      // transform: translateY(100%);
+      // transition-property: all;
+      // transition-duration: .5s;
+      // transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 
       h3 {
         text-transform: uppcase;
