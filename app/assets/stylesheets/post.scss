@@ -1,9 +1,3 @@
-// Place all the styles related to the post controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-
 .card {
   top:0;
   left:0;
@@ -173,6 +167,19 @@ body {
   }
 }
 
+.article:after {
+  content: "";
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:30px;
+  background: linear-gradient(to top,
+     rgba(255,255,255, 1) 20%,
+     rgba(255,255,255, 0) 80%
+  );
+}
+
 .picture-post {
   text-align: -webkit-center;
 }
@@ -211,3 +218,6 @@ margin-top: 22px;
 .card-filter-home a:hover {
   text-decoration:none;
 }
+
+
+
