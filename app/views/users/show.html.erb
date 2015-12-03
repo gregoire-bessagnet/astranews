@@ -35,8 +35,8 @@
           <% end %>
         </li>
       </ul>
-
     </div>
+
     <div class="text-center">
       <ul class="list-unstyled">
         <li>
@@ -66,50 +66,42 @@
         <i class="fa fa-envelope-o"></i> Envoyer un message
         <% end %>
       </div>
-
-    </div>
-  </div>
-  <hr>
-  <div class="container">
-    <div class="col-xs-12 ">
-      <div class="">
-        <h3>Résumé</h3>
+      </div>
+      <hr>
+      <div class="col-xs-12 ">
+        <h4>Mon parcours</h4>
         <h5><%= @user.biography %></h5>
       </div>
     </div>
 
-    <hr>
-    <h4>Articles de <%= @user.first_name %> <%=@user.last_name %> </h4>
-
-    <% @user.posts.each do |post| %>
-
-    <div class="col-xs-6 col-lg-4">
-      <div class="card" style="background: url(<%= cloudinary_url post.cover %>); background-size:cover">
-        <div class="card-filter">
-          <h2>
-            <%= link_to post_path(post) do %>
-            <%= post.title %>
-            <% end %>
-          </h2>
-          <p>
-            Le <%= post.created_at.strftime("%d %b. %Y") %>
-          </p>
-          <h6>
-            Synopsis :
-            <%= post.synopsis %>
-          </h6>
-
-          <% if policy(post).destroy? %>
-          <%= link_to "supprimer l'article",  post_path(post),
-          data: { confirm: 'Are you sure?' }, method: :delete %>
-          <% end %>
+    <div class="background-profile">
+      <h4>Articles de <%= @user.first_name %> <%=@user.last_name %></h4>
+      <% @user.posts.each do |post| %>
+        <div class="col-xs-6 col-lg-4">
+          <div class="card" style="background: url(<%= cloudinary_url post.cover %>); background-size:cover">
+            <div class="card-filter">
+              <h2>
+                <%= link_to post_path(post) do %>
+                  <%= post.title %>
+                <% end %>
+              </h2>
+              <p>
+                Le <%= post.created_at.strftime("%d %b. %Y") %>
+              </p>
+              <h6>
+                Synopsis :
+                <%= post.synopsis %>
+              </h6>
+              <% if policy(post).destroy? %>
+                <%= link_to "supprimer l'article",  post_path(post), data: { confirm: 'Are you sure?' }, method: :delete %>
+              <% end %>
+            </div>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>
-
 
 
 
