@@ -23,6 +23,7 @@
           <div class="card-filter-home" style="background: url(<%= cloudinary_url post.cover %>); background-size:cover"></div>
           <div class="card-details">
           <h3><%= post.title %></h3>
+          <h3><%= post.user.first_name %></h3>
             <%= render 'favorites', post: post %>
           </div>
           <% end %>
