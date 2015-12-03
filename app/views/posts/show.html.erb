@@ -9,24 +9,28 @@
                <div class="tags"> <%= @post.category %></div>
                <h1 class="article-headline"><%= @post.title %></h1>
                <p class="article-meta">Posté le <%= @post.created_at.strftime("%b %d, %Y")%> | Rédaction de <strong> <%= @post.city %> </strong> </p>
-               <h4><%= @post.introduction %></h4>
-                 <p><%= markdown @post.content %></p>
-               <div class="synops">
-                <h5>
-                  Synopsis
-                </h5>
-                <h4 class="article-excerpt">
-                  <%= @post.synopsis %>
-                </h4>
-              </div>
-              <div class="synops">
-                <h5>
-                  Informations relatives
-                </h5>
-                <p>Nombre de caractères : <%= @post.character_number %></p>
-                <p>Licence de droit :<%= @post.licence %></p>
-                <%= link_to "Acheter l'article", edit_post_path(@post), class:'btn btn-primary btn-sm' %> <%= link_to "Modifier l'article", edit_post_path(@post), class:"btn btn-primary btn-sm" %> <%= link_to "Voir tous les articles", posts_path, class:'btn btn-default btn-sm' %>
-              </div>
+
+
+                <div class="synopsis">
+                    <h5>
+                        Synopsis
+                    </h5>
+                    <h4 class="article-excerpt">
+                      <%= @post.synopsis %>
+                    </h4>
+                </div>
+
+
+                <div class="text-center">
+                    <%= link_to "Acheter l'article", edit_post_path(@post), class: "btn btn-success btn-md" %>
+                    <%= link_to "Modifier l'article", edit_post_path(@post), class: "btn btn-success btn-md" %>
+                    <%= link_to "Voir tous les articles", posts_path, class: "btn btn-default btn-md" %>
+                </div>
+
+
+                <p><%= markdown @post.content %></p>
+
+
             <div class="col-md-12">
               <h2>Les photos associées</h2>
               <%= link_to "Add photo", new_post_upload_path(@post), class: "btn btn-default" %>
@@ -43,6 +47,20 @@
                 <% end %>
               </ul>
             </div>
+
+
+            <div class="synops">
+                <h5>
+                  Informations relatives
+                </h5>
+                <p>Nombre de caractères : <%= @post.character_number %></p>
+                <p>Licence de droit :<%= @post.licence %></p>
+            </div>
+
+
+
+
+
               <%= javascript_tag do %>
                   $(document).ready(function() {
                   alert('<%= j @alert_message %>');
