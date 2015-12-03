@@ -1,6 +1,5 @@
 <h2 class="text-center">Modifier mon compte </h2>
 
-
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 <%= f.error_notification %>
 <div class="container">
@@ -28,7 +27,7 @@
       </div>
       <%= f.input :picture, label: 'Photo de profil' %>
       <%= f.input :phone_number, label: 'Téléphone', placeholder: "0600000000" %>
-      <%= f.input :address, as: :text, label: 'Adresse', placeholder: "2, place de la liberté" %>
+      <%= f.input :address, label: 'Adresse', placeholder: "2, place de la liberté" %>
       <hr>
 
       <%= f.input :speciality, label: 'Spécialité', placeholder: "pigiste, jri, photographe..." %>

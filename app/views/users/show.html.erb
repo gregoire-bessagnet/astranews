@@ -1,105 +1,95 @@
 <div class="diving">
-
   <div class="container">
     <div class="row">
-
       <div class="text-center">
         <%= image_tag @user.picture, class:"img-circle" %>
       </div>
       <h1 class="text-center"> <strong>  <%= @user.first_name.capitalize %> <%=@user.last_name.capitalize %> </strong> </h1>
-    </div>
-    <div class="text-center">
-      <% if current_user == @user %>
-      <p><%= link_to edit_user_registration_path do %>
-        <i class="fa fa-pencil-square-o"></i> <%= t ".profile", default: "Modifier mon profil" %>
+
+      <ul class="list-unstyled list-inline text-center">
+        <li>
+          <% if @user.sociallink1.blank? %>
+            <strong>Twitter</strong> : non renseigné
+          <% else %>
+            <%= link_to @user.sociallink1, target: "_blank" do %>
+              <i class="fa fa-twitter"></i>
+            <% end %>
+          <% end %>
+        </li>
+        <li>
+          <% if @user.sociallink2.blank? %>
+            <strong>Facebook</strong> : non renseigné
+          <% else %>
+            <%= link_to @user.sociallink2, target: "_blank" do %>
+              <i class="fa fa-facebook"></i>
+            <% end %>
+          <% end %>
+        </li>
+        <li>
+          <% if @user.sociallink3.blank? %>
+            <strong>Linkedin</strong> : non renseigné
+          <% else %>
+            <%= link_to @user.sociallink3, target: "_blank" do %>
+              <i class="fa fa-linkedin"></i>
+            <% end %>
+          <% end %>
+        </li>
+      </ul>
+
+      <div class="text-center">
+        <%= link_to "mailto:" + @user.email do %>
+          <i class="fa fa-envelope-o"></i> Envoyer un message
         <% end %>
 
-        <% end %>
-
-        <%= link_to "" do %>
-        <i class="fa fa-envelope-o"></i>  <a href="mailto:<%= @user.email %>">Message privé</a>
-        <% end %>
-      </p>
+      </div>
     </div>
     <div class="text-center">
       <ul class="list-unstyled">
         <li>
           <% if @user.speciality.blank? %>
-          <strong>Fonction</strong> : non renseigné
+            <strong>Fonction</strong> : non renseigné
           <% else %>
-          <strong>Fonction</strong> : <%= @user.speciality.upcase %>
+            <strong>Fonction</strong> : <%= @user.speciality.upcase %>
           <% end %>
         </li>
         <li>
           <% if @user.company_name.blank? %>
-          <strong>Agence</strong> : non renseigné
+            <strong>Agence</strong> : non renseigné
           <% else %>
-          <strong>Agence</strong> : <%= @user.company_name.upcase %>
+            <strong>Agence</strong> : <%= @user.company_name.upcase %>
           <% end %>
         </li>
         <li>
           <% if @user.website_url.blank? %>
-          <strong>Site web</strong> : non renseigné
+            <strong>Site web</strong> : non renseigné
           <% else %>
-          <strong>Site web</strong> : <%= link_to @user.website_url, @user.website_url, target: "_blank" %>
-          <% end %>
-        </li>
-        <li>
-          <% if @user.sociallink1.blank? %>
-          <strong>Twitter</strong> : non renseigné
-          <% else %>
-          <%= link_to @user.sociallink1, target: "_blank" do %>
-          <i class="fa fa-twitter"></i>
-          <% end %>
-          <% end %>
-        </li>
-        <li>
-          <% if @user.sociallink2.blank? %>
-          <strong>Facebook</strong> : non renseigné
-          <% else %>
-          <%= link_to @user.sociallink2, target: "_blank" do %>
-          <i class="fa fa-facebook"></i>
-          <% end %>
-          <% end %>
-        </li>
-        <li>
-          <% if @user.sociallink3.blank? %>
-          <strong>Linkedin</strong> : non renseigné
-          <% else %>
-          <%= link_to @user.sociallink3, target: "_blank" do %>
-          <i class="fa fa-linkedin"></i>
-          <% end %>
+            <strong>Site web</strong> : <%= link_to @user.website_url, @user.website_url, target: "_blank" %>
           <% end %>
         </li>
       </ul>
+
     </div>
   </div>
   <hr>
   <div class="container">
     <div class="col-xs-12 ">
       <div class="">
-        <h4>Description</h4>
+        <h3>Résumé</h3>
         <h5><%= @user.biography %></h5>
-
       </div>
     </div>
 
     <hr>
-    <div class="">
+    <h4>Articles de <%= @user.first_name %> <%=@user.last_name %> </h4>
 
-
-
-
-      <h4>Articles de <%= @user.first_name %> <%=@user.last_name %> </h4>
-
-      <% @user.posts.each do |post| %>
+    <% @user.posts.each do |post| %>
 
       <div class="col-xs-6 col-lg-4">
         <div class="card" style="background: url(<%= cloudinary_url post.cover %>); background-size:cover">
           <div class="card-filter">
             <h2>
               <%= link_to post_path(post) do %>
-              <%= post.title %>
+                <%= post.title %>
               <% end %>
             </h2>
             <p>
@@ -111,20 +101,15 @@
             </h6>
 
             <% if policy(post).destroy? %>
-            <%= link_to "supprimer l'article",  post_path(post),
-            data: { confirm: 'Are you sure?' }, method: :delete %>
+              <%= link_to "supprimer l'article",  post_path(post),
+              data: { confirm: 'Are you sure?' }, method: :delete %>
             <% end %>
-
           </div>
         </div>
-
       </div>
-
-      <% end %>
-
-    </div>
+    <% end %>
   </div>
-
+</div>
 
 
 
