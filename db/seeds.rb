@@ -42,7 +42,8 @@ puts "----Seeding Users"
     address: Faker::Address.fr_zip_and_city_in_region,
     password: "123soleil",
     password_confirmation: "123soleil",
-    picture: "http://api.randomuser.me/portraits/med/#{genre}/#{rand(0..61)}.jpg", # => TODO
+    # picture: "http://api.randomuser.me/portraits/med/#{genre}/#{rand(0..61)}.jpg", # => TODO
+    picture: "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg",
     email: Faker::Internet.free_email("#{first_name}.#{last_name}"),
     biography: Faker::Lorem.paragraph,
     company_name: company_name,
