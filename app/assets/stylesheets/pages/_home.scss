@@ -138,7 +138,10 @@
   }
 
   .container-cards {
+    position: relative;
     padding: 20px 0;
+    height: 240px;
+    overflow: hidden;
 
     &:hover {
       .card-filter-home {
@@ -157,7 +160,7 @@
     .card-filter-home {
       position: relative;
       height: 220px;
-      margin: 0 20px;
+      margin: 0 10px;
       overflow: hidden;
 
       &:after {
@@ -167,7 +170,8 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: rgba(0,0,0,0.4);
+        //background-color: rgba(0,0,0,0.4);
+        background-color: rgba(50, 183, 150, 0.6);
         transform: translateY(-100%);
 
         transition-property: all;
@@ -196,7 +200,9 @@
       transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 
       h3 {
-
+        text-transform: uppcase;
+        color: #fff;
+        font-size: 19px;
       }
     }
   }

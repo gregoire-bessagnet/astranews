@@ -1,7 +1,7 @@
 <div class="diving">
   <div class="container">
     <div class="row">
-      <div class="text-center">
+      <div class="text-center ">
         <%= image_tag @user.picture, class:"img-circle" %>
       </div>
       <h1 class="text-center"> <strong>  <%= @user.first_name.capitalize %> <%=@user.last_name.capitalize %> </strong> </h1>
@@ -37,10 +37,9 @@
       </ul>
 
       <div class="text-center">
-        <%= link_to "mailto:" + @user.email do %>
+        <%= link_to "mailto:" + @user.email, class: "btn btn-success" do %>
           <i class="fa fa-envelope-o"></i> Envoyer un message
         <% end %>
-
       </div>
     </div>
     <div class="text-center">
