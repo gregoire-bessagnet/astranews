@@ -12,16 +12,24 @@
 
 
                 <div class="synopsis">
-                    <h5>
+                    <h2>
                         Synopsis
-                    </h5>
+                    </h2>
                     <h4 class="article-excerpt">
                       <%= @post.synopsis %>
                     </h4>
                 </div>
 
 
-                <div class="text-center">
+                <div class="extra-info">
+                    <h2> Informations relatives </h2>
+                    <p>Nombre de caractères : <%= @post.character_number %></p>
+                    <p>Licence de droit : <%= @post.licence %></p>
+                    <p class="label label-danger">Prix : <%= @post.price %> €</p>
+               </div>
+
+
+                <div class="text-center buttons-view-post">
                     <%= link_to "Acheter l'article", edit_post_path(@post), class: "btn btn-success btn-md" %>
                     <%= link_to "Modifier l'article", edit_post_path(@post), class: "btn btn-success btn-md" %>
                     <%= link_to "Voir tous les articles", posts_path, class: "btn btn-default btn-md" %>
@@ -48,16 +56,6 @@
               </ul>
             </div>
 
-
-            <div class="extra-info">
-                <h5>
-                  Informations relatives
-                </h5>
-                <p>Nombre de caractères : <%= @post.character_number %></p>
-
-                <p>Licence de droit :<%= @post.licence %></p>
-                <p>Prix : <%= @post.price %> €</p>
-            </div>
 
 
 

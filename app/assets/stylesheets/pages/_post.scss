@@ -2,8 +2,6 @@
   .container-post {
     padding: 0;
 
-
-
     .img-post-header {
       width: 100%;
     }
@@ -157,7 +155,7 @@
       font-family: Lato;
     }
     &-excerpt {
-      font-weight: bold;
+      font-weight: thin;
     }
     h2 {
       font-size: 26px;
@@ -186,21 +184,30 @@
 
 
   .synopsis {
-     background-color: grey;
+     background-color: #F2F2F2;
      margin-bottom: 20px;
      padding-bottom: 10px;
      padding-left: 20px;
      padding-right: 20px;
+
+     h2 {
+      text-transform:uppercase;
+     }
   }
 
   .extra-info {
-     background-color: grey;
-     margin-bottom: 20px;
+     background-color: #F2F2F2;
+     margin-bottom: 40px;
      padding-bottom: 10px;
      padding-left: 20px;
      padding-right: 20px;
+     font-family:Lato;
+
   }
 
+  .buttons-view-post{
+    margin-bottom:30px;
+  }
 
 
   .article:after {
@@ -232,7 +239,7 @@
 
   p {
       margin: 0 0 11px;
-      margin-top: 25px;
+      line-height:29px;
     }
 
   .article h2 {
