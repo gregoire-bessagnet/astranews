@@ -43,29 +43,29 @@
       <ul class="list-unstyled">
         <li>
           <% if @user.speciality.blank? %>
-          <strong>Fonction</strong> : non renseigné
+            <strong>Fonction</strong> : non renseigné
           <% else %>
-          <strong>Fonction</strong> : <%= @user.speciality.upcase %>
+            <strong>Fonction</strong> : <%= @user.speciality.upcase %>
           <% end %>
         </li>
         <li>
           <% if @user.company_name.blank? %>
-          <strong>Agence</strong> : non renseigné
+            <strong>Agence</strong> : non renseigné
           <% else %>
-          <strong>Agence</strong> : <%= @user.company_name.upcase %>
+            <strong>Agence</strong> : <%= @user.company_name.upcase %>
           <% end %>
         </li>
         <li>
           <% if @user.website_url.blank? %>
-          <strong>Site web</strong> : non renseigné
+            <strong>Site web</strong> : non renseigné
           <% else %>
-          <strong>Site web</strong> : <%= link_to @user.website_url, @user.website_url, target: "_blank" %>
+            <strong>Site web</strong> : <%= link_to @user.website_url, @user.website_url, target: "_blank" %>
           <% end %>
         </li>
       </ul>
       <div class="text-center">
         <%= link_to "mailto:" + @user.email, class: "btn btn-success" do %>
-        <i class="fa fa-envelope-o"></i> Envoyer un message
+          <i class="fa fa-envelope-o"></i> Envoyer un message
         <% end %>
       </div>
       </div>
