@@ -1,5 +1,17 @@
 // Your footer style
 .footer{
     padding : 25px 0px;
-    background-color : #484B4B;
+    background-color : #589596;
+    width:100%;
+}
+.footer a {
+  color:whitesmoke;
+  &:hover {
+    color:#c2d1d1;
+  }
+}
+
+.copyright {
+  color:whitesmoke;
+  font-size:16px;
 }

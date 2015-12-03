@@ -64,6 +64,7 @@
   font-family: 'Chivo', sans-serif;
   font-size:45px;
   color:#5E9E9F;
+  padding-bottom: 13px;
 }
 
 .header_logo a:link a:visited a:hover, a:focus {
@@ -103,7 +104,7 @@
 margin-top:50px;
 text-align: left;
 position: absolute;
-width: 500px;
+width: 100%;
 font-size: 40px;
 display:inline;
 }
@@ -116,3 +117,6 @@ display:inline;
 }
 
 
+#home-articles {
+  padding-top: 35px;
+}
