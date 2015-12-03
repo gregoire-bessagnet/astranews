@@ -27,8 +27,12 @@
         </div>
 
         <div class="text-center buttons-view-post">
-          <%= link_to "Acheter l'article", edit_post_path(@post), class: "btn btn-success btn-md" %>
-          <%= link_to "Modifier l'article", edit_post_path(@post), class: "btn btn-success btn-md" %>
+          <% if @post.user == current_user %>
+            <%= link_to "Modifier l'article", edit_post_path(@post), class: "btn btn-success btn-md" %>
+          <% else %>
+            <%= link_to "Acheter l'article", edit_post_path(@post), class: "btn btn-success btn-md" %>
+          <% end %>
+
           <%= link_to "Voir tous les articles", posts_path, class: "btn btn-default btn-md" %>
         </div>
 
