@@ -34,6 +34,13 @@
                 <i class="fa fa-plus"></i>  <%= t ".profile", default: "Mes articles" %>
               <% end %>
             </li>
+
+            <li>
+              <%= link_to favs_path do %>
+                <i class="fa fa-heart-o"></i>  <%= t ".profile", default: "Mes favoris" %>
+              <% end %>
+            </li>
+
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>

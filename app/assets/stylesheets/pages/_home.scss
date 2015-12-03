@@ -43,7 +43,6 @@
 
 #search {
   width: 100%;
-
 }
 
 
@@ -79,7 +78,6 @@
 }
 
 
-
 .homeblocs{
   margin-top:30px;
   height:300px;
@@ -98,6 +96,31 @@
     padding:5px;
 }
 
+
 #home-articles {
   padding-top: 35px;
 }
+
+
+.footer {
+margin-top:50px;
+text-align: left;
+position: absolute;
+width: 500px;
+font-size: 40px;
+display:inline;
+}
+
+
+.list-footer-inline a {
+  margin-right: 12px;
+  color:#5E9E9F;
+  display:inline;
+}
+
+.card-fav {
+  position: absolute;
+  bottom: 60px;
+  right: 40px;
+}
+
