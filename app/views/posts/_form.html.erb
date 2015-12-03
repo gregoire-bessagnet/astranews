@@ -19,7 +19,6 @@
       <%= f.input :city, label: 'Localisation', placeholder: "Ex: Liban, Paris" %>
       <%= f.input :licence, label: 'Choisir la licence', collection: Post::LICENCE, selected: Post::LICENCE.first %>
       <%= f.input :price, label: 'Choisir le prix', placeholder: "Tapez ici votre article" %>
-
       <%= f.submit "Publier l'article", class: "btn btn-success text-center" %>
       <% end %>
     </div>
