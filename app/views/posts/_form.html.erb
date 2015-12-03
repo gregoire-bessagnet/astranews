@@ -13,7 +13,6 @@
       <%= f.input :category, collection: Post::CATEGORIES, selected: Post::CATEGORIES.first %>
       <%= f.input :city, label: 'localisation', placeholder: "Ex: Liban, Paris" %>
       <div class="row">
-        <div class= "col-xs-6"> <%= f.input :price_cents, label: 'Le prix', placeholder: "Choisir le prix de l'article" %> </div>
         <div class= "col-xs-6"><%= f.input :licence, label: 'Choisir la licence', collection: Post::LICENCE, selected: Post::LICENCE.first %>
         </div>
       </div>
