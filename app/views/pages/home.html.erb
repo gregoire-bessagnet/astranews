@@ -1,10 +1,11 @@
 <div class="coverhome">
   <div class="coverhome-filter">
+
     <div class="container">
+
       <div class="buttonhome">
         <h1>Hello !</h1>
       </div>
-
       <div class="text-center">
         <div class="bloctwo">
           <%= simple_form_for :search, url: posts_path, method: :get, :html => { :class => 'form-inline' } do |f| %>
@@ -17,7 +18,8 @@
   </div>
 </div>
 
-<div class="container">
+
+<div class="container" id="home-articles">
   <div class="row">
     <% @posts.each do |post| %>
       <div class="col-xs-6 col-md-4">

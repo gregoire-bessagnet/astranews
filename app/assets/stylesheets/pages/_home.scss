@@ -48,7 +48,7 @@
 
 .form_bg {
     padding:20px;
-    position: absolute;
+    //position: absolute;
     border:1px solid #fff;
     margin: auto;
     top: 0;
@@ -56,13 +56,14 @@
     bottom: 0;
     left: 0;
     width: 320px;
-    height: 280px;
+    //height: 280px;
 }
 
 .header_logo {
   font-family: 'Chivo', sans-serif;
   font-size:45px;
   color:#5E9E9F;
+  padding-bottom: 13px;
 }
 
 .header_logo a:link a:visited a:hover, a:focus {
@@ -93,6 +94,11 @@
 .hometags{
     background-color:grey;
     padding:5px;
+}
+
+
+#home-articles {
+  padding-top: 35px;
 }
 
 
