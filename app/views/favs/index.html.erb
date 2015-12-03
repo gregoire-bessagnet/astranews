@@ -1,16 +1,23 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-    <div class="text-center">
-      <h1>Mes articles favoris </h1>
-    </div>
-    <br/>
-    <ul class="list-unstyled">
-      <% @favs.each do |fav| %>
-      <li><%= fav.post.title %> - <%= fav.post.user %></li>
 
+<div class="container" id="home-articles">
+  <div class="row">
+    <h2>Mes favoris</h2>
+    <ul>
+      <% @favs.each do |fav| %>
+        <li>
+          <%= link_to post_path(fav.post) do %>
+            <%= fav.post.title %>
+          <% end %>
+        </li>
       <% end %>
     </ul>
   </div>
- </div>
 </div>
+
+
+
+
+
+
+
+
