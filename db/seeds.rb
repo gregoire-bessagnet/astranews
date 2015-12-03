@@ -68,7 +68,7 @@ puts "----Seeding Posts"
     Post.create({
       title: Faker::Lorem.sentence,
       introduction: Faker::Lorem.paragraph,
-      content: Faker::Lorem.paragraphs(3),
+      content: Faker::Lorem.paragraphs(5),
       date: Faker::Date.backward(90),
       synopsis: Faker::Lorem.sentence(2, true, 8),
       status:["Publié", "Brouillon"].sample,
