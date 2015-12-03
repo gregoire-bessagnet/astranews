@@ -2,38 +2,38 @@
   <div class="container-fluid container-post">
     <div class="row">
       <div class="col-xs-12">
-        <%= cl_image_tag @post.cover, :height => 450, :crop => :fill, class: "img-post-header" %>
+        <%= cl_image_tag @post.cover, :height => 200, :crop => :fill, class: "img-post-header", overlay: "logo-mini-s", effect: "mask", opacity: "50" %>
         <div class="cover-filter"></div>
 
         <div class="article">
          <div class="tags"> <%= @post.category %></div>
          <h1 class="article-headline"><%= @post.title %></h1>
-         <p class="article-meta">Posté le <%= @post.created_at.strftime("%b %d, %Y") %></p>
-         <h4><%= @post.introduction %></h4>
-         <p><%= markdown @post.content %></p>
-         <div class="synops">
-          <h5>
+         <p class="article-meta">Posté le <%= @post.created_at.strftime("%b %d, %Y") %> | Rédaction de <strong> <%= @post.city %> </strong> </p>
+
+         <div class="synopsis">
+          <h2>
             Synopsis
-          </h5>
+          </h2>
           <h4 class="article-excerpt">
             <%= @post.synopsis %>
           </h4>
         </div>
-        <div class="synops">
-          <h5>
-            Informations relatives
-          </h5>
+
+        <div class="extra-info">
+          <h2> Informations relatives </h2>
           <p>Nombre de caractères : <%= @post.character_number %></p>
-          <p>Licence de droit :<%= @post.licence %></p>
-
-          <% if @post.user == current_user %>
-          <%= link_to "Modifier l'article", edit_post_path(@post), class:"btn btn-primary btn-sm" %>
-          <% else %>
-          <%= link_to "Acheter l'article", edit_post_path(@post), class:'btn btn-primary btn-sm' %>
-          <% end %>
-          <%= link_to "Voir tous les articles", posts_path, class:'btn btn-default btn-sm' %>
-
+          <p>Licence de droit : <%= @post.  licence %></p>
+          <p class="label label-danger">Prix : <%= @post.price %> €</p>
         </div>
+
+        <div class="text-center buttons-view-post">
+          <%= link_to "Acheter l'article", edit_post_path(@post), class: "btn btn-success btn-md" %>
+          <%= link_to "Modifier l'article", edit_post_path(@post), class: "btn btn-success btn-md" %>
+          <%= link_to "Voir tous les articles", posts_path, class: "btn btn-default btn-md" %>
+        </div>
+
+        <p><%= markdown @post.content %></p>
+
         <div class="col-md-12">
           <h2>Les photos associées</h2>
 
@@ -45,23 +45,18 @@
           <ul class="list-unstyled">
             <% @post.uploads.each do |upload| %>
             <li>
-              <%= cl_image_tag upload.photo, class: "img-responsive" %>
+              <%= cl_image_tag upload.photo, overlay: "logo-mini-s", effect: "mask", opacity: "50", class: "img-responsive" %>
               <p>Description : <%= upload.description %></p>
               <% if policy(upload).destroy? %>
               <%= link_to "supprimer la photo", post_upload_path(post_id: @post.id, id: upload.id),
               data: { confirm: 'Are you sure?' }, method: :delete, class: "btn btn-primary" %>
+
               <% end %>
             </li>
             <% end %>
           </ul>
         </div>
-        <%= javascript_tag do %>
-        $(document).ready(function() {
-        alert('<%= j @alert_message %>');
-      });
-      <% end %>
+      </div>
     </div>
   </div>
-</div>
-</div>
 </div>

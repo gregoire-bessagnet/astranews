@@ -54,13 +54,29 @@
     color: darkgray;
   }
 
+
+  .synops {
+    background-color: #F2F2F2;
+    margin:10px;
+
+  }
+
   .synops h5 {
     text-align: left;
     color: darkgray;
 
   }
 
+  .synopsis {
+    background-color: #F2F2F2;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 20px;
 
+    h5 { text-transform: uppercase;
+    }
+
+  }
 
   .contenu{
     text-align: justify;
@@ -135,7 +151,7 @@
     position: relative;
     font-family: Lora;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 27px;
 
     &-headline {
       font-family: Oswald;
@@ -152,6 +168,7 @@
     }
     &-excerpt {
       font-weight: bold;
+      font-size:18px;
     }
     h2 {
       font-size: 26px;
@@ -198,16 +215,17 @@
   h4, .h4 {
       font-size: 20px;
       margin-top: 18px;
+      line-height: 27px;
     }
 
   h5, .h5 {
-   font-size: 16px;
-   padding-top: 22px;
+      font-size: 25px;
+      font-weight: bold;
   }
 
   p {
       margin: 0 0 11px;
-      margin-top: 25px;
+      margin-top: 30px;
     }
 
   .article h2 {

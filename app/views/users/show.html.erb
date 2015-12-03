@@ -79,7 +79,7 @@
       <h4>Articles de <%= @user.first_name %> <%=@user.last_name %></h4>
       <% @user.posts.each do |post| %>
         <div class="col-xs-6 col-lg-4">
-          <div class="card" style="background: url(<%= cloudinary_url post.cover %>); background-size:cover">
+          <div class="card" style="background: url(<%= cloudinary_url post.cover, angle: 340, overlay: "logo-mini-s", effect: "mask", opacity: "50" %>); background-size:cover">
             <div class="card-filter">
               <h2>
                 <%= link_to post_path(post) do %>
