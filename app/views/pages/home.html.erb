@@ -20,21 +20,10 @@
       <% @posts.each do |post| %>
         <li class="col-xs-6 col-md-4 container-cards">
           <%= link_to post_path(post) do %>
-          <div class="card-filter-home" style="background: url(<%= cloudinary_url post.cover %>); background-size:cover">
-            <h3><%= post.title %></h3>
-            <% if current_user %>
-              <div class="card-fav">
-                <% if post.is_faved_by(current_user) %>
-                  <%= link_to fav_path(post.is_faved_by(current_user)), method: :delete do %>
-                    <i class="fa fa-heart faved faved-on"></i>
-                  <% end %>
-                <% else %>
-                  <%= link_to post_favs_path(post), method: :post do %>
-                    <i class="fa fa-heart faved faved-off"></i>
-                  <% end %>
-                <% end  %>
-              </div>
-            <% end %>
+          <div class="card-filter-home" style="background: url(<%= cloudinary_url post.cover %>); background-size:cover"></div>
+          <div class="card-details">
+          <h3><%= post.title %></h3>
+            <%= render 'favorites', post: post %>
           </div>
           <% end %>
         </li>
@@ -42,5 +31,6 @@
     </ul>
   </div>
 </div>
+
 
 

@@ -140,13 +140,63 @@
   .container-cards {
     padding: 20px 0;
 
+    &:hover {
+      .card-filter-home {
+        &:after {
+          transform: translateY(0);
+        }
+      }
+
+      .card-details {
+        transform: translateY(0);
+      }
+    }
+
+    a { text-decoration: none; }
+
     .card-filter-home {
+      position: relative;
       height: 220px;
       margin: 0 20px;
+      overflow: hidden;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.4);
+        transform: translateY(-100%);
+
+        transition-property: all;
+        transition-duration: .5s;
+        transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+      }
 
       .card-fav {
         position: absolute;
         right: 40px;
+      }
+    }
+
+    .card-details {
+      position: absolute;
+      padding: 20px 40px;
+      top: 0;
+      padding: 20px 40px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+
+      transform: translateY(100%);
+      transition-property: all;
+      transition-duration: .5s;
+      transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
+      h3 {
+
       }
     }
   }
