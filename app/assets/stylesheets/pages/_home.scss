@@ -43,7 +43,6 @@
 
 #search {
   width: 100%;
-
 }
 
 
@@ -70,14 +69,11 @@
   text-decoration: none;
 }
 
-
 .bloctwo {
   bottom:10px;
   position:relative;
   margin-top:500px;
 }
-
-
 
 .homeblocs{
   margin-top:30px;
@@ -97,8 +93,6 @@
     padding:5px;
 }
 
-
-
 .footer {
 margin-top:50px;
 text-align: left;
@@ -108,11 +102,15 @@ font-size: 40px;
 display:inline;
 }
 
-
 .list-footer-inline a {
   margin-right: 12px;
   color:#5E9E9F;
   display:inline;
 }
 
+.card-fav {
+  position: absolute;
+  bottom: 60px;
+  right: 40px;
+}
 

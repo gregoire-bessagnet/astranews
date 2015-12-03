@@ -1,0 +1,38 @@
+<div class="card" style="background: url(<%= cloudinary_url post.cover %>); background-size:cover">
+          <div class="card-filter">
+            <h2>
+              <%= link_to post_path(post) do %>
+                <%= post.title %>
+              <% end %>
+            </h2>
+            <p>
+              <%= link_to user_path(post.user) do  %>
+                <%= image_tag post.user.picture, class:'avatar' %> <br>
+              <% end %>
+              Ecrit par <%= post.user.first_name %>
+              Le <%= post.created_at.strftime("%d %b. %Y") %>
+            </p>
+
+            <h6>
+              Synopsis :
+              <%= post.synopsis %>
+            </h6>
+            <p>
+              <% if current_user %>
+                <% if post.is_faved_by(current_user) %>
+                  <%= link_to fav_path(post.is_faved_by(current_user)), method: :delete do %>
+                    <i class="fa fa-heart faved faved-on"></i>
+                  <% end %>
+                <% else %>
+                  <%= link_to post_favs_path(post), method: :post do %>
+                    <i class="fa fa-heart faved faved-off"></i>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </p>
+            <% if policy(post).destroy? %>
+            <%= link_to "supprimer l'article", post_path(post),
+              data: { confirm: 'Are you sure?' }, method: :delete %>
+            <% end %>
+          </div>
+        </div>

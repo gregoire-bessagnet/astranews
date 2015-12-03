@@ -8,20 +8,10 @@
 
 
     <div class="navbar-wagon-pusher"></div>
-
-    <form action="" class="navbar-wagon-search hidden-xs hidden-sm">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>
-
-    <hr class="hidden-xs hidden-sm">
     <% if user_signed_in? %>
       <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
         <div class="icon-badge-container">
           <i class="fa fa-envelope-o"></i>
-
         </div>
       <% end %>
       <hr>
@@ -44,6 +34,13 @@
                 <i class="fa fa-plus"></i>  <%= t ".profile", default: "Mes articles" %>
               <% end %>
             </li>
+
+            <li>
+              <%= link_to favs_path do %>
+                <i class="fa fa-heart-o"></i>  <%= t ".profile", default: "Mes favoris" %>
+              <% end %>
+            </li>
+
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
