@@ -1,24 +1,27 @@
 <div class="container">
+
   <div class="row">
-    <div class= "col-md-8 col-md-offset-2">
+
+    <div class= "col-md-8">
       <%= simple_form_for @post do |f| %>
       <%= f.error_notification %>
-      <%= f.input :cover %>
-      <%= cl_image_tag @post.cover, transformation: :thumbnail  %>
-
       <%= f.input :title, label: 'Le titre', input_html: { class: "input-lg"} %>
       <%= f.input :content, label: 'Votre article', placeholder: "Tapez ici votre article" %>
-      <%= f.input :synopsis, label: 'Le synopsis', placeholder: "Tapez ici le synopsis" %>
-      <%= f.input :status, label: "status de l'article", collection: Post::STATUS, selected: Post::STATUS.first %>
-      <%= f.input :category, collection: Post::CATEGORIES, selected: Post::CATEGORIES.first %>
-      <%= f.input :city, label: 'localisation', placeholder: "Ex: Liban, Paris" %>
-      <div class="row">
-        <div class= "col-xs-6"><%= f.input :licence, label: 'Choisir la licence', collection: Post::LICENCE, selected: Post::LICENCE.first %>
-        </div>
-      </div>
-      <div class= "col-xs-12 col-md-offset-5"> <%= f.submit "Mettre en ligne l'article", class: "btn btn-primary" %> </div>
+      <%= f.input :synopsis, label: 'Le synopsis (200 char. max.)', placeholder: "Tapez ici le synopsis", input_html: { rows: 5} %>
     </div>
 
-    <% end %>
+
+    <div class= "col-md-4">
+      <%= f.input :cover %>
+      <%= cl_image_tag @post.cover, transformation: :t_media_lib_thumb %>
+      <%= f.input :status, label: "Statut de l'article", collection: Post::STATUS, selected: Post::STATUS.first %>
+      <%= f.input :category, collection: Post::CATEGORIES, selected: Post::CATEGORIES.first %>
+      <%= f.input :city, label: 'Localisation', placeholder: "Ex: Liban, Paris" %>
+      <%= f.input :licence, label: 'Choisir la licence', collection: Post::LICENCE, selected: Post::LICENCE.first %>
+      <%= f.submit "Publier l'article", class: "btn btn-success text-center" %>
+      <% end %>
+    </div>
+
   </div>
+
 </div>
