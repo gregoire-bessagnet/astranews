@@ -1,4 +1,4 @@
-<div class="card" style="background: url(<%= cloudinary_url post.cover %>); background-size:cover">
+<div class="card" style="background: url(<%= cloudinary_url post.cover, angle: 340, overlay: "logo-mini-s", effect: "mask", opacity: "50" %>); background-size:cover">
           <div class="card-filter">
             <h2>
               <%= link_to post_path(post) do %>

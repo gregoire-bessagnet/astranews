@@ -2,7 +2,7 @@
   <div class="container-fluid container-post">
     <div class="row">
       <div class="col-xs-12">
-        <%= cl_image_tag @post.cover, :height => 450, :crop => :fill, class: "img-post-header" %>
+        <%= cl_image_tag @post.cover, :height => 200, :crop => :fill, class: "img-post-header", overlay: "logo-mini-s", effect: "mask", opacity: "50" %>
         <div class="cover-filter"></div>
 
             <div class="article">
@@ -45,7 +45,7 @@
               <ul class="list-unstyled">
                 <% @post.uploads.each do |upload| %>
                 <li>
-                  <%= cl_image_tag upload.photo, class: "img-responsive" %>
+                  <%= cl_image_tag upload.photo, class: "img-responsive",  angle: 340, overlay: "logo-mini-s", effect: "mask", opacity: "50" %>
                   <p>Description : <%= upload.description %></p>
                   <% if policy(upload).destroy? %>
                     <%= link_to "supprimer la photo", post_upload_path(post_id: @post.id, id: upload.id),
