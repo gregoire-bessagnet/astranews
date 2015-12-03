@@ -1,15 +1,23 @@
 <div class="container" id="home-articles">
   <div class="row">
-    <h2>Tous les articles</h2>
+    <h2>Derniers articles postés</h2>
     <ul>
       <% @posts.each do |post| %>
         <li class="col-xs-6 col-md-4 container-cards">
           <%= link_to post_path(post) do %>
-          <div class="card-filter-home" style="background: url(<%= cloudinary_url post.cover %>); background-size:cover"></div>
-          <div class="card-details">
-          <h3><%= post.title %></h3>
+            <div class="card-filter-home" style="background: url(<%= cloudinary_url post.cover %>); background-size:cover"></div>
+            <div class="card-details">
+              <span class="card-post-cat"><%= post.category %></span>
+              <h3><%= post.title %></h3>
+              <p class="card-post-author">
+                Publié par <%= post.user.first_name %>
+                <%= post.user.last_name[0] %>.
+              </p>
+              <p class="card-post-date">
+                <%= l post.user.created_at, format: :short %>
+              </p>
+            </div>
             <%= render 'pages/favorites', post: post %>
-          </div>
           <% end %>
         </li>
       <% end %>
