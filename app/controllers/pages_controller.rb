@@ -4,8 +4,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!
 
   def home
-
-    @posts = Post.limit(9)
+    @posts = Post.order('created_at DESC').limit(9)
   end
 
 end
