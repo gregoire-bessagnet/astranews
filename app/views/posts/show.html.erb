@@ -8,7 +8,7 @@
             <div class="article">
                <div class="tags"> <%= @post.category %></div>
                <h1 class="article-headline"><%= @post.title %></h1>
-               <p class="article-meta">Posté le <%= @post.created_at.strftime("%b %d, %Y")%> | Rédaction de <strong> <%= @post.city %> </strong> </p>
+               <p class="article-meta">Posté par <strong><%= @post.user.first_name %> <%= @post.user.last_name %> </strong>,  le <%= @post.created_at.strftime("%b %d, %Y") %> | Rédaction de <strong> <%= @post.city %> </strong> </p>
 
 
                 <div class="synopsis">
@@ -49,12 +49,14 @@
             </div>
 
 
-            <div class="synops">
+            <div class="extra-info">
                 <h5>
                   Informations relatives
                 </h5>
                 <p>Nombre de caractères : <%= @post.character_number %></p>
+
                 <p>Licence de droit :<%= @post.licence %></p>
+                <p>Prix :<%= @post.price %></p>
             </div>
 
 

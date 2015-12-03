@@ -184,6 +184,25 @@
     }
   }
 
+
+  .synopsis {
+     background-color: grey;
+     margin-bottom: 20px;
+     padding-bottom: 10px;
+     padding-left: 20px;
+     padding-right: 20px;
+  }
+
+  .extra-info {
+     background-color: grey;
+     margin-bottom: 20px;
+     padding-bottom: 10px;
+     padding-left: 20px;
+     padding-right: 20px;
+  }
+
+
+
   .article:after {
     content: "";
     position:absolute;
