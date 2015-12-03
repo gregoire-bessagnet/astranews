@@ -75,7 +75,7 @@
     </div>
 
     <div class="background-profile">
-      <h4>Articles de <%= @user.first_name %> <%=@user.last_name %></h4>
+      <h4 class="text-center">Articles de <%= @user.first_name %> <%=@user.last_name %></h4>
       <% @user.posts.each do |post| %>
         <div class="col-xs-6 col-lg-4">
           <div class="card" style="background: url(<%= cloudinary_url post.cover %>); background-size:cover">
