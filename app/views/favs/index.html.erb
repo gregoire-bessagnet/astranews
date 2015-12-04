@@ -7,6 +7,8 @@
         <li>
           <%= link_to post_path(fav.post) do %>
             <%= fav.post.title %>
+            Publié par <%= fav.post.user.first_name %>
+                <%= fav.post.user.last_name[0] %>.
           <% end %>
         </li>
       <% end %>
