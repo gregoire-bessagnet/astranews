@@ -26,15 +26,22 @@
               <p><strong>Licence de droit</strong> : <%= @post.licence %></p>
           </div>
             <div class="col-lg-6 col-md-6 col-xs-12 text-right">
-          <h4 class="label label-danger">Prix : <%= @post.price %> €</h4>
+          <h4 class="label label-danger" data-toggle="modal" data-target="#myModal" >Prix : <%= @post.price %> €</h4>
             </div>
         </div>
 
         <div class="text-center buttons-view-post">
+
           <% if @post.user == current_user %>
             <%= link_to "Modifier l'article", edit_post_path(@post), class: "btn btn-success btn-md" %>
           <% else %>
-            <%= link_to "Acheter l'article", edit_post_path(@post), class: "btn btn-success btn-md" %>
+
+
+
+            <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#myModal" >
+              Acheter l'article
+            </button>
+
           <% end %>
 
           <%= link_to "Voir tous les articles", posts_path, class: "btn btn-default btn-md" %>
@@ -64,6 +71,32 @@
             <% end %>
           </ul>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-center" id="myModalLabel">Paiement bientôt en service avec Stripe</h4>
+      </div>
+      <div class="modal-body text-center">
+            <script src="https://checkout.stripe.com/checkout.js"
+                class="stripe-button"
+                data-key="pk_Fhlzwtm9SCx6Uxww5fNXX8CUbwwAc"
+                data-amount="2000"
+                data-name="Swiitcher"
+                data-description="2 widgets (20.00 €)"
+                data-image="unlogged.png"
+            </script>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
