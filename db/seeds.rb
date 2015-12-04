@@ -10,7 +10,6 @@ end
 
 
 
-
 puts "----Destroying Users"
   User.destroy_all
 puts "----Destroying Posts"

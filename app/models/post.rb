@@ -13,7 +13,7 @@ class Post < ActiveRecord::Base
   validates :title, presence: true, uniqueness: true
   # validates :introduction, presence: true
   validates :content, presence: true
-  validates :synopsis, length: { maximum: 200 }, presence: true
+  validates :synopsis, length: { maximum: 300 }, presence: true
   # validates :city, presence: true
   validates :category, inclusion: { in: Post::CATEGORIES, allow_nil: false }
   validates :status, inclusion: { in: Post::STATUS, allow_nil: false }
