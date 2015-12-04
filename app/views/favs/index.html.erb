@@ -1,24 +1,39 @@
 
 <div class="container" id="home-articles">
-  <div class="row">
-    <h2>Mes favoris</h2>
-    <ul>
+  <h2>Mes favoris</h2>
+  <table class="table table-striped table-hover table-users">
+    <thead>
+      <tr>
+        <th>
+          Titre
+        </th>
+        <th>
+          Auteur
+        </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
       <% @favs.each do |fav| %>
-        <li>
+      <tr>
+        <td>
           <%= link_to post_path(fav.post) do %>
-            <%= fav.post.title %>
-            Publié par <%= fav.post.user.first_name %>
-                <%= fav.post.user.last_name[0] %>.
+          <%= fav.post.title %>
           <% end %>
-        </li>
+        </td>
+        <td>
+          Publié par <%= fav.post.user.first_name %>
+          <%= fav.post.user.last_name[0] %>.
+        </td>
+        <td>
+          <%= link_to "Supprimer des favs", fav_path(fav), method: :delete %>
+        </td>
+      </tr>
       <% end %>
-    </ul>
-  </div>
+    </tbody>
+  </table>
+
 </div>
-
-
-
-
 
 
 

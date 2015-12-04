@@ -11,10 +11,8 @@
 
     <div class="navbar-wagon-pusher"></div>
     <% if user_signed_in? %>
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
-        <div class="icon-badge-container">
-          <i class="fa fa-envelope-o"></i>
-        </div>
+      <%= link_to favs_path, class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
+          <i class="fa fa-heart"></i> Mes favoris
       <% end %>
       <hr>
       <div class="navbar-wagon-item">
@@ -33,7 +31,7 @@
             </li>
             <li>
               <%= link_to favs_path do %>
-                <i class="fa fa-heart-o"></i>  <%= t ".profile", default: "Mes favoris" %>
+                <i class="fa fa-heart"></i>  <%= t ".profile", default: "Mes favoris" %>
               <% end %>
             </li>
             <li>
