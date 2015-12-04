@@ -53,6 +53,11 @@
 
           <% if @post.user == current_user %>
           <%= link_to "Add photo", new_post_upload_path(@post), class: "btn btn-default" %>
+
+            <% else %>
+          <h5>Aucune photo associée à l'article</h5>
+        <% end %>
+
           <% end %>
 
 
@@ -70,13 +75,6 @@
             <% end %>
           </ul>
         </div>
-
-        <% else %>
-
-        <% end %>
-
-
-
       </div>
     </div>
   </div>
