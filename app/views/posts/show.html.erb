@@ -8,7 +8,13 @@
         <div class="article">
           <div class="tags"> <%= @post.category %></div>
           <h1 class="article-headline"><%= @post.title %></h1>
-          <p class="article-meta">Posté le <%= @post.created_at.strftime("%b %d, %Y") %> par <strong> <%= @post.user.first_name %> <%= @post.user.last_name %> </strong> | Rédaction de <strong> <%= @post.city %> </strong> </p>
+          <p class="article-meta">
+            Posté le <%= @post.created_at.strftime("%b %d, %Y") %> par
+            <%= link_to user_path(@post.user) do %>
+              <strong> <%= @post.user.first_name %> <%= @post.user.last_name %> </strong>
+            <% end %>
+            | Rédaction de <strong> <%= @post.city %> </strong>
+          </p>
 
           <div class="container-fluid synopsis">
               <h2> Synopsis </h2>
