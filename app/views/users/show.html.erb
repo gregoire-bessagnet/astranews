@@ -83,7 +83,13 @@
 
   <div class="container-fluid container-signup">
     <div class= "col-md-8 col-md-offset-2 form-profile-botom ">
-      <h4 class="text-center"><strong>Articles de <%= @user.first_name %> <%=@user.last_name %></strong></h4>
+      <h4 class="text-center">
+        <% if @user == current_user %>
+          <strong>Mes articles</strong>
+        <% else %>
+          <strong>Articles de <%= @user.first_name %> <%=@user.last_name %></strong>
+        <% end %>
+      </h4>
       <ul id="home-articles" class="list-unstyled">
         <% @user.posts.each do |post| %>
           <li class="col-sm-6">
