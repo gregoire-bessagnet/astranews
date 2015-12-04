@@ -8,22 +8,26 @@
         <div class="article">
          <div class="tags"> <%= @post.category %></div>
          <h1 class="article-headline"><%= @post.title %></h1>
-         <p class="article-meta">Posté le <%= @post.created_at.strftime("%b %d, %Y") %> | Rédaction de <strong> <%= @post.city %> </strong> </p>
+         <p class="article-meta">Posté le <%= @post.created_at.strftime("%b %d, %Y") %> par <strong> <%= @post.user.first_name %> <%= @post.user.last_name %> </strong> | Rédaction de <strong> <%= @post.city %> </strong> </p>
 
-         <div class="synopsis">
+         <div class="container-fluid synopsis">
           <h2>
             Synopsis
           </h2>
-          <h4 class="article-excerpt">
+          <p class="article-excerpt">
             <%= @post.synopsis %>
-          </h4>
+          </p>
         </div>
 
-        <div class="extra-info">
-          <h2> Informations relatives </h2>
-          <p>Nombre de caractères : <%= @post.character_number %></p>
-          <p>Licence de droit : <%= @post.  licence %></p>
-          <p class="label label-danger">Prix : <%= @post.price %> €</p>
+        <div class="container-fluid extra-info">
+          <h2>Informations relatives</h2>
+           <div class="col-lg-6 col-md-6 col-xs-12">
+              <p><strong>Nombre de caractères</strong> (espaces compris) : <%= @post.content.length %></p>
+              <p><strong>Licence de droit</strong> : <%= @post.licence %></p>
+          </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 text-right">
+          <h4 class="label label-danger">Prix : <%= @post.price %> €</h4>
+            </div>
         </div>
 
         <div class="text-center buttons-view-post">

@@ -155,7 +155,10 @@
       font-family: Lato;
     }
     &-excerpt {
-      font-weight: thin;
+      font-weight: bold;
+      font-size:20px;
+      font-family:Lato;
+      padding:5px;
     }
     h2 {
       font-size: 26px;
@@ -241,11 +244,6 @@
       margin: 0 0 11px;
       line-height:29px;
     }
-
-  .article h2 {
-  padding-top: 18px;
-  font-size: 26px;
-  }
 
   .card-filter-home {
 
