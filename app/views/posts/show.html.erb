@@ -6,46 +6,45 @@
         <div class="cover-filter"></div>
 
         <div class="article">
-         <div class="tags"> <%= @post.category %></div>
-         <h1 class="article-headline"><%= @post.title %></h1>
-         <p class="article-meta">Posté le <%= @post.created_at.strftime("%b %d, %Y") %> par <strong> <%= @post.user.first_name %> <%= @post.user.last_name %> </strong> | Rédaction de <strong> <%= @post.city %> </strong> </p>
+          <div class="tags"> <%= @post.category %></div>
+          <h1 class="article-headline"><%= @post.title %></h1>
+          <p class="article-meta">Posté le <%= @post.created_at.strftime("%b %d, %Y") %> par <strong> <%= @post.user.first_name %> <%= @post.user.last_name %> </strong> | Rédaction de <strong> <%= @post.city %> </strong> </p>
 
-         <div class="container-fluid synopsis">
-          <h2>
-            Synopsis
-          </h2>
-          <p class="article-excerpt">
-            <%= @post.synopsis %>
-          </p>
-        </div>
+          <div class="container-fluid synopsis">
+              <h2> Synopsis </h2>
+              <p class="article-excerpt">
+                <%= @post.synopsis %>
+              </p>
+          </div>
 
-        <div class="container-fluid extra-info">
-          <h2>Informations relatives</h2>
-           <div class="col-lg-6 col-md-6 col-xs-12">
+          <div class="container-fluid extra-info">
+            <h2>Informations relatives</h2>
+            <div class="col-lg-6 col-md-6 col-xs-12">
               <p><strong>Nombre de caractères</strong> (espaces compris) : <%= @post.content.length %></p>
               <p><strong>Licence de droit</strong> : <%= @post.licence %></p>
-          </div>
-            <div class="col-lg-6 col-md-6 col-xs-12 text-right">
-          <h4 class="label label-danger" data-toggle="modal" data-target="#myModal" >Prix : <%= @post.price %> €</h4>
             </div>
-        </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 text-right">
+              <h4 class="label label-danger" data-toggle="modal" data-target="#myModal" >Prix : <%= @post.price %> €</h4>
+            </div>
+          </div>
 
         <div class="text-center buttons-view-post">
 
           <% if @post.user == current_user %>
-            <%= link_to "Modifier l'article", edit_post_path(@post), class: "btn btn-success btn-md" %>
+          <%= link_to "Modifier l'article", edit_post_path(@post), class: "btn btn-success btn-md" %>
+
           <% else %>
 
-
-
-            <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#myModal" >
-              Acheter l'article
-            </button>
+          <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#myModal" > Acheter l'article </button>
 
           <% end %>
 
           <%= link_to "Voir tous les articles", posts_path, class: "btn btn-default btn-md" %>
+
         </div>
+
+
+      <% if user_signed_in?  %>
 
         <p><%= markdown @post.content %></p>
 
@@ -71,6 +70,13 @@
             <% end %>
           </ul>
         </div>
+
+        <% else %>
+
+        <% end %>
+
+
+
       </div>
     </div>
   </div>
@@ -83,21 +89,49 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title text-center" id="myModalLabel">Paiement bientôt en service avec Stripe</h4>
-      </div>
-      <div class="modal-body text-center">
-            <script src="https://checkout.stripe.com/checkout.js"
+        <h3 class="modal-title text-center" id="myModalLabel">Paiement</h3>
+
+          <h4 class ="text-center"> Acheter l'article </h4>
+
+              <div class="modal-body text-center">
+                <script src="https://checkout.stripe.com/checkout.js"
                 class="stripe-button"
                 data-key="pk_Fhlzwtm9SCx6Uxww5fNXX8CUbwwAc"
                 data-amount="2000"
                 data-name="Swiitcher"
                 data-description="2 widgets (20.00 €)"
                 data-image="">
-            </script>
+                </script>
+              </div>
+
+            <h4 ="text-center"> Contacter le journaliste </h4>
+
+            <div class="contact-form">
+            <form id="contact" method="post" class="form" role="form">
+            <div class="row">
+            <div class="col-xs-6 col-md-6 form-group">
+            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required autofocus />
+            </div>
+            <div class="col-xs-6 col-md-6 form-group">
+            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required />
+            </div>
+            </div>
+            <textarea class="form-control" id="message" name="message" placeholder="Message" rows="5"></textarea>
+            <br />
+            <div class="row">
+            <div class="col-xs-12 col-md-12 form-group">
+            <button class="btn btn-primary pull-right" type="submit">Envoyer</button>
+            </form>
+            </div>
+
+
       </div>
+
+
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
+</div>
 </div>
