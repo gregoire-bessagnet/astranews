@@ -1,13 +1,16 @@
 <div class="coverhome">
   <div class="coverhome-filter">
-    <div class="container">
-      <h1>Swiitcher news on demand</h1>
-
-      <div class="search-form">
-        <%= simple_form_for :search, url: posts_path, method: :get, :html => { :class => 'form-inline' } do |f| %>
-        <%= f.input :query, label: false, placeholder: "Taper un titre" %>
-        <%= f.submit "Rechercher",  class: "btn btn-success" %>
-        <% end %>
+    <div class="container-fluid">
+      <div class="row">
+        <h1>Swiitcher news on demand</h1>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="search-form">
+              <%= simple_form_for :search, url: posts_path, method: :get, :html => { :class => 'form-inline' } do |f| %>
+              <%= f.input :query, label: false, placeholder: "Entrez un titre, une ville..." %>
+              <%= f.submit "Rechercher",  class: "btn btn-success" %>
+              <% end %>
+            </div>
+          </div>
       </div>
     </div>
   </div>
@@ -20,17 +23,18 @@
       <% @posts.each do |post| %>
         <li class="col-xs-6 col-md-4 container-cards">
           <%= link_to post_path(post) do %>
-            <div class="card-filter-home" style="background: url(<%= cloudinary_url post.cover,  angle: 340, overlay: "logo-mini-s", effect: "mask", opacity: "50" %>); background-size:cover"></div>
-            <div class="card-details">
-              <span class="card-post-cat"><%= post.category %></span>
-              <h3><%= post.title %></h3>
-              <p class="card-post-author">
-                Publié par <%= post.user.first_name %>
-                <%= post.user.last_name[0] %>.
-              </p>
-              <p class="card-post-date">
-                <%= l post.user.created_at, format: :short %>
-              </p>
+            <div class="card-filter-home" style="background: url(<%= cloudinary_url post.cover,  angle: 340, overlay: "logo-mini-s", effect: "mask", opacity: "50" %>); background-size:cover">
+            </div>
+             <div class="card-details">
+                <span class="card-post-cat"><%= post.category %></span>
+                <h3><%= post.title %></h3>
+                <p class="card-post-author">
+                  Publié par <%= post.user.first_name %>
+                  <%= post.user.last_name[0] %>.
+                </p>
+                  <p class="card-post-date">
+                    <%= l post.user.created_at, format: :short %>
+                  </p>
             </div>
             <%= render 'pages/favorites', post: post %>
           <% end %>
@@ -39,6 +43,3 @@
     </ul>
   </div>
 </div>
-
-
-

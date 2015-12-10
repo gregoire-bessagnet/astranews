@@ -9,7 +9,7 @@
       <%= f.input :content, label: 'Votre article', placeholder: "Tapez ici votre article" %>
       <%= f.input :synopsis, label: 'Le synopsis (300 char. max.)', placeholder: "Tapez ici le synopsis", input_html: { rows: 5} %>
         <h4>
-          <%= link_to "< Retour", :back,  class: "btn btn-success"  %>
+          <%= link_to "< Retour", :back,  class: "btn btn-default"  %>
         </h4>
     </div>
 
@@ -22,7 +22,7 @@
       <%= f.input :city, label: 'Localisation', placeholder: "Ex: Liban, Paris, Montussan" %>
       <%= f.input :licence, label: 'Choisir la licence', collection: Post::LICENCE, selected: Post::LICENCE.first %>
       <%= f.input :price, label: 'Choisir le prix', placeholder: "999" %>
-      <%= f.submit "Publier l'article", class: "btn btn-success text-center" %>
+      <%= f.submit "Publier votre article", class: "btn btn-success text-center" %>
       <% end %>
     </div>
 
