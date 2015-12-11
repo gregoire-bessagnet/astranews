@@ -1,10 +1,23 @@
-<%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
-<% end -%>
-
 <p class="login-separator">
   <span>ou</span>
 </p>
+
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= link_to omniauth_authorize_path(resource_name, provider), class: "btn facebook-btn" do %>
+      <i class="fa fa-<%= provider %>"></i> Sign in with <%= provider.to_s.titleize %>
+    <% end -%>
+    <br />
+  <% end -%>
+   <% end -%>
+
+<br />
+
+<div class="text-center">
+<%- if controller_name != 'sessions' %>
+  <%= link_to "Log in", new_session_path(resource_name) %><br />
+<% end -%>
+</div>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <%= link_to "Sign up", new_registration_path(resource_name) %><br />
@@ -22,12 +35,5 @@
   <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
 <% end -%>
 
-<%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to omniauth_authorize_path(resource_name, provider), class: "btn facebook-btn" do %>
-      <i class="fa fa-<%= provider %>"></i> Sign in with <%= provider.to_s.titleize %>
-    <% end -%>
-    <br />
-  <% end -%>
-   <% end -%>
+
 
