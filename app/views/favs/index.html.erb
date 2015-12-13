@@ -22,7 +22,7 @@
         </td>
         <td>
           Publié par
-          <%= link_to user_path(fav.user) do %>
+          <%= link_to user_path(fav.post.user) do %>
           <%= fav.post.user.first_name %>
           <%= fav.post.user.last_name[0] %>.
           <% end %>
