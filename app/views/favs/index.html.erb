@@ -1,4 +1,3 @@
-
 <div class="container" id="home-articles">
   <h2>Mes favoris</h2>
   <table class="table table-striped table-hover table-users">
@@ -22,8 +21,11 @@
           <% end %>
         </td>
         <td>
-          Publié par <%= fav.post.user.first_name %>
+          Publié par
+          <%= link_to user_path(fav.post.user) do %>
+          <%= fav.post.user.first_name %>
           <%= fav.post.user.last_name[0] %>.
+          <% end %>
         </td>
         <td>
           <%= link_to "Supprimer des favs", fav_path(fav), method: :delete %>
@@ -34,7 +36,3 @@
   </table>
 
 </div>
-
-
-
-
