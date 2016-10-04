@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'favoris/update'
+
+  get 'favoris/edit'
+
+  get 'favoris/show'
 
   root to: 'pages#home'
 

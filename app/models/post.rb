@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   has_many :uploads, dependent: :destroy
+  has_many :users, through: :favoris
   belongs_to :user
-
   has_many :favs, dependent: :destroy
 
 
