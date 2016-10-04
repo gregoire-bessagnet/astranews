@@ -1,19 +1,17 @@
 class PostsController < ApplicationController
 
-before_filter :authenticate_user!, except: [:index, :show]
-before_action :find_post, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:index, :show]
+  before_action :find_post, only: [:show, :edit, :update, :destroy]
 
   def index
-     @posts = policy_scope(Post)
-    if params[:search] and not params[:search][:title].blank?
-      @posts = Post.where("title ILIKE ?", "%" + params[:search][:title] + "%")
-      @search_title = params[:search][:title]
-    else
-      @posts = Post.all
+    @posts = policy_scope(Post).includes(:favs)
+    if params[:search] and not params[:search][:query].blank?
+      @posts = @posts.search params[:search][:query]
     end
   end
 
   def show
+    @alert_message = "Vous lisez #{@post.title}"
   end
 
   def new
@@ -44,7 +42,7 @@ before_action :find_post, only: [:show, :edit, :update, :destroy]
 
   def destroy
     @post.destroy
-    redirect_to posts_path
+    redirect_to :back
   end
 
   private
@@ -55,7 +53,7 @@ before_action :find_post, only: [:show, :edit, :update, :destroy]
   end
 
   def post_params
-    params.require(:post).permit(:title, :introduction, :content, :status, :synopsis, :city, :category, :price, :licence, :cover)
+    params.require(:post).permit(:title, :introduction, :content, :status, :synopsis, :city, :category, :licence, :cover, :price)
 
   end
 end

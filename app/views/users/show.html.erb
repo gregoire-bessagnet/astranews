@@ -1,50 +1,19 @@
 <div class="diving">
-
-  <div class="container">
+  <div class="container-fluid container-signup">
     <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <h1>
-          <%= image_tag @user.picture, class:"img-circle" %>
-          <hr><%= @user.first_name.capitalize %> <%=@user.last_name.capitalize %>
-        </h1>
-        <% if current_user == @user %>
-          <p><%= link_to edit_user_registration_path do %>
-            <i class="fa fa-pencil-square-o"></i> <%= t ".profile", default: "Modifier mon profil" %>
-            <% end %>
-          </p>
-        <% end %>
-        <p><%= link_to "" do %>
-          <i class="fa fa-envelope-o"></i> <%= t ".profile", default: "Envoyer un message privé" %>
-          <% end %>
-        </p>
-        <ul class="list-unstyled">
-          <li>
-            <% if @user.speciality.blank? %>
-            <strong>Fonction</strong> : non renseigné
-            <% else %>
-            <strong>Fonction</strong> : <%= @user.speciality.upcase %>
-            <% end %>
-          </li>
-          <li>
-            <% if @user.company_name.blank? %>
-            <strong>Agence</strong> : non renseigné
-            <% else %>
-            <strong>Agence</strong> : <%= @user.company_name.upcase %>
-            <% end %>
-          </li>
-          <li>
-            <% if @user.website_url.blank? %>
-            <strong>Site web</strong> : non renseigné
-            <% else %>
-            <strong>Site web</strong> : <%= link_to @user.website_url, @user.website_url, target: "_blank" %>
-            <% end %>
-          </li>
+      <div class= "col-md-8 col-md-offset-2 form-profile ">
+        <div class="text-center frame-picture">
+          <%= image_tag @user.picture, class:"user-picture" %>
+        </div>
+        <h1 class="text-center"> <strong>  <%= @user.first_name.capitalize %> <%=@user.last_name.capitalize %> </strong> </h1>
+
+        <ul class="list-unstyled list-inline text-center">
           <li>
             <% if @user.sociallink1.blank? %>
             <strong>Twitter</strong> : non renseigné
             <% else %>
             <%= link_to @user.sociallink1, target: "_blank" do %>
-            <i class="fa fa-twitter"></i>
+            <i class="fa fa-twitter fa-lg"></i>
             <% end %>
             <% end %>
           </li>
@@ -53,7 +22,7 @@
             <strong>Facebook</strong> : non renseigné
             <% else %>
             <%= link_to @user.sociallink2, target: "_blank" do %>
-            <i class="fa fa-facebook"></i>
+            <i class="fa fa-facebook fa-lg"></i>
             <% end %>
             <% end %>
           </li>
@@ -62,56 +31,79 @@
             <strong>Linkedin</strong> : non renseigné
             <% else %>
             <%= link_to @user.sociallink3, target: "_blank" do %>
-            <i class="fa fa-linkedin"></i>
+            <i class="fa fa-linkedin fa-lg"></i>
             <% end %>
             <% end %>
           </li>
         </ul>
-        <hr>
-        <div class="">
-          <h4>Description</h4>
-          <h5><%= @user.biography %></h5>
-
+        <br/>
+        <div class="text-center">
+          <%= link_to "mailto:" + @user.email, class: "btn btn-success btn-lg" do %>
+          Envoyer un message
+          <% end %>
         </div>
-        <hr>
+        <br/>
+      </div>
 
-        <div class="">
-          <h5>email: <a href="mailto:<%= @user.email %>"><%= @user.email %></a></h5>
+      <div class= "col-md-8 col-md-offset-2 form-profile ">
+        <div class="text-center">
+          <h4><strong>Mon parcours</strong></h4>
+          <br/>
+          <ul class="list-unstyled list-inline text-center">
+            <li>
+              <% if @user.speciality.blank? %>
+              <strong>Fonction</strong> : non renseigné
+              <% else %>
+              <strong>Fonction</strong> : <%= @user.speciality.upcase %>
+              <% end %>
+            </li>
+            <li>
+              <% if @user.company_name.blank? %>
+              <strong>Agence</strong> : non renseigné
+              <% else %>
+              <strong>Agence</strong> : <%= @user.company_name.upcase %>
+              <% end %>
+            </li>
+            <li>
+              <% if @user.website_url.blank? %>
+              <strong>Site web</strong> : non renseigné
+              <% else %>
+              <strong>Site web</strong> : <%= link_to @user.website_url, @user.website_url, target: "_blank" %>
+              <% end %>
+            </li>
+          </ul>
+           <div class="col-xs-12 ">
 
-
-
-        <h4>Articles de <%= @user.first_name %> <%=@user.last_name %> </h4>
-
-        <% @user.posts.each do |post| %>
-          <div class="col-xs-12 col-sm-6">
-            <div class="card" style="background: url(<%= cloudinary_url post.cover %>); background-size:cover">
-              <div class="card-filter">
-                <h2>
-                  <%= link_to post_path(post) do %>
-                    <%= post.title %>
-                  <% end %>
-                </h2>
-                <p>
-                  Le <%= post.created_at.strftime("%d %b. %Y") %>
-                </p>
-                <h6>
-                  Synopsis :
-                  <%= post.synopsis %>
-                </h6>
-
-                <% if policy(post).destroy? %>
-                  <%= link_to "supprimer l'article",  post_path(post),
-                  data: { confirm: 'Are you sure?' }, method: :delete %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-
+        <h5><%= @user.biography %></h5>
+      </div>
+        </div>
       </div>
     </div>
-
   </div>
+
+  <div class="container-fluid container-signup">
+    <div class= "col-md-8 col-md-offset-2 form-profile-botom ">
+      <h4 class="text-center">
+        <% if @user == current_user %>
+          <strong>Mes articles</strong>
+        <% else %>
+          <strong>Articles de <%= @user.first_name %> <%=@user.last_name %></strong>
+        <% end %>
+      </h4>
+      <ul id="home-articles" class="list-unstyled">
+        <% @user.posts.each do |post| %>
+          <li class="col-sm-6">
+            <div class="container-cards">
+            <%= render 'posts/postuser', post: post %>
+            </div>
+          </li>
+
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
 
 
 

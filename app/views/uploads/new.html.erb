@@ -6,12 +6,12 @@
       <%= simple_form_for [@post, @upload] do |f| %>
         <%= f.error_notification %>
         <%= f.input :photo, label: "Téléchargez vos photos" %>
-         <%= cl_image_tag @upload.photo, transformation: :thumbnail  %>
+         <%= cl_image_tag @upload.photo, transformation: :thumbnail,  angle: 340, overlay: "logo-mini-s", effect: "mask", opacity: "50"  %>
         <%= f.input :description, label: "Description", placeholder: "Décrivez la raison d'être de cette photo" %>
         <%= f.submit "Télécharger", class: "btn btn-primary" %>
       <% end %>
       <h4 class="text-center">
-        <%= link_to '< Retour', :back %>
+        <%= link_to '< Retour', :back, class: "btn btn-default" %>
       </h4>
 
     </div>

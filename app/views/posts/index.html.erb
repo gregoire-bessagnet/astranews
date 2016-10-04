@@ -1,33 +1,14 @@
-<div class="container">
+<div class="container" id="home-articles">
   <div class="row">
-    <% @posts.each do |post| %>
-      <div class="col-xs-12 col-sm-6">
-        <div class="card" style="background: url(<%= cloudinary_url post.cover %>); background-size:cover">
-          <div class="card-filter">
-            <h2>
-              <%= link_to post_path(post) do %>
-                <%= post.title %>
-              <% end %>
-            </h2>
-            <p>
-              <%= link_to user_path(post.user) do  %>
-                <%= image_tag post.user.picture, class:'avatar' %> <br>
-              <% end %>
-              Ecrit par <%= post.user.first_name %>
-              Le <%= post.created_at.strftime("%d %b. %Y") %>
-            </p>
-
-            <h6>
-              Synopsis :
-              <%= post.synopsis %>
-            </h6>
-            <% if policy(post).destroy? %>
-             <%= link_to "supprimer l'article", post_path(post),
-            data: { confirm: 'Are you sure?' }, method: :delete %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    <% end %>
+    <h2>Derniers articles postés</h2>
+    <ul>
+      <% @posts.each do |post| %>
+        <li class="col-xs-6 col-md-4 container-cards">
+          <%= render 'postuser', post: post %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>
+
+

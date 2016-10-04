@@ -2,8 +2,6 @@
   .container-post {
     padding: 0;
 
-
-
     .img-post-header {
       width: 100%;
     }
@@ -43,7 +41,6 @@
 
   }
 
-
   .carding h1 {
     text-align: center;
     font-weight : strong;
@@ -54,29 +51,12 @@
     color: darkgray;
   }
 
-
-  .synops {
-    background-color: #F2F2F2;
-    margin:10px;
-
-  }
-
   .synops h5 {
     text-align: left;
     color: darkgray;
 
   }
 
-  .synopsis {
-    background-color: #F2F2F2;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    padding: 20px;
-
-    h5 { text-transform: uppercase;
-    }
-
-  }
 
   .contenu{
     text-align: justify;
@@ -100,10 +80,18 @@
     background-color: white;
   }
 
-  .img-circle {
-  border-radius: 1%;
-  height: 180px;
+  // .img-circle {
+  // border-radius: 1%;
+  // height: 180px;
+  // }
+
+  .user-picture {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   }
+
 
   .avatar {
   width: 40px;
@@ -151,7 +139,7 @@
     position: relative;
     font-family: Lora;
     font-size: 16px;
-    line-height: 27px;
+    line-height: 1.6;
 
     &-headline {
       font-family: Oswald;
@@ -168,7 +156,9 @@
     }
     &-excerpt {
       font-weight: bold;
-      font-size:18px;
+      font-size:20px;
+      font-family:Lato;
+      padding:5px;
     }
     h2 {
       font-size: 26px;
@@ -195,12 +185,39 @@
     }
   }
 
+
+  .synopsis {
+     background-color: #F2F2F2;
+     margin-bottom: 20px;
+     padding-bottom: 10px;
+     padding-left: 20px;
+     padding-right: 20px;
+
+     h2 {
+      text-transform:uppercase;
+     }
+  }
+
+  .extra-info {
+     background-color: #F2F2F2;
+     margin-bottom: 40px;
+     padding-bottom: 10px;
+     padding-left: 20px;
+     padding-right: 20px;
+     font-family:Lato;
+
+  }
+
+  .buttons-view-post{
+    margin-bottom:30px;
+  }
+
+
   .article:after {
     content: "";
     position:absolute;
     bottom:0;
     left:0;
-    width:100%;
     height:30px;
     background: linear-gradient(to top,
        rgba(255,255,255, 1) 20%,
@@ -215,23 +232,17 @@
   h4, .h4 {
       font-size: 20px;
       margin-top: 18px;
-      line-height: 27px;
     }
 
   h5, .h5 {
-      font-size: 25px;
-      font-weight: bold;
+   font-size: 16px;
+   padding-top: 22px;
   }
 
   p {
       margin: 0 0 11px;
-      margin-top: 30px;
+      line-height:29px;
     }
-
-  .article h2 {
-  padding-top: 18px;
-  font-size: 26px;
-  }
 
   .card-filter-home {
 
@@ -244,6 +255,5 @@
     text-decoration:none;
   }
 }
-
 
 

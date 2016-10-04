@@ -1,11 +1,11 @@
+<div class="container-fluid container-signup ">
+  <div class="row">
+    <div class= "col-md-8 col-md-offset-2 form-signup ">
 <h2 class="text-center">Modifier mon compte </h2>
-
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 <%= f.error_notification %>
-<div class="container">
-  <div class="row">
-    <div class= "col-md-8 col-md-offset-2">
+
       <div class="form-inputs">
         <%= f.input :email, label: 'Email', required: true, autofocus: true %>
 
@@ -15,20 +15,20 @@
 
         <%= f.input :password, label: 'Mot de passe', autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
         <%= f.input :password_confirmation, label: 'Confirmer le mot de passe', required: false %>
-        <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+        <%= f.input :current_password, label: 'Mot de passe actuel', hint: "we need your current password to confirm your changes", required: true %>
       </div>
       <hr>
       <div class="row">
         <div class="col-sm-6">
-          <%= f.input :first_name %>
+          <%= f.input :first_name, label: 'Prénom' %>
         </div>
         <div class="col-sm-6">
-          <%= f.input :last_name %>
+          <%= f.input :last_name, label: 'Nom' %>
         </div>
       </div>
       <%= f.input :picture, label: 'Photo de profil' %>
       <%= f.input :phone_number, label: 'Téléphone', placeholder: "0600000000" %>
-      <%= f.input :address, as: :text, label: 'Adresse', placeholder: "2, place de la liberté" %>
+      <%= f.input :address, label: 'Adresse', placeholder: "2, place de la liberté" %>
       <hr>
 
       <%= f.input :speciality, label: 'Spécialité', placeholder: "pigiste, jri, photographe..." %>
@@ -47,14 +47,14 @@
       <%= f.input :sociallink2, label: 'Réseau social 2', placeholder: "https://www.facebook.com/john.doe" %>
       <%= f.input :sociallink3, label: 'Réseau social 3', placeholder: "https://www.linkedin.com/" %>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Enregistrer", class: "btn btn-primary" %>
+      <div class="form-actions text-center">
+        <%= f.button :submit, "Enregistrer", class: "btn btn-success" %>
       </div>
       <% end %>
-
-      <hr>
-
-      <p class="text-center"><%= link_to "< Retour à l'accueil", :back %> | <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Confirmer la suppression de votre compte ?" }, method: :delete %></p>
+      <br />
+      <div class="signup-none">
+       <p class="text-center"><%= link_to "Retour à l'accueil", :back, class: "btn btn-default" %>  <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Confirmer la suppression de votre compte ?" }, method: :delete, class: "btn btn-default" %></p>
+      </div>
 
     </div>
   </div>

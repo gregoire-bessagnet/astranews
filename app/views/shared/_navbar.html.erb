@@ -2,27 +2,15 @@
   <div class="container navbar-wagon-container">
 
     <%= link_to root_path do %>
-        <div class="header_logo"> <%= image_tag "logo_taille_site.png", width:"55%" %></div>
+        <div class="header_logo">
+          <%= image_tag "logo_taille_site.png" %>
+        </div>
     <% end %>
 
-
-
     <div class="navbar-wagon-pusher"></div>
-
-    <form action="" class="navbar-wagon-search hidden-xs hidden-sm">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>
-
-    <hr class="hidden-xs hidden-sm">
     <% if user_signed_in? %>
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
-        <div class="icon-badge-container">
-          <i class="fa fa-envelope-o"></i>
-
-        </div>
+      <%= link_to favs_path, class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
+          <i class="fa fa-heart"></i> Mes favoris
       <% end %>
       <hr>
       <div class="navbar-wagon-item">
@@ -40,8 +28,13 @@
               <% end %>
             </li>
             <li>
+              <%= link_to favs_path do %>
+                <i class="fa fa-heart"></i>  <%= t ".profile", default: "Mes favoris" %>
+              <% end %>
+            </li>
+            <li>
               <%= link_to posts_path do %>
-                <i class="fa fa-plus"></i>  <%= t ".profile", default: "Mes articles" %>
+                <i class="fa fa-file-text-o"></i>  <%= t ".profile", default: "Tous les articles" %>
               <% end %>
             </li>
             <li>

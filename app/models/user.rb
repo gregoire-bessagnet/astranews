@@ -2,14 +2,15 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, omniauth_providers: [:facebook]
+  :recoverable, :rememberable, :trackable, :validatable,
+  :omniauthable, omniauth_providers: [:facebook]
 
   has_many :posts, dependent: :destroy
   has_many :posts, through: :favoris
 
-  mount_uploader :picture, ImageUploader
+  has_many :favs, dependent: :destroy
 
+  mount_uploader :picture, ImageUploader
 
   # validates :speciality, presence: true
 
@@ -21,7 +22,7 @@ class User < ActiveRecord::Base
       user.password = Devise.friendly_token[0,20]  # Fake password for validation
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
-      user.picture = auth.info.image
+      user.remote_picture_url = auth.info.image
       user.token = auth.credentials.token
       user.token_expiry = Time.at(auth.credentials.expires_at)
     end
