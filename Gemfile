@@ -17,7 +17,7 @@ gem 'autoprefixer-rails'
 gem 'omniauth-facebook'
 gem 'redcarpet'
 gem 'pg_search'
-gem "geocoder"
+gem 'geocoder'
 
 gem 'faker'
 gem 'faker_extension_fr'
@@ -44,4 +44,3 @@ group :production do
   gem 'rails_12factor'
   gem 'puma'
 end
-
