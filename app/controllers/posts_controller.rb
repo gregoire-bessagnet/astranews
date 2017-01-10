@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   def show
     @alert_message = "Vous lisez #{@post.title}"
     @post = Post.find(params[:id])
+    authorize @post
   end
 
   def new

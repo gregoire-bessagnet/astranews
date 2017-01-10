@@ -4,7 +4,7 @@ development:
   api_key: '181839527517859'
   api_secret: rxoim-nQ4e-vx4b6fvkCXCRhQy4
   enhance_image_tag: true
-  static_image_support: false
+  static_image_support: true
 production:
   cloud_name: gregoire
   api_key: '181839527517859'
